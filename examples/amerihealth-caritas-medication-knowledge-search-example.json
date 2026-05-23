@@ -1,0 +1,54 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/MedicationKnowledge?code=617314"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://api-ext.amerihealthcaritas.com/0500/patient-api/MedicationKnowledge/mk-1",
+      "resource": {
+        "resourceType": "MedicationKnowledge",
+        "id": "mk-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617314",
+              "display": "Atorvastatin 20 MG Oral Tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "doseForm": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/snomedct",
+              "code": "385055001",
+              "display": "Tablet"
+            }
+          ]
+        },
+        "synonym": ["Lipitor"],
+        "drugCharacteristic": [
+          { "type": { "text": "tier" }, "valueString": "Tier 1 - Preferred Generic" }
+        ],
+        "regulatory": [
+          {
+            "regulatoryAuthority": { "display": "AmeriHealth Caritas Formulary" },
+            "substitution": [
+              {
+                "type": { "text": "generic" },
+                "allowed": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-schema/amerihealth-caritas-organization-schema.json",
+  "title": "AmeriHealthCaritasOrganization",
+  "description": "JSON Schema mirroring the FHIR R4 Organization resource as exposed by the AmeriHealth Caritas Provider Directory FHIR API. Represents contracted health-care delivery organizations (clinics, hospitals, IPAs, behavioral-health groups, LTSS providers) participating in AmeriHealth Caritas managed Medicaid, CHIP, D-SNP, LTSS, and Marketplace networks.",
+  "type": "object",
+  "required": ["resourceType"],
+  "properties": {
+    "resourceType": { "type": "string", "const": "Organization" },
+    "id": { "type": "string" },
+    "meta": { "type": "object" },
+    "identifier": { "type": "array", "items": { "type": "object" } },
+    "active": { "type": "boolean" },
+    "type": { "type": "array", "items": { "type": "object" } },
+    "name": { "type": "string" },
+    "alias": { "type": "array", "items": { "type": "string" } },
+    "telecom": { "type": "array", "items": { "type": "object" } },
+    "address": { "type": "array", "items": { "type": "object" } },
+    "partOf": { "type": "object", "description": "Reference(Organization)" },
+    "contact": { "type": "array", "items": { "type": "object" } },
+    "endpoint": { "type": "array", "items": { "type": "object" } }
+  }
+}

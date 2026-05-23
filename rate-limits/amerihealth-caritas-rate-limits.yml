@@ -1,0 +1,104 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: AmeriHealth Caritas
+providerId: amerihealth-caritas
+created: '2026-05-23'
+modified: '2026-05-23'
+reconciled: false
+tags:
+  - Rate Limiting
+  - FHIR
+  - Healthcare
+  - CMS
+  - SMART On FHIR
+description: >-
+  The AmeriHealth Caritas developer portal does not publish numeric
+  rate limits for its FHIR R4 APIs. Limits are administered behind the
+  scenes consistent with CMS Patient Access expectations and reasonable-
+  use protections, scoped per registered application and per member
+  token. Production apps that exceed fair-use thresholds are contacted
+  directly. Sandbox endpoints are bound by similar reasonable-use
+  ceilings without published numbers. Token lifetimes are explicitly
+  short-lived: the documented OAuth `expires_in` is 3600 seconds (1
+  hour); refresh tokens are subject to revocation when member consent
+  is withdrawn.
+notes: >-
+  Specific per-second / per-minute numbers are not publicly disclosed.
+  Token expiration of 3600s is taken from the developer portal sample
+  token response. Per-plan endpoints share the same documented
+  authorization surface but are administered independently per plan
+  code.
+sources:
+  - https://developer.amerihealthcaritas.com/
+  - https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
+  - https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
+limits:
+  - name: Patient Access FHIR requests (production)
+    scope: app + member_token
+    metric: requests_per_second
+    limit: not publicly published; reasonable-use enforcement
+    notes: Member-authorized FHIR queries; throttled to protect platform but no public RPS number.
+  - name: Provider Directory FHIR requests
+    scope: app
+    metric: requests_per_second
+    limit: not publicly published; reasonable-use enforcement
+  - name: Drug Formulary FHIR requests
+    scope: app
+    metric: requests_per_second
+    limit: not publicly published; reasonable-use enforcement
+  - name: Sandbox FHIR requests
+    scope: ip
+    metric: requests_per_second
+    limit: not publicly published; reasonable-use enforcement
+    notes: Sandbox uses synthetic data; no member PHI risk but limits still apply.
+  - name: OAuth Access Token Lifetime
+    scope: token
+    metric: seconds
+    limit: 3600
+    notes: Documented `expires_in` in the developer portal sample token response is 3600 seconds.
+  - name: OAuth Refresh Token Lifetime
+    scope: token
+    metric: revocable
+    limit: revocable
+    notes: Refresh tokens are subject to revocation when member consent is withdrawn.
+policies:
+  - name: SMART on FHIR Authorization
+    description: >-
+      Production member data access requires SMART on FHIR / OAuth 2.0
+      with explicit member consent at
+      https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize.
+      Tokens are short-lived and refresh tokens are subject to revocation.
+  - name: PKCE for Public Clients
+    description: >-
+      Mobile, SPA, and any client unable to keep a Client Secret must
+      use the PKCE authorization code flow with `code_challenge` and
+      `code_challenge_method=S256`.
+  - name: Application Attestation
+    description: >-
+      Developer apps must complete the AmeriHealth Caritas attestation
+      aligning with CMS privacy and data-use expectations before
+      production access is granted.
+  - name: Backoff Strategy
+    description: >-
+      Implement exponential backoff and honor any `Retry-After`
+      response header; pace requests conservatively given the absence
+      of published numeric limits.
+  - name: Per-Plan Endpoint Selection
+    description: >-
+      Select the correct four-digit plan code (e.g. 0100, 0500, 0900,
+      1200, 2100, 2400, 2600) for the member's plan rather than
+      assuming a single shared endpoint.
+  - name: Cache Public Reference Data
+    description: >-
+      Provider Directory and Drug Formulary responses are public and
+      change infrequently; cache aggressively with conditional ETag /
+      Last-Modified handling where supported.
+  - name: HIPAA Logging Hygiene
+    description: >-
+      Do not log raw FHIR bodies containing PHI to shared
+      observability sinks; redact identifiers and narrow log retention.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

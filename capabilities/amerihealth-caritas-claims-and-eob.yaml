@@ -1,0 +1,157 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AmeriHealth Caritas Claims & EOB
+  description: >-
+    Naftiko capability wrapping the AmeriHealth Caritas Patient Access
+    FHIR R4 resources that surface a member's coverage and claims:
+    Coverage, Claim, and ExplanationOfBenefit (CARIN Blue Button). Read-
+    only; bearer-token-authorized; one tool per FHIR resource.
+  tags:
+    - AmeriHealth Caritas
+    - Claims
+    - EOB
+    - Coverage
+    - CARIN Blue Button
+    - FHIR
+  created: '2026-05-23'
+  modified: '2026-05-23'
+binds:
+  - namespace: env
+    keys:
+      AHC_PATIENT_BEARER_TOKEN: AHC_PATIENT_BEARER_TOKEN
+capability:
+  consumes:
+    - type: http
+      namespace: ahc-claims-eob
+      baseUri: https://api-ext.amerihealthcaritas.com/0500/patient-api
+      description: AmeriHealth Caritas FHIR claims & coverage surface.
+      resources:
+        - name: Coverage
+          path: /Coverage
+          operations:
+            - name: searchCoverage
+              method: GET
+              description: Search Coverage for a patient
+              outputRawFormat: json
+              inputParameters:
+                - name: patient
+                  in: query
+                  type: string
+                  required: true
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: Claim
+          path: /Claim
+          operations:
+            - name: searchClaim
+              method: GET
+              description: Search Claim resources for a patient
+              outputRawFormat: json
+              inputParameters:
+                - name: patient
+                  in: query
+                  type: string
+                  required: true
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: ExplanationOfBenefit
+          path: /ExplanationOfBenefit
+          operations:
+            - name: searchExplanationOfBenefit
+              method: GET
+              description: Search ExplanationOfBenefit (CARIN BB) for a patient
+              outputRawFormat: json
+              inputParameters:
+                - name: patient
+                  in: query
+                  type: string
+                  required: true
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+      authentication:
+        type: bearer
+        token: '{{env.AHC_PATIENT_BEARER_TOKEN}}'
+  exposes:
+    - type: rest
+      namespace: ahc-claims-eob-rest
+      port: 8080
+      description: REST adapter for claims & EOB.
+      resources:
+        - path: /v1/coverage
+          name: coverage
+          description: Search Coverage for a patient
+          operations:
+            - method: GET
+              name: searchCoverage
+              description: Search Coverage
+              call: ahc-claims-eob.searchCoverage
+              with:
+                patient: rest.patient
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/claims
+          name: claims
+          description: Search Claim for a patient
+          operations:
+            - method: GET
+              name: searchClaims
+              description: Search Claim
+              call: ahc-claims-eob.searchClaim
+              with:
+                patient: rest.patient
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/eob
+          name: explanation-of-benefit
+          description: Search ExplanationOfBenefit for a patient
+          operations:
+            - method: GET
+              name: searchExplanationOfBenefit
+              description: Search ExplanationOfBenefit
+              call: ahc-claims-eob.searchExplanationOfBenefit
+              with:
+                patient: rest.patient
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: ahc-claims-eob-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for claims & EOB.
+      tools:
+        - name: search-coverage
+          description: Search Coverage for a patient
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-claims-eob.searchCoverage
+          with:
+            patient: tools.patient
+        - name: search-claim
+          description: Search Claim for a patient
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-claims-eob.searchClaim
+          with:
+            patient: tools.patient
+        - name: search-explanation-of-benefit
+          description: Search ExplanationOfBenefit (CARIN BB) for a patient
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-claims-eob.searchExplanationOfBenefit
+          with:
+            patient: tools.patient

@@ -1,0 +1,98 @@
+name: AmeriHealth Caritas Vocabulary
+description: >-
+  Operational vocabulary that maps the AmeriHealth Caritas surface area
+  (managed Medicaid, CHIP, dual-eligible, LTSS, Marketplace, behavioral
+  health, pharmacy benefits) and its FHIR-based developer surface to the
+  API Evangelist taxonomy. Aligns concepts, services, tools, and
+  standards used across the AmeriHealth Caritas family of plans and
+  developer portal.
+modified: '2026-05-23'
+provider: AmeriHealth Caritas
+providerId: amerihealth-caritas
+concepts:
+  - name: Medicaid Managed Care
+    description: Full-risk managed care of state Medicaid populations.
+  - name: Children's Health Insurance Program (CHIP)
+    description: State-funded coverage for children in eligible families.
+  - name: Dual Eligible (D-SNP)
+    description: Members eligible for both Medicare and Medicaid; served by VIP Care plans.
+  - name: Long-Term Services and Supports (LTSS)
+    description: Long-term care services delivered through Community HealthChoices contracts.
+  - name: Marketplace / Individual & Family
+    description: Qualified Health Plans on state-based or federal Marketplaces under AmeriHealth Caritas Next and First Choice Next.
+  - name: Behavioral Health
+    description: Managed behavioral health benefits and county/state contracts delivered through PerformCare.
+  - name: Pharmacy Benefits Management
+    description: PBM services delivered through PerformRx for AmeriHealth Caritas plans and external clients.
+  - name: Patient Access API
+    description: CMS-mandated FHIR R4 read API for member clinical, claims, and coverage data.
+  - name: Provider Directory API
+    description: CMS-mandated FHIR R4 public directory of contracted Practitioners, Organizations, and Locations.
+  - name: Drug Formulary API
+    description: CMS-mandated FHIR R4 public drug formulary surface.
+  - name: SMART on FHIR / OAuth 2.0
+    description: Authorization framework securing Patient Access data.
+  - name: PKCE Flow
+    description: Authorization Code with Proof Key for Code Exchange for mobile / SPA clients.
+  - name: CARIN Blue Button
+    description: Implementation guide for consumer-directed payer data exchange (ExplanationOfBenefit).
+  - name: Da Vinci PDex
+    description: Payer Data Exchange implementation guide for clinical payer-to-payer data sharing.
+  - name: USCDI v1
+    description: United States Core Data for Interoperability dataset.
+  - name: Per-Plan FHIR Endpoint
+    description: Per-state-plan FHIR routing via four-digit plan code (0100, 0500, 0900, 1200, 2100, 2400, 2600).
+services:
+  - name: Patient Access FHIR Service
+    description: api-ext.amerihealthcaritas.com/{planCode}/patient-api FHIR R4 server.
+  - name: Provider Directory FHIR Service
+    description: api-ext.amerihealthcaritas.com/{planCode}/provider-api FHIR R4 server.
+  - name: SMART Authorization Server
+    description: fhir.amerihealthcaritas.com/{planCode}/smartauth — token, authorize, introspect, revoke, manage.
+  - name: Member Patient Access OAuth
+    description: member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize — member-facing consent.
+  - name: External Token Endpoint
+    description: eapics.amerihealthcaritas.com/oauth2/v1/token — token exchange.
+  - name: Developer Portal
+    description: developer.amerihealthcaritas.com — registration, app management, sandbox credentials.
+  - name: Health Plan Finder
+    description: amerihealthcaritas.com/find-a-health-plan — public plan directory by state.
+  - name: Family of Plans Portals
+    description: Per-state plan member portals (e.g. keystonefirstpa.com, amerihealthcaritasla.com, mibluecrosscomplete.com, amerihealthcaritasnc.com).
+  - name: Careers Portal
+    description: careers.amerihealthcaritas.com — employment search.
+tools:
+  - name: Postman Collection (community)
+    description: No official Postman workspace is published; community collections may exist.
+  - name: FHIR Validators
+    description: Use HL7 FHIR Validator and Inferno against the published CapabilityStatement.
+  - name: SMART App Launcher
+    description: SMART-on-FHIR test launcher (e.g. launch.smarthealthit.org) for OAuth flow testing.
+  - name: AmeriHealth Caritas Next Provider Portal
+    description: Provider portal (amerihealthcaritasnextproviderportal.com) with associated github.com/amerihealth org.
+standards:
+  - name: HL7 FHIR R4 (4.0.1)
+    url: https://hl7.org/fhir/R4/index.html
+  - name: SMART App Launch 1.0.0
+    url: https://hl7.org/fhir/smart-app-launch/1.0.0/
+  - name: USCDI v1
+    url: https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi#uscdi-v1
+  - name: CARIN Blue Button IG
+    url: https://hl7.org/fhir/us/carin-bb/history.html
+  - name: Da Vinci PDex IG
+    url: https://hl7.org/fhir/us/davinci-pdex/history.html
+  - name: OAuth 2.0
+    url: https://oauth.net/2/
+  - name: OpenID Connect Core 1.0
+    url: https://openid.net/specs/openid-connect-core-1_0.html
+  - name: CMS Interoperability and Patient Access (CMS-9115-F)
+    url: https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability
+  - name: HIPAA Privacy & Security Rules
+    url: https://www.hhs.gov/hipaa/index.html
+  - name: APIs.json
+    url: https://apisjson.org/
+  - name: OpenAPI 3.x
+    url: https://spec.openapis.org/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

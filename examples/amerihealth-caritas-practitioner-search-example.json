@@ -1,0 +1,54 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://api-ext.amerihealthcaritas.com/1200/provider-api/Practitioner?name=smith"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://api-ext.amerihealthcaritas.com/1200/provider-api/Practitioner/prac-1",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-1",
+        "identifier": [
+          { "system": "http://hl7.org/fhir/sid/us-npi", "value": "1234567893" }
+        ],
+        "active": true,
+        "name": [
+          { "use": "official", "family": "Smith", "given": ["John"], "suffix": ["MD"] }
+        ],
+        "telecom": [
+          { "system": "phone", "value": "+1-215-555-0144", "use": "work" }
+        ],
+        "address": [
+          {
+            "use": "work",
+            "line": ["1500 Market St"],
+            "city": "Philadelphia",
+            "state": "PA",
+            "postalCode": "19102",
+            "country": "US"
+          }
+        ],
+        "gender": "male",
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0360",
+                  "code": "MD",
+                  "display": "Doctor of Medicine"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

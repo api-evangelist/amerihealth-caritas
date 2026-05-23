@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-schema/amerihealth-caritas-explanation-of-benefit-schema.json",
+  "title": "AmeriHealthCaritasExplanationOfBenefit",
+  "description": "JSON Schema mirroring the FHIR R4 ExplanationOfBenefit resource as profiled by CARIN Blue Button and exposed via AmeriHealth Caritas Patient Access. EOB describes claim adjudication results for AmeriHealth Caritas Medicaid, CHIP, D-SNP, LTSS, and Marketplace members.",
+  "type": "object",
+  "required": ["resourceType", "status", "type", "use", "patient", "created", "insurer", "provider", "outcome"],
+  "properties": {
+    "resourceType": { "type": "string", "const": "ExplanationOfBenefit" },
+    "id": { "type": "string" },
+    "meta": { "type": "object" },
+    "identifier": { "type": "array", "items": { "type": "object" } },
+    "status": { "type": "string", "enum": ["active", "cancelled", "draft", "entered-in-error"] },
+    "type": { "type": "object" },
+    "subType": { "type": "object" },
+    "use": { "type": "string", "enum": ["claim", "preauthorization", "predetermination"] },
+    "patient": { "type": "object", "description": "Reference(Patient)" },
+    "billablePeriod": {
+      "type": "object",
+      "properties": {
+        "start": { "type": "string", "format": "date" },
+        "end": { "type": "string", "format": "date" }
+      }
+    },
+    "created": { "type": "string", "format": "date-time" },
+    "insurer": { "type": "object", "description": "Reference(Organization)" },
+    "provider": { "type": "object", "description": "Reference(Practitioner|PractitionerRole|Organization)" },
+    "outcome": { "type": "string", "enum": ["queued", "complete", "error", "partial"] },
+    "disposition": { "type": "string" },
+    "insurance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "focal": { "type": "boolean" },
+          "coverage": { "type": "object", "description": "Reference(Coverage)" }
+        }
+      }
+    },
+    "item": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sequence": { "type": "integer" },
+          "productOrService": { "type": "object" },
+          "servicedDate": { "type": "string", "format": "date" },
+          "servicedPeriod": { "type": "object" },
+          "quantity": { "type": "object" },
+          "unitPrice": { "type": "object" },
+          "net": { "type": "object" },
+          "adjudication": { "type": "array", "items": { "type": "object" } }
+        }
+      }
+    },
+    "total": { "type": "array", "items": { "type": "object" } },
+    "payment": { "type": "object" }
+  }
+}

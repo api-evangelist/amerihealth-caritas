@@ -1,0 +1,142 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: AmeriHealth Caritas
+providerId: amerihealth-caritas
+created: '2026-05-23'
+modified: '2026-05-23'
+reconciled: true
+tags:
+  - FHIR
+  - Healthcare
+  - Health Insurance
+  - Medicaid
+  - Interoperability
+  - CMS
+  - Patient Access
+  - Provider Directory
+  - Drug Formulary
+description: >-
+  AmeriHealth Caritas exposes HL7 FHIR R4 APIs (Patient Access, Provider
+  Directory, Drug Formulary) to satisfy the CMS Interoperability and
+  Patient Access final rule (CMS-9115-F). The APIs are free to
+  registered third-party applications: access is governed by SMART on
+  FHIR / OAuth 2.0, member consent, and a CMS-aligned attestation rather
+  than a commercial price tier. There is no list price, no metered rate
+  card, and no paid subscription. Member health-plan products (Medicaid,
+  CHIP, D-SNP, LTSS, Marketplace) are sold through state Medicaid
+  agencies, CMS, and state Marketplaces and are out of scope for an API
+  pricing surface.
+notes: >-
+  APIs are provided pursuant to CMS interoperability mandates; no
+  commercial pricing exists. Plan entries describe the free regulatory
+  access surface rather than dollar-denominated tiers. Plan-side
+  insurance pricing (member premiums, copays, deductibles) is set per
+  state plan and is not part of this API plans file.
+sources:
+  - https://developer.amerihealthcaritas.com/
+  - https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability
+  - https://www.amerihealthcaritas.com/find-a-health-plan
+plans:
+  - id: ahc-developer-sandbox
+    name: Developer Sandbox
+    type: freemium
+    description: >-
+      Free sandbox access for testing against synthetic patient data,
+      the live FHIR CapabilityStatements, and the per-plan FHIR
+      endpoints. Sandbox member credentials are issued to registered
+      developers after account activation.
+    entries:
+      - label: Sandbox FHIR requests
+        name: sandbox_requests
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: US
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: FHIR R4 sandbox endpoints (Patient Access & Provider Directory)
+      - name: Synthetic patient credentials issued to registered developers
+      - name: Live CapabilityStatements per plan code
+      - name: SMART App Launch / OAuth 2.0 / PKCE test flows
+      - name: No commercial cost
+  - id: ahc-production-patient-access
+    name: CMS Patient Access (Production)
+    type: freemium
+    description: >-
+      Production access for third-party member-facing apps under CMS-
+      9115-F. Requires developer registration, app attestation, and
+      SMART on FHIR / OAuth 2.0 with member consent. No fees are
+      charged to the application or member.
+    entries:
+      - label: Patient Access FHIR requests
+        name: patient_access_requests
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: US
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: SMART on FHIR / OAuth 2.0 + PKCE member consent
+      - name: Per-plan FHIR endpoint routing (0100, 0500, 0900, 2400, 2600)
+      - name: AllergyIntolerance, Claim, Condition, Coverage, Encounter, ExplanationOfBenefit
+      - name: Immunization, Medication, MedicationDispense, MedicationKnowledge, MedicationRequest
+      - name: Observation, Organization, OrganizationAffiliation, Patient, Practitioner, PractitionerRole, Procedure
+      - name: Required developer attestation; HIPAA-aligned data handling
+  - id: ahc-provider-directory
+    name: Provider Directory (Public)
+    type: freemium
+    description: >-
+      CMS-mandated public Provider Directory FHIR API. No
+      authentication required. Suitable for cached integration into
+      member-facing care navigation, broker tools, and benefits
+      lookups.
+    entries:
+      - label: Provider Directory requests
+        name: provider_directory_requests
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: US
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Practitioner, PractitionerRole, Organization, OrganizationAffiliation, Location, InsurancePlan
+      - name: Per-plan endpoints (0100, 0500, 0900, 1200, 2100, 2400, 2600)
+      - name: No authentication required
+  - id: ahc-drug-formulary
+    name: Drug Formulary (Public)
+    type: freemium
+    description: >-
+      CMS-mandated public Drug Formulary surface listing covered
+      medications, tiering, and prior authorization indicators.
+      Documented as a no-authentication surface in the developer
+      portal; formulary content is currently navigable through FHIR
+      MedicationKnowledge / List resources.
+    entries:
+      - label: Formulary requests
+        name: formulary_requests
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: US
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: MedicationKnowledge, List resources
+      - name: Drug formulary tiers and prior-authorization indicators
+      - name: No authentication required
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

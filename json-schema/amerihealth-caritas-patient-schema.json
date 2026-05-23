@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-schema/amerihealth-caritas-patient-schema.json",
+  "title": "AmeriHealthCaritasPatient",
+  "description": "JSON Schema for the FHIR R4 Patient resource as returned by the AmeriHealth Caritas Patient Access API. Mirrors the subset of FHIR Patient elements typically exposed for Medicaid, CHIP, D-SNP, and Marketplace members. Refer to the live FHIR CapabilityStatement at /metadata for the authoritative schema.",
+  "type": "object",
+  "required": ["resourceType", "id"],
+  "properties": {
+    "resourceType": { "type": "string", "const": "Patient" },
+    "id": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "versionId": { "type": "string" },
+        "lastUpdated": { "type": "string", "format": "date-time" },
+        "profile": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": { "type": "string", "enum": ["usual", "official", "temp", "secondary", "old"] },
+          "system": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "active": { "type": "boolean" },
+    "name": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": { "type": "string" },
+          "family": { "type": "string" },
+          "given": { "type": "array", "items": { "type": "string" } },
+          "prefix": { "type": "array", "items": { "type": "string" } },
+          "suffix": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "telecom": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": { "type": "string", "enum": ["phone", "fax", "email", "pager", "url", "sms", "other"] },
+          "value": { "type": "string" },
+          "use": { "type": "string", "enum": ["home", "work", "temp", "old", "mobile"] }
+        }
+      }
+    },
+    "gender": { "type": "string", "enum": ["male", "female", "other", "unknown"] },
+    "birthDate": { "type": "string", "format": "date" },
+    "address": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": { "type": "string" },
+          "type": { "type": "string" },
+          "line": { "type": "array", "items": { "type": "string" } },
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "postalCode": { "type": "string" },
+          "country": { "type": "string" }
+        }
+      }
+    },
+    "maritalStatus": { "type": "object" },
+    "communication": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "language": { "type": "object" },
+          "preferred": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

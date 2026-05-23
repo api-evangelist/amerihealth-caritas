@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-schema/amerihealth-caritas-location-schema.json",
+  "title": "AmeriHealthCaritasLocation",
+  "description": "JSON Schema mirroring the FHIR R4 Location resource as exposed by the AmeriHealth Caritas Provider Directory FHIR API. Represents a physical place where contracted services are delivered (a clinic site, hospital campus, behavioral-health office, pharmacy, or community-based service location).",
+  "type": "object",
+  "required": ["resourceType"],
+  "properties": {
+    "resourceType": { "type": "string", "const": "Location" },
+    "id": { "type": "string" },
+    "meta": { "type": "object" },
+    "identifier": { "type": "array", "items": { "type": "object" } },
+    "status": { "type": "string", "enum": ["active", "suspended", "inactive"] },
+    "operationalStatus": { "type": "object" },
+    "name": { "type": "string" },
+    "alias": { "type": "array", "items": { "type": "string" } },
+    "description": { "type": "string" },
+    "mode": { "type": "string", "enum": ["instance", "kind"] },
+    "type": { "type": "array", "items": { "type": "object" } },
+    "telecom": { "type": "array", "items": { "type": "object" } },
+    "address": {
+      "type": "object",
+      "properties": {
+        "line": { "type": "array", "items": { "type": "string" } },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "country": { "type": "string" }
+      }
+    },
+    "physicalType": { "type": "object" },
+    "position": {
+      "type": "object",
+      "properties": {
+        "longitude": { "type": "number" },
+        "latitude": { "type": "number" },
+        "altitude": { "type": "number" }
+      }
+    },
+    "managingOrganization": { "type": "object", "description": "Reference(Organization)" },
+    "partOf": { "type": "object", "description": "Reference(Location)" },
+    "hoursOfOperation": { "type": "array", "items": { "type": "object" } },
+    "availabilityExceptions": { "type": "string" },
+    "endpoint": { "type": "array", "items": { "type": "object" } }
+  }
+}

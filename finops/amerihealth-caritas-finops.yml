@@ -1,0 +1,130 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: AmeriHealth Caritas
+providerId: amerihealth-caritas
+created: '2026-05-23'
+modified: '2026-05-23'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - FHIR
+  - Healthcare
+  - CMS
+  - Medicaid
+  - Patient Access
+description: >-
+  FOCUS-aligned FinOps for the AmeriHealth Caritas FHIR APIs:
+  regulatory free access (no vendor invoice). The cost surface is the
+  consumer's own infrastructure (request volume, data egress, identity
+  / consent flow, member outreach) rather than per-call API charges
+  from AmeriHealth Caritas. This FinOps file does not attempt to model
+  the underlying health-plan economics (Medicaid capitation, premiums,
+  D-SNP MA payments, PerformRx PBM revenue) — those are commercial
+  contracts with state Medicaid agencies, CMS, employers, and pharmacy
+  clients rather than API-level charges.
+sources:
+  - https://developer.amerihealthcaritas.com/
+  - https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: AmeriHealth Caritas
+serviceCategory: Healthcare Interoperability
+billingModel:
+  pricingCategory: Regulatory Free Access (no fee)
+  billingFrequency: N/A
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+focusColumns:
+  ServiceName: AmeriHealth Caritas FHIR APIs
+  ServiceCategory: Healthcare Interoperability
+  ProviderName: AmeriHealth Caritas
+  PublisherName: AmeriHealth Caritas
+  InvoiceIssuerName: N/A (no AmeriHealth Caritas invoice for API access)
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: patient_access_requests
+    description: Member-authorized FHIR R4 queries against Patient Access endpoints; not billed but tracked for capacity and rate-limit purposes.
+    unit: request
+    aggregation: sum
+    dimensions:
+      - plan_code
+      - resource_type
+      - app
+  - name: provider_directory_requests
+    description: Public Provider Directory FHIR queries.
+    unit: request
+    aggregation: sum
+    dimensions:
+      - plan_code
+      - resource_type
+      - app
+  - name: drug_formulary_requests
+    description: Public Drug Formulary FHIR queries (MedicationKnowledge / List).
+    unit: request
+    aggregation: sum
+    dimensions:
+      - resource_type
+      - app
+  - name: oauth_member_authorizations
+    description: SMART on FHIR consent flows initiated and completed; useful for measuring application activation.
+    unit: authorization
+    aggregation: sum
+    dimensions:
+      - plan_code
+      - app
+  - name: refresh_token_uses
+    description: OAuth refresh token exchanges; useful for understanding member retention in the app.
+    unit: exchange
+    aggregation: sum
+    dimensions:
+      - plan_code
+      - app
+  - name: data_egress
+    description: PHI / FHIR resource bytes returned to the consumer; informs the consumer's own storage and processing cost.
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - plan_code
+      - resource_type
+      - app
+principles:
+  - name: Visibility
+    description: >-
+      AmeriHealth Caritas does not invoice for API access. Track
+      request and member-authorization volumes via your application's
+      own logging (token issuance, FHIR request audit). Reconcile
+      against the per-plan CapabilityStatement at
+      /{planCode}/{api}/metadata.
+  - name: Allocation
+    description: >-
+      Tag FHIR requests with the originating product feature (member
+      portal, claims explorer, care management workflow, formulary
+      lookup) AND with the plan code so downstream cost can be
+      allocated by both feature and population.
+  - name: Optimization
+    description: >-
+      Use _summary and _elements parameters to reduce payload size and
+      downstream egress cost. Cache Provider Directory and Drug
+      Formulary responses aggressively — they do not require member
+      consent and change infrequently. Use bulk-data ($export)
+      operations when supported to amortize request overhead.
+  - name: Accountability
+    description: >-
+      API access is free but operational risk is real: mishandled
+      member PHI triggers HIPAA exposure. Establish clear data-
+      retention windows and a periodic audit of which member tokens
+      are still active. Honor member consent revocation immediately
+      and rotate any compromised Client Secrets through the developer
+      portal.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

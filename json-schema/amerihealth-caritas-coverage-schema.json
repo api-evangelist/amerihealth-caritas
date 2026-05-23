@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-schema/amerihealth-caritas-coverage-schema.json",
+  "title": "AmeriHealthCaritasCoverage",
+  "description": "JSON Schema mirroring the FHIR R4 Coverage resource exposed by AmeriHealth Caritas Patient Access. Coverage identifies an insurance plan that pays for healthcare for a beneficiary; here it identifies a Medicaid, CHIP, D-SNP, LTSS, or Marketplace coverage relationship with an AmeriHealth Caritas plan.",
+  "type": "object",
+  "required": ["resourceType", "status", "beneficiary", "payor"],
+  "properties": {
+    "resourceType": { "type": "string", "const": "Coverage" },
+    "id": { "type": "string" },
+    "meta": { "type": "object" },
+    "identifier": { "type": "array", "items": { "type": "object" } },
+    "status": { "type": "string", "enum": ["active", "cancelled", "draft", "entered-in-error"] },
+    "type": { "type": "object" },
+    "policyHolder": { "type": "object" },
+    "subscriber": { "type": "object" },
+    "subscriberId": { "type": "string" },
+    "beneficiary": { "type": "object", "description": "Reference(Patient)" },
+    "dependent": { "type": "string" },
+    "relationship": { "type": "object" },
+    "period": {
+      "type": "object",
+      "properties": {
+        "start": { "type": "string", "format": "date-time" },
+        "end": { "type": "string", "format": "date-time" }
+      }
+    },
+    "payor": {
+      "type": "array",
+      "items": { "type": "object", "description": "Reference(Organization|Patient|RelatedPerson)" }
+    },
+    "class": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "object" },
+          "value": { "type": "string" },
+          "name": { "type": "string" }
+        }
+      }
+    },
+    "order": { "type": "integer" },
+    "network": { "type": "string" },
+    "costToBeneficiary": { "type": "array", "items": { "type": "object" } },
+    "subrogation": { "type": "boolean" },
+    "contract": { "type": "array", "items": { "type": "object" } }
+  }
+}

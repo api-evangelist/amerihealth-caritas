@@ -1,0 +1,322 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AmeriHealth Caritas Provider Directory FHIR
+  description: >-
+    Naftiko capability wrapping the AmeriHealth Caritas Provider
+    Directory FHIR R4 API. No authentication required. Exposes
+    Practitioner, PractitionerRole, Organization,
+    OrganizationAffiliation, Location, and InsurancePlan search and
+    read operations as both a REST adapter and an MCP tool surface.
+  tags:
+    - AmeriHealth Caritas
+    - Provider Directory
+    - FHIR
+    - Public
+  created: '2026-05-23'
+  modified: '2026-05-23'
+binds: []
+capability:
+  consumes:
+    - type: http
+      namespace: ahc-provider-directory
+      baseUri: https://api-ext.amerihealthcaritas.com/1200/provider-api
+      description: >-
+        AmeriHealth Caritas Provider Directory FHIR R4 endpoint. Default
+        plan code is 1200; substitute as needed (0100, 0500, 0900,
+        1200, 2100, 2400, 2600).
+      resources:
+        - name: Practitioner
+          path: /Practitioner
+          operations:
+            - name: searchPractitioner
+              method: GET
+              description: Search Practitioner resources
+              outputRawFormat: json
+              inputParameters:
+                - name: name
+                  in: query
+                  type: string
+                  required: false
+                - name: specialty
+                  in: query
+                  type: string
+                  required: false
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+            - name: readPractitioner
+              method: GET
+              description: Read a Practitioner by id
+              outputRawFormat: json
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: PractitionerRole
+          path: /PractitionerRole
+          operations:
+            - name: searchPractitionerRole
+              method: GET
+              description: Search PractitionerRole resources
+              outputRawFormat: json
+              inputParameters:
+                - name: practitioner
+                  in: query
+                  type: string
+                  required: false
+                - name: organization
+                  in: query
+                  type: string
+                  required: false
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: Organization
+          path: /Organization
+          operations:
+            - name: searchOrganization
+              method: GET
+              description: Search Organization resources
+              outputRawFormat: json
+              inputParameters:
+                - name: name
+                  in: query
+                  type: string
+                  required: false
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: OrganizationAffiliation
+          path: /OrganizationAffiliation
+          operations:
+            - name: searchOrganizationAffiliation
+              method: GET
+              description: Search OrganizationAffiliation
+              outputRawFormat: json
+              inputParameters:
+                - name: organization
+                  in: query
+                  type: string
+                  required: false
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: Location
+          path: /Location
+          operations:
+            - name: searchLocation
+              method: GET
+              description: Search Location resources
+              outputRawFormat: json
+              inputParameters:
+                - name: address-city
+                  in: query
+                  type: string
+                  required: false
+                - name: address-state
+                  in: query
+                  type: string
+                  required: false
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: InsurancePlan
+          path: /InsurancePlan
+          operations:
+            - name: searchInsurancePlan
+              method: GET
+              description: Search InsurancePlan resources
+              outputRawFormat: json
+              inputParameters:
+                - name: name
+                  in: query
+                  type: string
+                  required: false
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+      authentication:
+        type: none
+  exposes:
+    - type: rest
+      namespace: ahc-provider-directory-rest
+      port: 8080
+      description: REST adapter for Provider Directory.
+      resources:
+        - path: /v1/practitioners
+          name: practitioners
+          description: Search Practitioner resources
+          operations:
+            - method: GET
+              name: searchPractitioners
+              description: Search Practitioner
+              call: ahc-provider-directory.searchPractitioner
+              with:
+                name: rest.name
+                specialty: rest.specialty
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/practitioner
+          name: practitioner
+          description: Read Practitioner by id
+          operations:
+            - method: GET
+              name: readPractitioner
+              description: Read Practitioner
+              call: ahc-provider-directory.readPractitioner
+              with:
+                id: rest.id
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/practitioner-roles
+          name: practitioner-roles
+          description: Search PractitionerRole resources
+          operations:
+            - method: GET
+              name: searchPractitionerRoles
+              description: Search PractitionerRole
+              call: ahc-provider-directory.searchPractitionerRole
+              with:
+                practitioner: rest.practitioner
+                organization: rest.organization
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/organizations
+          name: organizations
+          description: Search Organization resources
+          operations:
+            - method: GET
+              name: searchOrganizations
+              description: Search Organization
+              call: ahc-provider-directory.searchOrganization
+              with:
+                name: rest.name
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/organization-affiliations
+          name: organization-affiliations
+          description: Search OrganizationAffiliation
+          operations:
+            - method: GET
+              name: searchOrganizationAffiliations
+              description: Search OrganizationAffiliation
+              call: ahc-provider-directory.searchOrganizationAffiliation
+              with:
+                organization: rest.organization
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/locations
+          name: locations
+          description: Search Location resources
+          operations:
+            - method: GET
+              name: searchLocations
+              description: Search Location
+              call: ahc-provider-directory.searchLocation
+              with:
+                address-city: rest.address-city
+                address-state: rest.address-state
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/insurance-plans
+          name: insurance-plans
+          description: Search InsurancePlan resources
+          operations:
+            - method: GET
+              name: searchInsurancePlans
+              description: Search InsurancePlan
+              call: ahc-provider-directory.searchInsurancePlan
+              with:
+                name: rest.name
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: ahc-provider-directory-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Provider Directory.
+      tools:
+        - name: search-practitioner
+          description: Search Practitioner resources
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.searchPractitioner
+          with:
+            name: tools.name
+            specialty: tools.specialty
+        - name: read-practitioner
+          description: Read Practitioner by id
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.readPractitioner
+          with:
+            id: tools.id
+        - name: search-practitioner-role
+          description: Search PractitionerRole resources
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.searchPractitionerRole
+          with:
+            practitioner: tools.practitioner
+            organization: tools.organization
+        - name: search-organization
+          description: Search Organization resources
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.searchOrganization
+          with:
+            name: tools.name
+        - name: search-organization-affiliation
+          description: Search OrganizationAffiliation
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.searchOrganizationAffiliation
+          with:
+            organization: tools.organization
+        - name: search-location
+          description: Search Location resources
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.searchLocation
+          with:
+            address-city: tools.address-city
+            address-state: tools.address-state
+        - name: search-insurance-plan
+          description: Search InsurancePlan resources
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: ahc-provider-directory.searchInsurancePlan
+          with:
+            name: tools.name

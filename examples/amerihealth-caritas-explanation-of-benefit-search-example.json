@@ -1,0 +1,62 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit?patient=ahc-member-example"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/eob-1",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "eob-1",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional",
+              "display": "Professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": { "reference": "Patient/ahc-member-example" },
+        "billablePeriod": { "start": "2026-04-01", "end": "2026-04-30" },
+        "created": "2026-05-05T10:00:00Z",
+        "insurer": { "reference": "Organization/amerihealth-caritas-dc", "display": "AmeriHealth Caritas DC" },
+        "provider": { "reference": "PractitionerRole/pr-12345" },
+        "outcome": "complete",
+        "insurance": [
+          { "focal": true, "coverage": { "reference": "Coverage/cov-1" } }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                { "system": "http://www.ama-assn.org/go/cpt", "code": "99213", "display": "Office or other outpatient visit" }
+              ]
+            },
+            "servicedDate": "2026-04-12",
+            "quantity": { "value": 1 },
+            "unitPrice": { "value": 150, "currency": "USD" },
+            "net": { "value": 150, "currency": "USD" },
+            "adjudication": [
+              { "category": { "text": "eligible" }, "amount": { "value": 150, "currency": "USD" } },
+              { "category": { "text": "benefit" }, "amount": { "value": 120, "currency": "USD" } }
+            ]
+          }
+        ],
+        "total": [
+          { "category": { "text": "submitted" }, "amount": { "value": 150, "currency": "USD" } },
+          { "category": { "text": "benefit" }, "amount": { "value": 120, "currency": "USD" } }
+        ]
+      }
+    }
+  ]
+}

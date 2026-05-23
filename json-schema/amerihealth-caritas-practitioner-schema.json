@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-schema/amerihealth-caritas-practitioner-schema.json",
+  "title": "AmeriHealthCaritasPractitioner",
+  "description": "JSON Schema mirroring the FHIR R4 Practitioner resource exposed by the AmeriHealth Caritas Provider Directory FHIR API. Represents a contracted in-network clinician across the AmeriHealth Caritas family of plans.",
+  "type": "object",
+  "required": ["resourceType"],
+  "properties": {
+    "resourceType": { "type": "string", "const": "Practitioner" },
+    "id": { "type": "string" },
+    "meta": { "type": "object" },
+    "identifier": {
+      "type": "array",
+      "description": "Practitioner identifiers including NPI",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": { "type": "string" },
+          "system": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "active": { "type": "boolean" },
+    "name": { "type": "array", "items": { "type": "object" } },
+    "telecom": { "type": "array", "items": { "type": "object" } },
+    "address": { "type": "array", "items": { "type": "object" } },
+    "gender": { "type": "string", "enum": ["male", "female", "other", "unknown"] },
+    "birthDate": { "type": "string", "format": "date" },
+    "qualification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "object" },
+          "period": { "type": "object" },
+          "issuer": { "type": "object" }
+        }
+      }
+    },
+    "communication": { "type": "array", "items": { "type": "object" } }
+  }
+}

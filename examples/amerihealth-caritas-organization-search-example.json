@@ -1,0 +1,48 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://api-ext.amerihealthcaritas.com/1200/provider-api/Organization?name=health"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://api-ext.amerihealthcaritas.com/1200/provider-api/Organization/org-1",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-1",
+        "identifier": [
+          { "system": "http://hl7.org/fhir/sid/us-npi", "value": "9876543210" }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ],
+        "name": "Example Health Clinic",
+        "telecom": [
+          { "system": "phone", "value": "+1-215-555-0100", "use": "work" }
+        ],
+        "address": [
+          {
+            "line": ["100 Health Way"],
+            "city": "Philadelphia",
+            "state": "PA",
+            "postalCode": "19103",
+            "country": "US"
+          }
+        ]
+      }
+    }
+  ]
+}

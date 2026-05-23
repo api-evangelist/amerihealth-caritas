@@ -1,0 +1,153 @@
+aid: amerihealth-caritas
+name: AmeriHealth Caritas Rules
+description: >-
+  Operational rules and Spectral-style guardrails for working with the
+  AmeriHealth Caritas FHIR R4 Patient Access, Provider Directory, and
+  Drug Formulary APIs. Codifies the CMS-9115-F regulatory frame, SMART
+  on FHIR authentication, HIPAA handling, per-plan endpoint routing
+  conventions, and read-only safety posture expected from agents and
+  integrations.
+modified: '2026-05-23'
+rules:
+  - id: ahc-fhir-r4-conformance
+    name: FHIR R4 (4.0.1) Conformance
+    description: >-
+      All three AmeriHealth Caritas APIs (Patient Access, Provider
+      Directory, Drug Formulary) implement HL7 FHIR 4.0.1. Discover the
+      live supported resources, search parameters, and operations from
+      the per-plan CapabilityStatement at
+      `/{planCode}/{patient-api|provider-api}/metadata` before issuing
+      any query.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+      - amerihealth-caritas:provider-directory-api
+      - amerihealth-caritas:formulary-api
+    severity: required
+  - id: ahc-plan-code-routing
+    name: Per-Plan FHIR Endpoint Routing
+    description: >-
+      FHIR endpoints are routed per state plan via a four-digit plan
+      code path segment on `api-ext.amerihealthcaritas.com`. Confirmed
+      public Patient Access codes include 0100, 0500, 0900, 2400, 2600;
+      confirmed Provider Directory codes include 0100, 0500, 0900,
+      1200, 2100, 2400, 2600. Pick the right plan code for the member's
+      state plan; do not assume codes are reusable across plans.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+      - amerihealth-caritas:provider-directory-api
+    severity: required
+  - id: ahc-smart-on-fhir-oauth
+    name: SMART on FHIR OAuth 2.0 Authentication
+    description: >-
+      Patient Access requires SMART App Launch 1.0.0 / OAuth 2.0 with
+      OIDC. Register the app on
+      `https://developer.amerihealthcaritas.com/`, store the Client
+      Secret only on a secured server, and use PKCE (code_challenge /
+      code_challenge_method=S256) for mobile or single-page apps that
+      cannot keep a secret. Authorize at
+      `https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize`
+      and exchange at `https://eapics.amerihealthcaritas.com/oauth2/v1/token`.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+    severity: required
+  - id: ahc-fhir-smart-scopes
+    name: Minimum SMART Scope Set
+    description: >-
+      Request only the SMART scopes the app needs. The default approved
+      scopes are `openid`, `fhirUser`, `launch/patient`, `patient/*.read`,
+      and `offline_access`. Avoid asking for wildcard write scopes; the
+      Patient Access surface is read-only for members.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+    severity: required
+  - id: ahc-provider-directory-public
+    name: Provider Directory & Formulary Are Public
+    description: >-
+      The Provider Directory and Drug Formulary FHIR APIs do not
+      require OAuth. Do not attach member bearer tokens or PHI when
+      calling these endpoints. Treat them as cache-friendly reference
+      data sources.
+    applies_to:
+      - amerihealth-caritas:provider-directory-api
+      - amerihealth-caritas:formulary-api
+    severity: required
+  - id: ahc-hipaa-phi-handling
+    name: HIPAA / PHI Handling
+    description: >-
+      Patient Access responses contain Protected Health Information.
+      Encrypt in transit and at rest, narrow retention windows, restrict
+      access via least privilege, and never log raw FHIR bodies in
+      shared observability sinks. Members can revoke consent at any
+      time; honor revocations immediately.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+    severity: required
+  - id: ahc-read-only-posture
+    name: Read-Only Agent Posture
+    description: >-
+      AmeriHealth Caritas APIs surfaced through Naftiko capabilities
+      are read-only. Agents must not attempt POST/PUT/PATCH/DELETE
+      against patient, claim, or coverage resources. Treat them as
+      reporting and decision-support inputs only.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+      - amerihealth-caritas:provider-directory-api
+      - amerihealth-caritas:formulary-api
+    severity: required
+  - id: ahc-cms-9115-attestation
+    name: CMS-9115-F Attestation Required
+    description: >-
+      Production access for Patient Access apps requires completing the
+      AmeriHealth Caritas attestation that confirms alignment with CMS
+      privacy and data-use expectations. Sandbox testing may proceed
+      with the developer-portal sandbox credentials prior to attestation.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+    severity: required
+  - id: ahc-carin-pdex-uscdi-alignment
+    name: CARIN Blue Button, Da Vinci PDex, USCDI Alignment
+    description: >-
+      Model Patient Access consumption against the CARIN Blue Button IG
+      for ExplanationOfBenefit, the Da Vinci PDex IG for clinical
+      payer-to-payer exchange, and USCDI v1 elements. The developer
+      portal explicitly references all three guides as best-practice
+      anchors.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+    severity: recommended
+  - id: ahc-fhir-bundle-pagination
+    name: FHIR Bundle Pagination
+    description: >-
+      FHIR search responses are paginated Bundles. Follow the `next`
+      link relation to walk full result sets; do not assume single-page
+      responses for any clinical, claim, or directory query.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+      - amerihealth-caritas:provider-directory-api
+    severity: required
+  - id: ahc-no-public-rate-limits
+    name: Reasonable-Use Rate Limits
+    description: >-
+      AmeriHealth Caritas does not publish numeric rate limits for its
+      FHIR APIs. Implement exponential backoff, honor `Retry-After`
+      headers, cache public Provider Directory and Formulary
+      responses aggressively, and pace member-token traffic
+      conservatively.
+    applies_to:
+      - amerihealth-caritas:patient-access-api
+      - amerihealth-caritas:provider-directory-api
+      - amerihealth-caritas:formulary-api
+    severity: recommended
+  - id: ahc-prefer-summary-elements
+    name: Use _summary and _elements to Limit Payload
+    description: >-
+      For directory and reference queries where full FHIR bodies are
+      unnecessary, request `_summary=true` or use `_elements` to
+      reduce payload size and downstream egress cost.
+    applies_to:
+      - amerihealth-caritas:provider-directory-api
+      - amerihealth-caritas:formulary-api
+    severity: recommended
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

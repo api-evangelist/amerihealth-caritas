@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-structure.org/schema/v0.json",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/json-structure/amerihealth-caritas-health-plan-structure.json",
+  "title": "AmeriHealthCaritasHealthPlan",
+  "description": "JSON Structure describing one AmeriHealth Caritas health plan brand (state Medicaid managed care, CHIP, D-SNP, LTSS, Marketplace, or behavioral-health line of business). Aggregated from the family-of-plans health plan finder.",
+  "type": "object",
+  "required": ["brand", "state", "lineOfBusiness", "url", "fhirPlanCode"],
+  "properties": {
+    "brand": {
+      "type": "string",
+      "description": "Public brand name (e.g. AmeriHealth Caritas Louisiana, Keystone First, Blue Cross Complete of Michigan, First Choice by Select Health, PerformCare)."
+    },
+    "state": {
+      "type": "string",
+      "description": "U.S. state or D.C. served by the plan."
+    },
+    "lineOfBusiness": {
+      "type": "string",
+      "enum": [
+        "Medicaid Managed Care",
+        "CHIP",
+        "D-SNP",
+        "Dual Eligible",
+        "LTSS Managed Care",
+        "Marketplace",
+        "Behavioral Health"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Member-facing plan website."
+    },
+    "fhirPlanCode": {
+      "type": "string",
+      "description": "Four-digit plan code used to route per-plan FHIR endpoints at api-ext.amerihealthcaritas.com (e.g. 0100, 0500, 0900, 1200, 2100, 2400, 2600)."
+    },
+    "parent": {
+      "type": "string",
+      "description": "Operating parent (AmeriHealth Caritas, jointly owned by Independence Blue Cross and Blue Cross Blue Shield of Michigan)."
+    },
+    "stateAgency": {
+      "type": "string",
+      "description": "Contracting state Medicaid agency (e.g. PA DHS, LA LDH, NC DHHS, OH ODM, FL AHCA, MI MDHHS, DE DHSS, SC DHHS, NJ DHS, NH DHHS, DC DHCF)."
+    },
+    "fhirBaseUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Per-plan FHIR base URL, of the form https://api-ext.amerihealthcaritas.com/{fhirPlanCode}/patient-api or .../provider-api"
+    },
+    "capabilityStatementUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "memberCount": {
+      "type": "integer",
+      "description": "Approximate enrolled members (where publicly disclosed)."
+    }
+  }
+}

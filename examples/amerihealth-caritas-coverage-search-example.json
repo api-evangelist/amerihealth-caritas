@@ -1,0 +1,47 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Coverage?patient=ahc-member-example"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Coverage/cov-1",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-1",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "MCD",
+              "display": "Medicaid"
+            }
+          ]
+        },
+        "subscriberId": "AHC-DC-987654321",
+        "beneficiary": { "reference": "Patient/ahc-member-example" },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": { "start": "2026-01-01" },
+        "payor": [{ "reference": "Organization/amerihealth-caritas-dc" }],
+        "class": [
+          { "type": { "text": "plan" }, "value": "AHC-DC-MEDICAID", "name": "AmeriHealth Caritas DC Medicaid" },
+          { "type": { "text": "group" }, "value": "DCDHCF" }
+        ],
+        "network": "AHC-DC-NETWORK"
+      }
+    }
+  ]
+}
