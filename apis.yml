@@ -416,6 +416,8 @@ common:
           AmeriHealth Administrators provides third-party
           administration services for self-funded employer health
           plans.
+  - type: LLMsTxt
+    url: https://developer.amerihealthcaritas.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
