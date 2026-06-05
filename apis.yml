@@ -1,19 +1,14 @@
 aid: amerihealth-caritas
 name: AmeriHealth Caritas
 description: >-
-  AmeriHealth Caritas is one of the largest Medicaid managed care
-  organizations in the United States, serving roughly five million
-  members across Medicaid, Children's Health Insurance Program (CHIP),
-  dual-eligible Medicare-Medicaid (D-SNP), Medicare-Medicaid LTSS, and
-  Marketplace lines of business across thirteen states plus the District
-  of Columbia. The company is owned jointly by Independence Blue Cross
-  (majority) and Blue Cross Blue Shield of Michigan, operates state
-  health plans under brands such as Keystone First, Select Health of
-  South Carolina, Blue Cross Complete of Michigan, AmeriHealth Caritas
-  Next, AmeriHealth Caritas VIP Care, and PerformCare, and exposes a
-  set of HL7 FHIR R4 APIs through its developer portal at
-  developer.amerihealthcaritas.com to satisfy the CMS Interoperability
-  and Patient Access final rule (CMS-9115-F).
+  AmeriHealth Caritas is one of the largest Medicaid managed care organizations in the United States, serving roughly
+  five million members across Medicaid, Children's Health Insurance Program (CHIP), dual-eligible Medicare-Medicaid
+  (D-SNP), Medicare-Medicaid LTSS, and Marketplace lines of business across thirteen states plus the District of
+  Columbia. The company is owned jointly by Independence Blue Cross (majority) and Blue Cross Blue Shield of Michigan,
+  operates state health plans under brands such as Keystone First, Select Health of South Carolina, Blue Cross Complete
+  of Michigan, AmeriHealth Caritas Next, AmeriHealth Caritas VIP Care, and PerformCare, and exposes a set of HL7 FHIR R4
+  APIs through its developer portal at developer.amerihealthcaritas.com to satisfy the CMS Interoperability and Patient
+  Access final rule (CMS-9115-F).
 url: https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/apis.yml
 type: Index
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -41,17 +36,12 @@ apis:
   - aid: amerihealth-caritas:patient-access-api
     name: AmeriHealth Caritas Patient Access FHIR API
     description: >-
-      HL7 FHIR R4 (4.0.1) Patient Access API published to satisfy the CMS
-      Interoperability and Patient Access final rule (CMS-9115-F). Provides
-      member-authorized access to clinical, claims, encounter, coverage,
-      medication, immunization, and demographic resources for the
-      AmeriHealth Caritas family of Medicaid, CHIP, D-SNP, LTSS, and
-      Marketplace health plans. Member data is protected by SMART on FHIR
-      / OAuth 2.0 with PKCE; production access requires developer
-      registration, app review, and member consent. Per-plan FHIR base
-      URLs are exposed under api-ext.amerihealthcaritas.com keyed by a
-      four-digit plan code (0100, 0500, 0900, 2400, 2600 confirmed
-      public).
+      HL7 FHIR R4 (4.0.1) Patient Access API published to satisfy the CMS Interoperability and Patient Access final rule
+      (CMS-9115-F). Provides member-authorized access to clinical, claims, encounter, coverage, medication,
+      immunization, and demographic resources for the AmeriHealth Caritas family of Medicaid, CHIP, D-SNP, LTSS, and
+      Marketplace health plans. Member data is protected by SMART on FHIR / OAuth 2.0 with PKCE; production access
+      requires developer registration, app review, and member consent. Per-plan FHIR base URLs are exposed under
+      api-ext.amerihealthcaritas.com keyed by a four-digit plan code (0100, 0500, 0900, 2400, 2600 confirmed public).
     humanURL: https://developer.amerihealthcaritas.com/
     baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
     tags:
@@ -85,12 +75,6 @@ apis:
         url: openapi/amerihealth-caritas-patient-access-openapi.yml
       - type: SpectralRules
         url: rules/amerihealth-caritas-rules.yml
-      - type: NaftikoCapability
-        url: capabilities/amerihealth-caritas-patient-access.yaml
-      - type: NaftikoCapability
-        url: capabilities/amerihealth-caritas-claims-and-eob.yaml
-      - type: NaftikoCapability
-        url: capabilities/amerihealth-caritas-medications-and-formulary.yaml
       - type: JSONSchema
         url: json-schema/amerihealth-caritas-patient-schema.json
       - type: JSONSchema
@@ -100,15 +84,11 @@ apis:
   - aid: amerihealth-caritas:provider-directory-api
     name: AmeriHealth Caritas Provider Directory FHIR API
     description: >-
-      HL7 FHIR R4 (4.0.1) Provider Directory API satisfying the CMS
-      Provider Directory requirements of the Interoperability and Patient
-      Access final rule. Publishes Practitioner, PractitionerRole,
-      Organization, OrganizationAffiliation, Location, and InsurancePlan
-      resources for the AmeriHealth Caritas family of plans. No
-      authentication is required; the directory is publicly queryable.
-      Per-plan endpoints are exposed at api-ext.amerihealthcaritas.com
-      under plan codes including 0100, 0500, 0900, 1200, 2100, 2400, and
-      2600.
+      HL7 FHIR R4 (4.0.1) Provider Directory API satisfying the CMS Provider Directory requirements of the
+      Interoperability and Patient Access final rule. Publishes Practitioner, PractitionerRole, Organization,
+      OrganizationAffiliation, Location, and InsurancePlan resources for the AmeriHealth Caritas family of plans. No
+      authentication is required; the directory is publicly queryable. Per-plan endpoints are exposed at
+      api-ext.amerihealthcaritas.com under plan codes including 0100, 0500, 0900, 1200, 2100, 2400, and 2600.
     humanURL: https://developer.amerihealthcaritas.com/
     baseURL: https://api-ext.amerihealthcaritas.com/1200/provider-api
     tags:
@@ -143,8 +123,6 @@ apis:
         url: openapi/amerihealth-caritas-provider-directory-openapi.yml
       - type: SpectralRules
         url: rules/amerihealth-caritas-rules.yml
-      - type: NaftikoCapability
-        url: capabilities/amerihealth-caritas-provider-directory.yaml
       - type: JSONSchema
         url: json-schema/amerihealth-caritas-practitioner-schema.json
       - type: JSONSchema
@@ -154,15 +132,11 @@ apis:
   - aid: amerihealth-caritas:formulary-api
     name: AmeriHealth Caritas Formulary FHIR API
     description: >-
-      HL7 FHIR R4 Formulary API published to satisfy CMS-9115-F drug
-      formulary publication requirements for Medicaid managed care and
-      D-SNP populations. Covered drug lists, tier information, and prior
-      authorization indicators are exposed through FHIR
-      MedicationKnowledge and List resources. Documented at
-      developer.amerihealthcaritas.com as a public, no-authentication
-      surface; the canonical public base URL is not separately published
-      at api-ext.amerihealthcaritas.com and formulary resources are
-      currently surfaced inside the Patient Access API under
+      HL7 FHIR R4 Formulary API published to satisfy CMS-9115-F drug formulary publication requirements for Medicaid
+      managed care and D-SNP populations. Covered drug lists, tier information, and prior authorization indicators are
+      exposed through FHIR MedicationKnowledge and List resources. Documented at developer.amerihealthcaritas.com as a
+      public, no-authentication surface; the canonical public base URL is not separately published at
+      api-ext.amerihealthcaritas.com and formulary resources are currently surfaced inside the Patient Access API under
       MedicationKnowledge / List.
     humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
     baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
@@ -177,15 +151,12 @@ apis:
         url: https://developer.amerihealthcaritas.com/
       - type: Documentation
         url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
-      - type: NaftikoCapability
-        url: capabilities/amerihealth-caritas-medications-and-formulary.yaml
   - aid: amerihealth-caritas:website
     name: AmeriHealth Caritas Corporate Website
     description: >-
-      Public corporate website for AmeriHealth Caritas, hosting the
-      family-of-plans health plan finder, solutions overview, careers,
-      member and provider portals for the federated state plans, and
-      pointers to the CMS Interoperability developer portal.
+      Public corporate website for AmeriHealth Caritas, hosting the family-of-plans health plan finder, solutions
+      overview, careers, member and provider portals for the federated state plans, and pointers to the CMS
+      Interoperability developer portal.
     humanURL: https://www.amerihealthcaritas.com
     baseURL: https://www.amerihealthcaritas.com
     tags:
@@ -249,173 +220,133 @@ common:
     data:
       - name: HL7 FHIR R4 Patient Access API
         description: >-
-          SMART on FHIR / OAuth 2.0 secured member access to
-          AllergyIntolerance, Claim, Condition, Coverage, Encounter,
-          ExplanationOfBenefit, HealthcareService, Immunization,
-          InsurancePlan, List, Location, Medication, MedicationDispense,
-          MedicationKnowledge, MedicationRequest, Observation,
-          Organization, OrganizationAffiliation, Patient, Practitioner,
-          PractitionerRole, and Procedure FHIR R4 resources across the
+          SMART on FHIR / OAuth 2.0 secured member access to AllergyIntolerance, Claim, Condition, Coverage, Encounter,
+          ExplanationOfBenefit, HealthcareService, Immunization, InsurancePlan, List, Location, Medication,
+          MedicationDispense, MedicationKnowledge, MedicationRequest, Observation, Organization,
+          OrganizationAffiliation, Patient, Practitioner, PractitionerRole, and Procedure FHIR R4 resources across the
           AmeriHealth Caritas family of plans.
       - name: HL7 FHIR R4 Provider Directory API
         description: >-
-          Public, unauthenticated FHIR Provider Directory exposing
-          Practitioner, PractitionerRole, Organization,
-          OrganizationAffiliation, Location, and InsurancePlan resources
-          for member, broker, and care-management consumers.
+          Public, unauthenticated FHIR Provider Directory exposing Practitioner, PractitionerRole, Organization,
+          OrganizationAffiliation, Location, and InsurancePlan resources for member, broker, and care-management
+          consumers.
       - name: HL7 FHIR R4 Drug Formulary API
         description: >-
-          CMS-mandated public Drug Formulary surface for AmeriHealth
-          Caritas managed Medicaid and dual-eligible plans, exposed via
-          FHIR MedicationKnowledge and List resources.
+          CMS-mandated public Drug Formulary surface for AmeriHealth Caritas managed Medicaid and dual-eligible plans,
+          exposed via FHIR MedicationKnowledge and List resources.
       - name: Per-Plan FHIR Endpoint Routing
         description: >-
-          FHIR base URLs are routed per state plan using a four-digit
-          plan code (for example 0100, 0500, 0900, 1200, 2100, 2400,
-          2600) on api-ext.amerihealthcaritas.com so each Medicaid /
-          D-SNP / Marketplace plan is reachable independently while
-          sharing one developer registration.
+          FHIR base URLs are routed per state plan using a four-digit plan code (for example 0100, 0500, 0900, 1200,
+          2100, 2400, 2600) on api-ext.amerihealthcaritas.com so each Medicaid / D-SNP / Marketplace plan is reachable
+          independently while sharing one developer registration.
       - name: SMART App Launch 1.0.0 OAuth 2.0
         description: >-
-          Standard authorization code and PKCE authorization code flows
-          backed by token, authorize, introspect, revoke, and session
-          management endpoints under fhir.amerihealthcaritas.com.
+          Standard authorization code and PKCE authorization code flows backed by token, authorize, introspect, revoke,
+          and session management endpoints under fhir.amerihealthcaritas.com.
       - name: CARIN Blue Button & Da Vinci PDex Conformance
         description: >-
-          Implementation aligns with the CARIN Blue Button
-          Implementation Guide and the Da Vinci Payer Data Exchange
-          (PDex) IG referenced from the developer portal best-practices
-          section.
+          Implementation aligns with the CARIN Blue Button Implementation Guide and the Da Vinci Payer Data Exchange
+          (PDex) IG referenced from the developer portal best-practices section.
       - name: USCDI Data Coverage
         description: >-
-          Data elements published map to the United States Core Data for
-          Interoperability (USCDI v1) to support clinical data exchange
-          to consumer apps.
+          Data elements published map to the United States Core Data for Interoperability (USCDI v1) to support clinical
+          data exchange to consumer apps.
       - name: Developer Portal Self-Service
         description: >-
-          Developers register, attest, and receive Client ID and Client
-          Secret credentials from developer.amerihealthcaritas.com; once
-          approved, sandbox patient credentials are issued for testing.
+          Developers register, attest, and receive Client ID and Client Secret credentials from
+          developer.amerihealthcaritas.com; once approved, sandbox patient credentials are issued for testing.
   - type: UseCases
     data:
       - name: Member Health Record Aggregation
         description: >-
-          Third-party consumer apps allow Medicaid, D-SNP, and
-          Marketplace members to download and aggregate claims,
-          encounters, medications, immunizations, and care plan data
-          from AmeriHealth Caritas plans into one personal health record.
+          Third-party consumer apps allow Medicaid, D-SNP, and Marketplace members to download and aggregate claims,
+          encounters, medications, immunizations, and care plan data from AmeriHealth Caritas plans into one personal
+          health record.
       - name: Provider Directory Lookups
         description: >-
-          Care navigation apps, broker tools, and benefits portals query
-          the public Provider Directory FHIR API to find
-          AmeriHealth-Caritas-contracted Practitioners, PractitionerRoles,
-          Organizations, and Locations by specialty, location, or
-          network.
+          Care navigation apps, broker tools, and benefits portals query the public Provider Directory FHIR API to find
+          AmeriHealth-Caritas-contracted Practitioners, PractitionerRoles, Organizations, and Locations by specialty,
+          location, or network.
       - name: Drug Formulary Browsing
         description: >-
-          Members and prescribers query the public Drug Formulary FHIR
-          API to confirm whether a medication is covered, the tier, and
-          any prior authorization requirements before filling.
+          Members and prescribers query the public Drug Formulary FHIR API to confirm whether a medication is covered,
+          the tier, and any prior authorization requirements before filling.
       - name: Care Coordination Across Dual-Eligible Plans
         description: >-
-          D-SNP / dual-eligible care managers reconcile Medicare and
-          Medicaid coverage, ExplanationOfBenefit, and Encounter data to
-          coordinate Long-Term Services and Supports (LTSS) and
-          behavioral health services.
+          D-SNP / dual-eligible care managers reconcile Medicare and Medicaid coverage, ExplanationOfBenefit, and
+          Encounter data to coordinate Long-Term Services and Supports (LTSS) and behavioral health services.
       - name: Payer-To-Payer Data Sharing
         description: >-
-          When a member switches plans, the Patient Access surface can
-          inform payer-to-payer exchange workflows aligned with Da Vinci
-          PDex to migrate clinical history.
+          When a member switches plans, the Patient Access surface can inform payer-to-payer exchange workflows aligned
+          with Da Vinci PDex to migrate clinical history.
       - name: Population Health Reporting
         description: >-
-          State Medicaid agencies and quality reporting partners
-          consume aggregated, member-authorized FHIR data to support
-          HEDIS, quality measure, and SDOH reporting.
+          State Medicaid agencies and quality reporting partners consume aggregated, member-authorized FHIR data to
+          support HEDIS, quality measure, and SDOH reporting.
   - type: Integrations
     data:
       - name: Independence Blue Cross
         description: >-
-          AmeriHealth Caritas is majority-owned by Independence Blue
-          Cross (Philadelphia) and shares brand and operational
-          relationships with the Independence family.
+          AmeriHealth Caritas is majority-owned by Independence Blue Cross (Philadelphia) and shares brand and
+          operational relationships with the Independence family.
       - name: Blue Cross Blue Shield of Michigan
         description: >-
-          Blue Cross Blue Shield of Michigan is a co-owner of
-          AmeriHealth Caritas and the joint sponsor of Blue Cross
-          Complete of Michigan, the Michigan Medicaid managed care
-          plan operated by AmeriHealth Caritas.
+          Blue Cross Blue Shield of Michigan is a co-owner of AmeriHealth Caritas and the joint sponsor of Blue Cross
+          Complete of Michigan, the Michigan Medicaid managed care plan operated by AmeriHealth Caritas.
       - name: CMS Interoperability Framework
         description: >-
-          APIs exist to satisfy the CMS-9115-F Interoperability and
-          Patient Access final rule for Medicaid managed care, CHIP, and
-          D-SNP populations.
+          APIs exist to satisfy the CMS-9115-F Interoperability and Patient Access final rule for Medicaid managed care,
+          CHIP, and D-SNP populations.
       - name: HL7 FHIR R4
         description: >-
-          All three APIs implement HL7 FHIR 4.0.1 with SMART App Launch
-          1.0.0 security, CARIN Blue Button, and Da Vinci PDex guidance.
+          All three APIs implement HL7 FHIR 4.0.1 with SMART App Launch 1.0.0 security, CARIN Blue Button, and Da Vinci
+          PDex guidance.
       - name: USCDI v1
         description: >-
-          Patient Access data set is profiled against USCDI v1 elements
-          for clinical, encounter, medication, and care team data.
+          Patient Access data set is profiled against USCDI v1 elements for clinical, encounter, medication, and care
+          team data.
       - name: SMART on FHIR / OAuth 2.0 / OIDC / PKCE
-        description: >-
-          Standard SMART App Launch authorization code flow and PKCE
-          flow back the Patient Access security model.
+        description: Standard SMART App Launch authorization code flow and PKCE flow back the Patient Access security model.
       - name: State Medicaid Agencies
         description: >-
-          Each AmeriHealth Caritas state plan operates under contract
-          with a state Medicaid agency (PA DHS, LA LDH, NC DHHS, OH
-          ODM, FL AHCA, NH DHHS, MI MDHHS, DE DHSS, SC DHHS, NJ DHS).
+          Each AmeriHealth Caritas state plan operates under contract with a state Medicaid agency (PA DHS, LA LDH, NC
+          DHHS, OH ODM, FL AHCA, NH DHHS, MI MDHHS, DE DHSS, SC DHHS, NJ DHS).
   - type: Solutions
     data:
       - name: Medicaid Managed Care
         description: >-
-          Full-risk Medicaid managed care plans operated for state
-          Medicaid agencies in PA, DE, DC, NC, NH, OH, LA, FL, MI, and
-          SC under brands including AmeriHealth Caritas Pennsylvania,
-          Keystone First, AmeriHealth Caritas DC, AmeriHealth Caritas
-          Delaware, AmeriHealth Caritas Louisiana, AmeriHealth Caritas
-          North Carolina, AmeriHealth Caritas New Hampshire,
-          AmeriHealth Caritas Ohio, AmeriHealth Caritas Florida, First
-          Choice by Select Health of South Carolina, and Blue Cross
-          Complete of Michigan.
+          Full-risk Medicaid managed care plans operated for state Medicaid agencies in PA, DE, DC, NC, NH, OH, LA, FL,
+          MI, and SC under brands including AmeriHealth Caritas Pennsylvania, Keystone First, AmeriHealth Caritas DC,
+          AmeriHealth Caritas Delaware, AmeriHealth Caritas Louisiana, AmeriHealth Caritas North Carolina, AmeriHealth
+          Caritas New Hampshire, AmeriHealth Caritas Ohio, AmeriHealth Caritas Florida, First Choice by Select Health of
+          South Carolina, and Blue Cross Complete of Michigan.
       - name: Dual-Eligible Special Needs Plans (D-SNP)
         description: >-
-          AmeriHealth Caritas VIP Care, Keystone First VIP Choice, and
-          First Choice VIP Care D-SNP plans serve members eligible for
-          both Medicare and Medicaid across multiple states.
+          AmeriHealth Caritas VIP Care, Keystone First VIP Choice, and First Choice VIP Care D-SNP plans serve members
+          eligible for both Medicare and Medicaid across multiple states.
       - name: Long-Term Services and Supports (LTSS)
         description: >-
-          Community HealthChoices plans (AmeriHealth Caritas
-          Pennsylvania Community HealthChoices, Keystone First
-          Community HealthChoices) deliver LTSS-managed care to dual
-          eligibles and individuals with long-term care needs.
+          Community HealthChoices plans (AmeriHealth Caritas Pennsylvania Community HealthChoices, Keystone First
+          Community HealthChoices) deliver LTSS-managed care to dual eligibles and individuals with long-term care
+          needs.
       - name: Children's Health Insurance Program (CHIP)
         description: >-
-          Keystone First CHIP and other CHIP plans provide
-          state-administered coverage for children in eligible
+          Keystone First CHIP and other CHIP plans provide state-administered coverage for children in eligible
           families.
       - name: Individual & Family Marketplace
         description: >-
-          AmeriHealth Caritas Next and First Choice Next plans on
-          state-based and federal Marketplaces in DE, FL, LA, NC, and
-          SC.
+          AmeriHealth Caritas Next and First Choice Next plans on state-based and federal Marketplaces in DE, FL, LA,
+          NC, and SC.
       - name: Behavioral Health
         description: >-
-          PerformCare (Pennsylvania) and PerformCare New Jersey deliver
-          behavioral health managed care and contracted services for
-          state and county programs.
+          PerformCare (Pennsylvania) and PerformCare New Jersey deliver behavioral health managed care and contracted
+          services for state and county programs.
       - name: Pharmacy Benefits Management
         description: >-
-          PerformRx, a wholly-owned pharmacy benefits manager,
-          administers pharmacy benefits for AmeriHealth Caritas plans
-          and external clients.
+          PerformRx, a wholly-owned pharmacy benefits manager, administers pharmacy benefits for AmeriHealth Caritas
+          plans and external clients.
       - name: Third-Party Administration
-        description: >-
-          AmeriHealth Administrators provides third-party
-          administration services for self-funded employer health
-          plans.
+        description: AmeriHealth Administrators provides third-party administration services for self-funded employer health plans.
   - type: LLMsTxt
     url: https://developer.amerihealthcaritas.com/llms.txt
 maintainers:
