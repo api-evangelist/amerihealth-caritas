@@ -347,7 +347,7 @@ common:
           plans and external clients.
       - name: Third-Party Administration
         description: AmeriHealth Administrators provides third-party administration services for self-funded employer health plans.
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.amerihealthcaritas.com/llms.txt
 maintainers:
   - FN: Kin Lane
