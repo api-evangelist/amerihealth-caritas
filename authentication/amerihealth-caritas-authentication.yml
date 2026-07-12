@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/amerihealth-caritas-patient-access-openapi.yml
+summary:
+  types:
+  - openIdConnect
+schemes:
+- name: openId
+  type: openIdConnect
+  openIdConnectUrl: https://api-ext.amerihealthcaritas.com/0500/patient-api/.well-known/smart-configuration
+  sources:
+  - openapi/amerihealth-caritas-patient-access-openapi.yml
