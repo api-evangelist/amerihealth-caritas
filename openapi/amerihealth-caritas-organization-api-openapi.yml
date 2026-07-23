@@ -1,0 +1,729 @@
+openapi: 3.0.1
+info:
+  title: AmeriHealth Caritas AllergyIntolerance Organization API
+  contact: {}
+  version: 1.0.0
+  description: The AllergyIntolerance FHIR resource type
+servers:
+- url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  description: AmeriHealth Caritas
+security:
+- openId:
+  - openid
+  - fhirUser
+tags:
+- name: Organization
+  description: The Organization FHIR resource type
+paths:
+  /Organization/{id}:
+    get:
+      tags:
+      - Organization
+      summary: 'read-instance: Read Organization instance'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    put:
+      tags:
+      - Organization
+      summary: 'update-instance: Update an existing Organization instance, or create using a client-assigned ID'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Organization\"\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: <Organization xmlns="http://hl7.org/fhir"/>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    delete:
+      tags:
+      - Organization
+      summary: 'instance-delete: Perform a logical delete on a resource instance'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    patch:
+      tags:
+      - Organization
+      summary: 'instance-patch: Patch a resource instance of type Organization by ID'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: "<Parameters xmlns=\"http://hl7.org/fhir\">\n   <parameter>\n      <name value=\"operation\"/>\n      <part>\n         <name value=\"type\"/>\n         <valueString value=\"add\"/>\n      </part>\n      <part>\n         <name value=\"path\"/>\n         <valueString value=\"Patient\"/>\n      </part>\n      <part>\n         <name value=\"name\"/>\n         <valueString value=\"birthDate\"/>\n      </part>\n      <part>\n         <name value=\"value\"/>\n         <valueDate value=\"1930-01-01\"/>\n      </part>\n   </parameter>\n</Parameters>"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/_history/{version_id}:
+    get:
+      tags:
+      - Organization
+      summary: 'vread-instance: Read Organization instance with specific version'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: version_id
+        in: path
+        description: The resource version ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '1'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization:
+    get:
+      tags:
+      - Organization
+      summary: 'search-type: Search for Organization instances'
+      description: This is a search type
+      parameters:
+      - name: identifier-system-ntwk-unique
+        in: query
+        style: simple
+      - name: address-state
+        in: query
+        description: A state specified in an address
+        style: simple
+      - name: resource-placeholder
+        in: query
+        description: Search for resources of type [Organization] populated with the resource-placeholder extension
+        style: simple
+      - name: _lastUpdated
+        in: query
+        description: Only return resources which were last updated as specified by the given range
+        style: simple
+      - name: identifier-system-ntwk
+        in: query
+        description: An organization identifier with system NTWK
+        style: simple
+      - name: type
+        in: query
+        description: A code for the type of organization
+        style: simple
+      - name: address-country
+        in: query
+        description: A country specified in an address
+        style: simple
+      - name: endpoint
+        in: query
+        description: Technical endpoints providing access to services operated for the organization
+        style: simple
+      - name: phonetic
+        in: query
+        description: A portion of the organization's name using some kind of phonetic matching algorithm
+        style: simple
+      - name: address-city
+        in: query
+        description: A city specified in an address
+        style: simple
+      - name: partof
+        in: query
+        description: An organization of which this organization forms a part
+        style: simple
+      - name: identifier
+        in: query
+        description: Any identifier for the organization (not the accreditation issuer's identifier)
+        style: simple
+      - name: address
+        in: query
+        description: A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text
+        style: simple
+      - name: identifier-system-prn-unique
+        in: query
+        style: simple
+      - name: _security
+        in: query
+        description: Search for resources which have the given security labels
+        style: simple
+      - name: active
+        in: query
+        description: Is the Organization record active
+        style: simple
+      - name: address-postalcode
+        in: query
+        description: A postal code specified in an address
+        style: simple
+      - name: _profile
+        in: query
+        description: Search for resources which have the given profile
+        style: simple
+      - name: _has
+        in: query
+        description: Return resources linked to by the given target
+        style: simple
+      - name: _tag
+        in: query
+        description: Search for resources which have the given tag
+        style: simple
+      - name: address-use
+        in: query
+        description: A use code specified in an address
+        style: simple
+      - name: name
+        in: query
+        description: A portion of the organization's name or alias
+        style: simple
+      - name: _source
+        in: query
+        description: Search for resources which have the given source value (Resource.meta.source)
+        style: simple
+      - name: _id
+        in: query
+        description: The ID of the resource
+        style: simple
+      - name: _content
+        in: query
+        description: Search the contents of the resource's data using a fulltext search
+        style: simple
+      - name: _text
+        in: query
+        description: Search the contents of the resource's narrative using a fulltext search
+        style: simple
+      - name: identifier-system-prn
+        in: query
+        description: An organization identifier with system PRN
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    post:
+      tags:
+      - Organization
+      summary: 'create-type: Create a new Organization instance'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Organization\"\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: <Organization xmlns="http://hl7.org/fhir"/>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/_history:
+    get:
+      tags:
+      - Organization
+      summary: 'type-history: Fetch the resource change history for all resources of type Organization'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/_history:
+    get:
+      tags:
+      - Organization
+      summary: 'instance-history: Fetch the resource change history for all resources of type Organization'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/$validate:
+    get:
+      tags:
+      - Organization
+      parameters:
+      - name: resource
+        in: query
+        required: false
+        style: simple
+      - name: mode
+        in: query
+        required: false
+        style: simple
+      - name: profile
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$validate:
+    get:
+      tags:
+      - Organization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: resource
+        in: query
+        required: false
+        style: simple
+      - name: mode
+        in: query
+        required: false
+        style: simple
+      - name: profile
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$meta-delete:
+    post:
+      tags:
+      - Organization
+      description: Delete tags, profiles, and/or security labels from a resource
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$meta-add:
+    post:
+      tags:
+      - Organization
+      description: Add tags, profiles, and/or security labels to a resource
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/$meta:
+    get:
+      tags:
+      - Organization
+      description: Request a list of tags, profiles, and security labels for a specfic resource instance
+      parameters:
+      - name: return
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$meta:
+    get:
+      tags:
+      - Organization
+      description: Request a list of tags, profiles, and security labels for a specfic resource instance
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: return
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/$expunge:
+    post:
+      tags:
+      - Organization
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$expunge:
+    post:
+      tags:
+      - Organization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$graphql:
+    get:
+      tags:
+      - Organization
+      description: This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$binary-access-write:
+    post:
+      tags:
+      - Organization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$binary-access-read:
+    get:
+      tags:
+      - Organization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: path
+        in: query
+        required: true
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Organization/{id}/$diff:
+    get:
+      tags:
+      - Organization
+      summary: Comparte two resources or two versions of a single resource
+      description: This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: from
+        in: query
+        description: The resource ID and version to diff from
+        required: true
+        style: simple
+        example: Patient/example/version/1
+      - name: to
+        in: query
+        description: The resource ID and version to diff to
+        required: true
+        style: simple
+        example: Patient/example/version/2
+      - name: includeMeta
+        in: query
+        description: Should differences in the Resource.meta element be included in the diff
+        required: false
+        style: simple
+        example: 'false'
+      - name: fromVersion
+        in: query
+        description: The resource ID and version to diff from
+        required: false
+        style: simple
+        example: Patient/example/version/1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+components:
+  schemas:
+    FHIR-JSON-RESOURCE:
+      type: object
+      description: A FHIR resource
+    FHIR-XML-RESOURCE:
+      type: object
+      description: A FHIR resource
+  securitySchemes:
+    openId:
+      type: openIdConnect
+      openIdConnectUrl: https://api-ext.amerihealthcaritas.com/0500/patient-api/.well-known/smart-configuration

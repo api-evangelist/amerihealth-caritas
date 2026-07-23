@@ -1,0 +1,727 @@
+openapi: 3.0.1
+info:
+  title: AmeriHealth Caritas AllergyIntolerance Immunization API
+  contact: {}
+  version: 1.0.0
+  description: The AllergyIntolerance FHIR resource type
+servers:
+- url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  description: AmeriHealth Caritas
+security:
+- openId:
+  - openid
+  - fhirUser
+tags:
+- name: Immunization
+  description: The Immunization FHIR resource type
+paths:
+  /Immunization/{id}:
+    get:
+      tags:
+      - Immunization
+      summary: 'read-instance: Read Immunization instance'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    put:
+      tags:
+      - Immunization
+      summary: 'update-instance: Update an existing Immunization instance, or create using a client-assigned ID'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Immunization\"\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: <Immunization xmlns="http://hl7.org/fhir"/>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    delete:
+      tags:
+      - Immunization
+      summary: 'instance-delete: Perform a logical delete on a resource instance'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    patch:
+      tags:
+      - Immunization
+      summary: 'instance-patch: Patch a resource instance of type Immunization by ID'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: "<Parameters xmlns=\"http://hl7.org/fhir\">\n   <parameter>\n      <name value=\"operation\"/>\n      <part>\n         <name value=\"type\"/>\n         <valueString value=\"add\"/>\n      </part>\n      <part>\n         <name value=\"path\"/>\n         <valueString value=\"Patient\"/>\n      </part>\n      <part>\n         <name value=\"name\"/>\n         <valueString value=\"birthDate\"/>\n      </part>\n      <part>\n         <name value=\"value\"/>\n         <valueDate value=\"1930-01-01\"/>\n      </part>\n   </parameter>\n</Parameters>"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/_history/{version_id}:
+    get:
+      tags:
+      - Immunization
+      summary: 'vread-instance: Read Immunization instance with specific version'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: version_id
+        in: path
+        description: The resource version ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '1'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization:
+    get:
+      tags:
+      - Immunization
+      summary: 'search-type: Search for Immunization instances'
+      description: This is a search type
+      parameters:
+      - name: date
+        in: query
+        description: Vaccination  (non)-Administration Date
+        style: simple
+      - name: lot-number
+        in: query
+        description: Vaccine Lot Number
+        style: simple
+      - name: resource-placeholder
+        in: query
+        description: Search for resources of type [Immunization] populated with the resource-placeholder extension
+        style: simple
+      - name: _lastUpdated
+        in: query
+        description: Only return resources which were last updated as specified by the given range
+        style: simple
+      - name: status-reason
+        in: query
+        description: Reason why the vaccine was not administered
+        style: simple
+      - name: reason-code
+        in: query
+        description: Reason why the vaccine was administered
+        style: simple
+      - name: manufacturer
+        in: query
+        description: Vaccine Manufacturer
+        style: simple
+      - name: patient
+        in: query
+        description: The patient for the vaccination record
+        style: simple
+      - name: reaction-date
+        in: query
+        description: When reaction started
+        style: simple
+      - name: identifier
+        in: query
+        description: Business identifier
+        style: simple
+      - name: reaction
+        in: query
+        description: Additional information on reaction
+        style: simple
+      - name: performer
+        in: query
+        description: The practitioner or organization who played a role in the vaccination
+        style: simple
+      - name: _security
+        in: query
+        description: Search for resources which have the given security labels
+        style: simple
+      - name: _profile
+        in: query
+        description: Search for resources which have the given profile
+        style: simple
+      - name: target-disease
+        in: query
+        description: The target disease the dose is being administered against
+        style: simple
+      - name: series
+        in: query
+        description: The series being followed by the provider
+        style: simple
+      - name: vaccine-code
+        in: query
+        description: Vaccine Product Administered
+        style: simple
+      - name: _has
+        in: query
+        description: Return resources linked to by the given target
+        style: simple
+      - name: _tag
+        in: query
+        description: Search for resources which have the given tag
+        style: simple
+      - name: reason-reference
+        in: query
+        description: Why immunization occurred
+        style: simple
+      - name: location
+        in: query
+        description: The service delivery location or facility in which the vaccine was / was to be administered
+        style: simple
+      - name: _source
+        in: query
+        description: Search for resources which have the given source value (Resource.meta.source)
+        style: simple
+      - name: _id
+        in: query
+        description: The ID of the resource
+        style: simple
+      - name: _content
+        in: query
+        description: Search the contents of the resource's data using a fulltext search
+        style: simple
+      - name: _text
+        in: query
+        description: Search the contents of the resource's narrative using a fulltext search
+        style: simple
+      - name: status
+        in: query
+        description: Immunization event status
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    post:
+      tags:
+      - Immunization
+      summary: 'create-type: Create a new Immunization instance'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Immunization\"\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: <Immunization xmlns="http://hl7.org/fhir"/>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/_history:
+    get:
+      tags:
+      - Immunization
+      summary: 'type-history: Fetch the resource change history for all resources of type Immunization'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/_history:
+    get:
+      tags:
+      - Immunization
+      summary: 'instance-history: Fetch the resource change history for all resources of type Immunization'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/$validate:
+    get:
+      tags:
+      - Immunization
+      parameters:
+      - name: resource
+        in: query
+        required: false
+        style: simple
+      - name: mode
+        in: query
+        required: false
+        style: simple
+      - name: profile
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$validate:
+    get:
+      tags:
+      - Immunization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: resource
+        in: query
+        required: false
+        style: simple
+      - name: mode
+        in: query
+        required: false
+        style: simple
+      - name: profile
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$meta-delete:
+    post:
+      tags:
+      - Immunization
+      description: Delete tags, profiles, and/or security labels from a resource
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$meta-add:
+    post:
+      tags:
+      - Immunization
+      description: Add tags, profiles, and/or security labels to a resource
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/$meta:
+    get:
+      tags:
+      - Immunization
+      description: Request a list of tags, profiles, and security labels for a specfic resource instance
+      parameters:
+      - name: return
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$meta:
+    get:
+      tags:
+      - Immunization
+      description: Request a list of tags, profiles, and security labels for a specfic resource instance
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: return
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/$expunge:
+    post:
+      tags:
+      - Immunization
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$expunge:
+    post:
+      tags:
+      - Immunization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$graphql:
+    get:
+      tags:
+      - Immunization
+      description: This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$binary-access-write:
+    post:
+      tags:
+      - Immunization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$binary-access-read:
+    get:
+      tags:
+      - Immunization
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: path
+        in: query
+        required: true
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Immunization/{id}/$diff:
+    get:
+      tags:
+      - Immunization
+      summary: Comparte two resources or two versions of a single resource
+      description: This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: from
+        in: query
+        description: The resource ID and version to diff from
+        required: true
+        style: simple
+        example: Patient/example/version/1
+      - name: to
+        in: query
+        description: The resource ID and version to diff to
+        required: true
+        style: simple
+        example: Patient/example/version/2
+      - name: includeMeta
+        in: query
+        description: Should differences in the Resource.meta element be included in the diff
+        required: false
+        style: simple
+        example: 'false'
+      - name: fromVersion
+        in: query
+        description: The resource ID and version to diff from
+        required: false
+        style: simple
+        example: Patient/example/version/1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+components:
+  schemas:
+    FHIR-JSON-RESOURCE:
+      type: object
+      description: A FHIR resource
+    FHIR-XML-RESOURCE:
+      type: object
+      description: A FHIR resource
+  securitySchemes:
+    openId:
+      type: openIdConnect
+      openIdConnectUrl: https://api-ext.amerihealthcaritas.com/0500/patient-api/.well-known/smart-configuration

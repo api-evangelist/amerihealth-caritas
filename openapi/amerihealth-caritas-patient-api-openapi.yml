@@ -1,0 +1,906 @@
+openapi: 3.0.1
+info:
+  title: AmeriHealth Caritas AllergyIntolerance Patient API
+  contact: {}
+  version: 1.0.0
+  description: The AllergyIntolerance FHIR resource type
+servers:
+- url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  description: AmeriHealth Caritas
+security:
+- openId:
+  - openid
+  - fhirUser
+tags:
+- name: Patient
+  description: The Patient FHIR resource type
+paths:
+  /Patient/{id}:
+    get:
+      tags:
+      - Patient
+      summary: 'read-instance: Read Patient instance'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    put:
+      tags:
+      - Patient
+      summary: 'update-instance: Update an existing Patient instance, or create using a client-assigned ID'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Patient\"\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: <Patient xmlns="http://hl7.org/fhir"/>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    delete:
+      tags:
+      - Patient
+      summary: 'instance-delete: Perform a logical delete on a resource instance'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    patch:
+      tags:
+      - Patient
+      summary: 'instance-patch: Patch a resource instance of type Patient by ID'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: "<Parameters xmlns=\"http://hl7.org/fhir\">\n   <parameter>\n      <name value=\"operation\"/>\n      <part>\n         <name value=\"type\"/>\n         <valueString value=\"add\"/>\n      </part>\n      <part>\n         <name value=\"path\"/>\n         <valueString value=\"Patient\"/>\n      </part>\n      <part>\n         <name value=\"name\"/>\n         <valueString value=\"birthDate\"/>\n      </part>\n      <part>\n         <name value=\"value\"/>\n         <valueDate value=\"1930-01-01\"/>\n      </part>\n   </parameter>\n</Parameters>"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/_history/{version_id}:
+    get:
+      tags:
+      - Patient
+      summary: 'vread-instance: Read Patient instance with specific version'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: version_id
+        in: path
+        description: The resource version ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '1'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient:
+    get:
+      tags:
+      - Patient
+      summary: 'search-type: Search for Patient instances'
+      description: This is a search type
+      parameters:
+      - name: deceased
+        in: query
+        description: This patient has been marked as deceased, or as a death date entered
+        style: simple
+      - name: birthdate
+        in: query
+        description: The patient's date of birth
+        style: simple
+      - name: gender
+        in: query
+        description: Gender of the patient
+        style: simple
+      - name: address-state
+        in: query
+        description: A state specified in an address
+        style: simple
+      - name: resource-placeholder
+        in: query
+        description: Search for resources of type [Patient] populated with the resource-placeholder extension
+        style: simple
+      - name: _lastUpdated
+        in: query
+        description: Only return resources which were last updated as specified by the given range
+        style: simple
+      - name: link
+        in: query
+        description: All patients linked to the given patient
+        style: simple
+      - name: language
+        in: query
+        description: Language code (irrespective of use value)
+        style: simple
+      - name: address-country
+        in: query
+        description: A country specified in an address
+        style: simple
+      - name: death-date
+        in: query
+        description: The date of death has been provided and satisfies this search value
+        style: simple
+      - name: phonetic
+        in: query
+        description: A portion of either family or given name using some kind of phonetic matching algorithm
+        style: simple
+      - name: telecom
+        in: query
+        description: The value in any kind of telecom details of the patient
+        style: simple
+      - name: address-city
+        in: query
+        description: A city specified in an address
+        style: simple
+      - name: email
+        in: query
+        description: A value in an email contact
+        style: simple
+      - name: identifier-system-mb
+        in: query
+        description: A patient identifier with system MB
+        style: simple
+      - name: identifier
+        in: query
+        description: A patient identifier
+        style: simple
+      - name: given
+        in: query
+        description: A portion of the given name of the patient
+        style: simple
+      - name: address
+        in: query
+        description: A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text
+        style: simple
+      - name: staffFlag
+        in: query
+        description: Boolean flag declaring if member is a member of staff
+        style: simple
+      - name: general-practitioner
+        in: query
+        description: Patient's nominated general practitioner, not the organization that manages the record
+        style: simple
+      - name: _security
+        in: query
+        description: Search for resources which have the given security labels
+        style: simple
+      - name: active
+        in: query
+        description: Whether the patient record is active
+        style: simple
+      - name: address-postalcode
+        in: query
+        description: A postalCode specified in an address
+        style: simple
+      - name: identifier-system-mb-unique
+        in: query
+        style: simple
+      - name: _profile
+        in: query
+        description: Search for resources which have the given profile
+        style: simple
+      - name: phone
+        in: query
+        description: A value in a phone contact
+        style: simple
+      - name: organization
+        in: query
+        description: The organization that is the custodian of the patient record
+        style: simple
+      - name: _has
+        in: query
+        description: Return resources linked to by the given target
+        style: simple
+      - name: _tag
+        in: query
+        description: Search for resources which have the given tag
+        style: simple
+      - name: address-use
+        in: query
+        description: A use code specified in an address
+        style: simple
+      - name: name
+        in: query
+        description: A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text
+        style: simple
+      - name: _source
+        in: query
+        description: Search for resources which have the given source value (Resource.meta.source)
+        style: simple
+      - name: _id
+        in: query
+        description: The ID of the resource
+        style: simple
+      - name: family
+        in: query
+        description: A portion of the family name of the patient
+        style: simple
+      - name: _content
+        in: query
+        description: Search the contents of the resource's data using a fulltext search
+        style: simple
+      - name: _text
+        in: query
+        description: Search the contents of the resource's narrative using a fulltext search
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+    post:
+      tags:
+      - Patient
+      summary: 'create-type: Create a new Patient instance'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            example: "{\n  \"resourceType\": \"Patient\"\n}"
+          application/fhir+xml:
+            schema:
+              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+            example: <Patient xmlns="http://hl7.org/fhir"/>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/_history:
+    get:
+      tags:
+      - Patient
+      summary: 'type-history: Fetch the resource change history for all resources of type Patient'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/_history:
+    get:
+      tags:
+      - Patient
+      summary: 'instance-history: Fetch the resource change history for all resources of type Patient'
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/$member-match:
+    post:
+      tags:
+      - Patient
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"MemberPatient\"\n  }, {\n    \"name\": \"OldCoverage\"\n  }, {\n    \"name\": \"NewCoverage\"\n  }, {\n    \"name\": \"MemberIdentifier\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/$validate:
+    get:
+      tags:
+      - Patient
+      parameters:
+      - name: resource
+        in: query
+        required: false
+        style: simple
+      - name: mode
+        in: query
+        required: false
+        style: simple
+      - name: profile
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$validate:
+    get:
+      tags:
+      - Patient
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: resource
+        in: query
+        required: false
+        style: simple
+      - name: mode
+        in: query
+        required: false
+        style: simple
+      - name: profile
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$meta-delete:
+    post:
+      tags:
+      - Patient
+      description: Delete tags, profiles, and/or security labels from a resource
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$meta-add:
+    post:
+      tags:
+      - Patient
+      description: Add tags, profiles, and/or security labels to a resource
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/$meta:
+    get:
+      tags:
+      - Patient
+      description: Request a list of tags, profiles, and security labels for a specfic resource instance
+      parameters:
+      - name: return
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$meta:
+    get:
+      tags:
+      - Patient
+      description: Request a list of tags, profiles, and security labels for a specfic resource instance
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: return
+        in: query
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/$expunge:
+    post:
+      tags:
+      - Patient
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$expunge:
+    post:
+      tags:
+      - Patient
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/$everything:
+    get:
+      tags:
+      - Patient
+      parameters:
+      - name: _count
+        in: query
+        description: Results from this method are returned across multiple pages. This parameter controls the size of those pages.
+        required: false
+        style: simple
+      - name: _offset
+        in: query
+        description: Results from this method are returned across multiple pages. This parameter controls the offset when fetching a page.
+        required: false
+        style: simple
+      - name: _lastUpdated
+        in: query
+        description: Only return resources which were last updated as specified by the given range
+        required: false
+        style: simple
+      - name: _content
+        in: query
+        description: Filter the resources to return only resources matching the given _content filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _text
+        in: query
+        description: Filter the resources to return only resources matching the given _text filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _filter
+        in: query
+        description: Filter the resources to return only resources matching the given _filter filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _type
+        in: query
+        description: Filter the resources to return only resources matching the given _type filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _id
+        in: query
+        description: Filter the resources to return based on the patient ids provided.
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$everything:
+    get:
+      tags:
+      - Patient
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: _count
+        in: query
+        description: Results from this method are returned across multiple pages. This parameter controls the size of those pages.
+        required: false
+        style: simple
+      - name: _offset
+        in: query
+        description: Results from this method are returned across multiple pages. This parameter controls the offset when fetching a page.
+        required: false
+        style: simple
+      - name: _lastUpdated
+        in: query
+        description: Only return resources which were last updated as specified by the given range
+        required: false
+        style: simple
+      - name: _content
+        in: query
+        description: Filter the resources to return only resources matching the given _content filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _text
+        in: query
+        description: Filter the resources to return only resources matching the given _text filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _filter
+        in: query
+        description: Filter the resources to return only resources matching the given _filter filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _type
+        in: query
+        description: Filter the resources to return only resources matching the given _type filter (note that this filter is applied only to results which link to the given patient, not to the patient itself or to supporting resources linked to by the matched resources)
+        required: false
+        style: simple
+      - name: _id
+        in: query
+        description: Filter the resources to return based on the patient ids provided.
+        required: false
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$graphql:
+    get:
+      tags:
+      - Patient
+      description: This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$binary-access-write:
+    post:
+      tags:
+      - Patient
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      requestBody:
+        content:
+          application/fhir+json:
+            schema:
+              title: FHIR Resource
+              type: object
+            example: "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$binary-access-read:
+    get:
+      tags:
+      - Patient
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: path
+        in: query
+        required: true
+        style: simple
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+  /Patient/{id}/$diff:
+    get:
+      tags:
+      - Patient
+      summary: Comparte two resources or two versions of a single resource
+      description: This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.
+      parameters:
+      - name: id
+        in: path
+        description: The resource ID
+        required: true
+        style: simple
+        schema:
+          minimum: 1
+          type: string
+        example: '123'
+      - name: from
+        in: query
+        description: The resource ID and version to diff from
+        required: true
+        style: simple
+        example: Patient/example/version/1
+      - name: to
+        in: query
+        description: The resource ID and version to diff to
+        required: true
+        style: simple
+        example: Patient/example/version/2
+      - name: includeMeta
+        in: query
+        description: Should differences in the Resource.meta element be included in the diff
+        required: false
+        style: simple
+        example: 'false'
+      - name: fromVersion
+        in: query
+        description: The resource ID and version to diff from
+        required: false
+        style: simple
+        example: Patient/example/version/1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
+            application/fhir+xml:
+              schema:
+                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+components:
+  schemas:
+    FHIR-JSON-RESOURCE:
+      type: object
+      description: A FHIR resource
+    FHIR-XML-RESOURCE:
+      type: object
+      description: A FHIR resource
+  securitySchemes:
+    openId:
+      type: openIdConnect
+      openIdConnectUrl: https://api-ext.amerihealthcaritas.com/0500/patient-api/.well-known/smart-configuration
