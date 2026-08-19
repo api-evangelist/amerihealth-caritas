@@ -1,0 +1,608 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AmeriHealth Caritas AllergyIntolerance List API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read-instance: Read List instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "read-instance: Read List instance"
+        },
+        {
+          "info": {
+            "name": "update-instance: Update an existing List instance, or create using a client-assigned ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "update-instance: Update an existing List instance, or create using a client-assigned ID"
+        },
+        {
+          "info": {
+            "name": "instance-patch: Patch a resource instance of type List by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "instance-patch: Patch a resource instance of type List by ID"
+        },
+        {
+          "info": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-delete: Perform a logical delete on a resource instance"
+        },
+        {
+          "info": {
+            "name": "vread-instance: Read List instance with specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/_history/:version_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "version_id",
+                "value": "1",
+                "type": "path",
+                "description": "The resource version ID"
+              }
+            ]
+          },
+          "docs": "vread-instance: Read List instance with specific version"
+        },
+        {
+          "info": {
+            "name": "search-type: Search for List instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "When the list was prepared"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "Business identifier"
+              },
+              {
+                "name": "item",
+                "value": "",
+                "type": "query",
+                "description": "Actual entry"
+              },
+              {
+                "name": "empty-reason",
+                "value": "",
+                "type": "query",
+                "description": "Why list is empty"
+              },
+              {
+                "name": "notes",
+                "value": "",
+                "type": "query",
+                "description": "The annotation  - text content (as markdown)"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "What the purpose of this list is"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "If all resources have the same subject"
+              },
+              {
+                "name": "resource-placeholder",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources of type [List] populated with the resource-placeholder extension"
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Only return resources which were last updated as specified by the given range"
+              },
+              {
+                "name": "_security",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given security labels"
+              },
+              {
+                "name": "encounter",
+                "value": "",
+                "type": "query",
+                "description": "Context in which list created"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Who and/or what defined the list contents (aka Author)"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "Descriptive name for the list"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given profile"
+              },
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query",
+                "description": "If all resources have the same subject"
+              },
+              {
+                "name": "_has",
+                "value": "",
+                "type": "query",
+                "description": "Return resources linked to by the given target"
+              },
+              {
+                "name": "_tag",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given tag"
+              },
+              {
+                "name": "_source",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given source value (Resource.meta.source)"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource"
+              },
+              {
+                "name": "_content",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's data using a fulltext search"
+              },
+              {
+                "name": "_text",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's narrative using a fulltext search"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "current | retired | entered-in-error"
+              }
+            ]
+          },
+          "docs": "This is a search type"
+        },
+        {
+          "info": {
+            "name": "create-type: Create a new List instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create-type: Create a new List instance"
+        },
+        {
+          "info": {
+            "name": "type-history: Fetch the resource change history for all resources of type List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/_history"
+          },
+          "docs": "type-history: Fetch the resource change history for all resources of type List"
+        },
+        {
+          "info": {
+            "name": "instance-history: Fetch the resource change history for all resources of type List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/_history",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-history: Fetch the resource change history for all resources of type List"
+        },
+        {
+          "info": {
+            "name": "GET /List/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/$validate",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /List/{id}/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$validate",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /List/{id}/$meta-delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$meta-delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete tags, profiles, and/or security labels from a resource"
+        },
+        {
+          "info": {
+            "name": "POST /List/{id}/$meta-add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$meta-add",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add tags, profiles, and/or security labels to a resource"
+        },
+        {
+          "info": {
+            "name": "GET /List/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/$meta",
+            "params": [
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "GET /List/{id}/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "POST /List/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/$expunge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /List/{id}/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$expunge",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /List/{id}/$graphql",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$graphql",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format."
+        },
+        {
+          "info": {
+            "name": "POST /List/{id}/$binary-access-write",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$binary-access-write",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /List/{id}/$binary-access-read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$binary-access-read",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/List/:id/$diff",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "from",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              },
+              {
+                "name": "to",
+                "value": "Patient/example/version/2",
+                "type": "query",
+                "description": "The resource ID and version to diff to"
+              },
+              {
+                "name": "includeMeta",
+                "value": "false",
+                "type": "query",
+                "description": "Should differences in the Resource.meta element be included in the diff"
+              },
+              {
+                "name": "fromVersion",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              }
+            ]
+          },
+          "docs": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

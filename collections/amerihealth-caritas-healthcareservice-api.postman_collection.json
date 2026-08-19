@@ -1,0 +1,2402 @@
+{
+  "item": [
+    {
+      "id": "59314c38-97fe-47c0-afde-4fae23b03edc",
+      "name": "HealthcareService",
+      "description": {
+        "content": "The HealthcareService FHIR resource type",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b9726e8-bc79-4aee-8669-314da6f4ace4",
+          "name": "read-instance: Read HealthcareService instance",
+          "request": {
+            "name": "read-instance: Read HealthcareService instance",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dca3b265-0ad3-4993-93cb-7771de8c2799",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e32478d-5aea-47d1-a8d8-e66bc4a12641",
+          "name": "update-instance: Update an existing HealthcareService instance, or create using a client-assigned ID",
+          "request": {
+            "name": "update-instance: Update an existing HealthcareService instance, or create using a client-assigned ID",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b516b9f5-9ebb-4207-a852-4701f4a12ec9",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"HealthcareService\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ddd2a3a-1311-42b4-89e5-fd87bdc056bf",
+          "name": "instance-delete: Perform a logical delete on a resource instance",
+          "request": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70cc6d36-36f5-41b2-a87d-96c4c206c496",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7761dad-9db8-4cf7-9a1f-2058fd97bd5e",
+          "name": "instance-patch: Patch a resource instance of type HealthcareService by ID",
+          "request": {
+            "name": "instance-patch: Patch a resource instance of type HealthcareService by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecce56cd-3de3-42ed-912b-3607c40d8f70",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "179840de-6380-4fe6-9851-30a6b6155c9d",
+          "name": "vread-instance: Read HealthcareService instance with specific version",
+          "request": {
+            "name": "vread-instance: Read HealthcareService instance with specific version",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "_history",
+                ":version_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version_id",
+                  "description": "(Required) The resource version ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a7485d1-03ca-4537-bb72-e11bca99c783",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "_history",
+                    ":version_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version_id",
+                      "description": "(Required) The resource version ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33362ba2-58d3-492d-a435-30b3e2a8cc9f",
+          "name": "search-type: Search for HealthcareService instances",
+          "request": {
+            "name": "search-type: Search for HealthcareService instances",
+            "description": {
+              "content": "This is a search type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier-system-hcs-unique",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "External identifiers for this item",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The specialty of the service provided by this healthcare service",
+                    "type": "text/plain"
+                  },
+                  "key": "specialty",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Service Category of the Healthcare Service",
+                    "type": "text/plain"
+                  },
+                  "key": "service-category",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources of type [HealthcareService] populated with the resource-placeholder extension",
+                    "type": "text/plain"
+                  },
+                  "key": "resource-placeholder",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The type of service provided by this healthcare service",
+                    "type": "text/plain"
+                  },
+                  "key": "service-type",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Only return resources which were last updated as specified by the given range",
+                    "type": "text/plain"
+                  },
+                  "key": "_lastUpdated",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given security labels",
+                    "type": "text/plain"
+                  },
+                  "key": "_security",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The Healthcare Service is currently marked as active",
+                    "type": "text/plain"
+                  },
+                  "key": "active",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "One of the Programs supported by this HealthcareService",
+                    "type": "text/plain"
+                  },
+                  "key": "program",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "One of the HealthcareService's characteristics",
+                    "type": "text/plain"
+                  },
+                  "key": "characteristic",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Technical endpoints providing access to electronic services operated for the healthcare service",
+                    "type": "text/plain"
+                  },
+                  "key": "endpoint",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A healthcare service identifier with system HCS",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier-system-hcs",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given profile",
+                    "type": "text/plain"
+                  },
+                  "key": "_profile",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Location(s) service is intended for/available to",
+                    "type": "text/plain"
+                  },
+                  "key": "coverage-area",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The organization that provides this Healthcare Service",
+                    "type": "text/plain"
+                  },
+                  "key": "organization",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Return resources linked to by the given target",
+                    "type": "text/plain"
+                  },
+                  "key": "_has",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given tag",
+                    "type": "text/plain"
+                  },
+                  "key": "_tag",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A portion of the Healthcare service name",
+                    "type": "text/plain"
+                  },
+                  "key": "name",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The location of the Healthcare Service",
+                    "type": "text/plain"
+                  },
+                  "key": "location",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given source value (Resource.meta.source)",
+                    "type": "text/plain"
+                  },
+                  "key": "_source",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The ID of the resource",
+                    "type": "text/plain"
+                  },
+                  "key": "_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's data using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_content",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's narrative using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_text",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b80951f2-48ca-48f1-aab8-22bcd6790586",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier-system-hcs-unique",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier",
+                      "value": ""
+                    },
+                    {
+                      "key": "specialty",
+                      "value": ""
+                    },
+                    {
+                      "key": "service-category",
+                      "value": ""
+                    },
+                    {
+                      "key": "resource-placeholder",
+                      "value": ""
+                    },
+                    {
+                      "key": "service-type",
+                      "value": ""
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": ""
+                    },
+                    {
+                      "key": "_security",
+                      "value": ""
+                    },
+                    {
+                      "key": "active",
+                      "value": ""
+                    },
+                    {
+                      "key": "program",
+                      "value": ""
+                    },
+                    {
+                      "key": "characteristic",
+                      "value": ""
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier-system-hcs",
+                      "value": ""
+                    },
+                    {
+                      "key": "_profile",
+                      "value": ""
+                    },
+                    {
+                      "key": "coverage-area",
+                      "value": ""
+                    },
+                    {
+                      "key": "organization",
+                      "value": ""
+                    },
+                    {
+                      "key": "_has",
+                      "value": ""
+                    },
+                    {
+                      "key": "_tag",
+                      "value": ""
+                    },
+                    {
+                      "key": "name",
+                      "value": ""
+                    },
+                    {
+                      "key": "location",
+                      "value": ""
+                    },
+                    {
+                      "key": "_source",
+                      "value": ""
+                    },
+                    {
+                      "key": "_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "_content",
+                      "value": ""
+                    },
+                    {
+                      "key": "_text",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90904207-e2f7-46ec-aef5-9015960c2ff7",
+          "name": "create-type: Create a new HealthcareService instance",
+          "request": {
+            "name": "create-type: Create a new HealthcareService instance",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2f79d64c-aa31-4bd3-a5ea-25d4b95a55eb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"HealthcareService\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "205f4112-5dc2-440a-9e67-2fe7b5a06245",
+          "name": "type-history: Fetch the resource change history for all resources of type HealthcareService",
+          "request": {
+            "name": "type-history: Fetch the resource change history for all resources of type HealthcareService",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42f66688-f38f-464d-9890-be873fbc657b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b11d6032-8ad5-4752-9467-559ee209c1dc",
+          "name": "instance-history: Fetch the resource change history for all resources of type HealthcareService",
+          "request": {
+            "name": "instance-history: Fetch the resource change history for all resources of type HealthcareService",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "233b647b-85c5-4527-905f-6da2e0f72d60",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bafd231-4a22-4a9e-bff9-880a056dbc15",
+          "name": "/HealthcareService/$validate",
+          "request": {
+            "name": "/HealthcareService/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f6835d5-55ed-4fdc-80dd-15833a649ec8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1838c5b-07b0-4527-8ee1-1ba66b7dda95",
+          "name": "/HealthcareService/:id/$validate",
+          "request": {
+            "name": "/HealthcareService/:id/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b0d59ef-42da-4018-879e-10433494e79a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70edfc29-62ca-40f4-99fe-f9edf7726852",
+          "name": "Delete tags, profiles, and/or security labels from a resource",
+          "request": {
+            "name": "Delete tags, profiles, and/or security labels from a resource",
+            "description": {
+              "content": "Delete tags, profiles, and/or security labels from a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$meta-delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3385c6b0-aba0-4a2e-9848-e4dc9279997d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$meta-delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c57f306-ed73-425b-811c-c25474b3d84d",
+          "name": "Add tags, profiles, and/or security labels to a resource",
+          "request": {
+            "name": "Add tags, profiles, and/or security labels to a resource",
+            "description": {
+              "content": "Add tags, profiles, and/or security labels to a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$meta-add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6d85e9d6-34e3-41c3-ad8e-268c6e1a9ec5",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$meta-add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc138ab6-b139-4030-9b64-62619f2ee7b2",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e45790b7-c87d-40c7-957c-b58c9dddbf6c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a920e79-64a3-427e-9b0b-1d7b65f70aa4",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f26d3032-6f47-4c07-b5f0-f6eec5f5df30",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "10ff4639-a54c-48ab-9de2-270514086d49",
+          "name": "/HealthcareService/$expunge",
+          "request": {
+            "name": "/HealthcareService/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "27634e33-df37-4992-af1e-cfd76ffc313f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b02c0573-cf8a-4893-9ffb-48574e38e2e4",
+          "name": "/HealthcareService/:id/$expunge",
+          "request": {
+            "name": "/HealthcareService/:id/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b85cb14-7d14-4f14-a6a6-8ba28dd52023",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a9522e3-1e0a-4e51-8b74-2ad4c793ad79",
+          "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+          "request": {
+            "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+            "description": {
+              "content": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$graphql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58730218-785b-4b81-9452-dac92780da95",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$graphql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "444df5f3-2264-45b5-9205-6b1ca10a8002",
+          "name": "/HealthcareService/:id/$binary-access-write",
+          "request": {
+            "name": "/HealthcareService/:id/$binary-access-write",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$binary-access-write"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "335ae6ca-d025-471b-ac69-53487698a5eb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$binary-access-write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72d37a39-4aa5-4138-9e28-962d829eedda",
+          "name": "/HealthcareService/:id/$binary-access-read",
+          "request": {
+            "name": "/HealthcareService/:id/$binary-access-read",
+            "description": {},
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$binary-access-read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "path",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff5b0655-0813-4c88-af2d-360094afa269",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$binary-access-read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b341737a-3c1b-476c-8f5b-9d3def41a894",
+          "name": "Comparte two resources or two versions of a single resource",
+          "request": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "description": {
+              "content": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HealthcareService",
+                ":id",
+                "$diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff to",
+                    "type": "text/plain"
+                  },
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Should differences in the Resource.meta element be included in the diff",
+                    "type": "text/plain"
+                  },
+                  "key": "includeMeta",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "fromVersion",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72bf122e-b466-4f35-b78f-e5c53a8a64c7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HealthcareService",
+                    ":id",
+                    "$diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": ""
+                    },
+                    {
+                      "key": "to",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeMeta",
+                      "value": ""
+                    },
+                    {
+                      "key": "fromVersion",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ext.amerihealthcaritas.com/0500/patient-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a9c66b7e-51f3-4e3c-a8bc-3d86ea5f6c33",
+    "name": "AmeriHealth Caritas AllergyIntolerance HealthcareService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The AllergyIntolerance FHIR resource type",
+      "type": "text/plain"
+    }
+  }
+}

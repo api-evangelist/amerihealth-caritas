@@ -1,0 +1,638 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AmeriHealth Caritas AllergyIntolerance Claim API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Claim",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read-instance: Read Claim instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "read-instance: Read Claim instance"
+        },
+        {
+          "info": {
+            "name": "update-instance: Update an existing Claim instance, or create using a client-assigned ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "update-instance: Update an existing Claim instance, or create using a client-assigned ID"
+        },
+        {
+          "info": {
+            "name": "instance-patch: Patch a resource instance of type Claim by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "instance-patch: Patch a resource instance of type Claim by ID"
+        },
+        {
+          "info": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-delete: Perform a logical delete on a resource instance"
+        },
+        {
+          "info": {
+            "name": "vread-instance: Read Claim instance with specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/_history/:version_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "version_id",
+                "value": "1",
+                "type": "path",
+                "description": "The resource version ID"
+              }
+            ]
+          },
+          "docs": "vread-instance: Read Claim instance with specific version"
+        },
+        {
+          "info": {
+            "name": "search-type: Search for Claim instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim",
+            "params": [
+              {
+                "name": "care-team",
+                "value": "",
+                "type": "query",
+                "description": "Member of the CareTeam"
+              },
+              {
+                "name": "use",
+                "value": "",
+                "type": "query",
+                "description": "The kind of financial resource"
+              },
+              {
+                "name": "resource-placeholder",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources of type [Claim] populated with the resource-placeholder extension"
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Only return resources which were last updated as specified by the given range"
+              },
+              {
+                "name": "payee",
+                "value": "",
+                "type": "query",
+                "description": "The party receiving any payment for the Claim"
+              },
+              {
+                "name": "provider",
+                "value": "",
+                "type": "query",
+                "description": "Provider responsible for the Claim"
+              },
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query",
+                "description": "Patient receiving the products or services"
+              },
+              {
+                "name": "insurer",
+                "value": "",
+                "type": "query",
+                "description": "The target payor/insurer for the Claim"
+              },
+              {
+                "name": "detail-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a line item, detail product or service"
+              },
+              {
+                "name": "enterer",
+                "value": "",
+                "type": "query",
+                "description": "The party responsible for the entry of the Claim"
+              },
+              {
+                "name": "procedure-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a procedure"
+              },
+              {
+                "name": "item-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a line item product or service"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "The primary identifier of the financial resource"
+              },
+              {
+                "name": "created",
+                "value": "",
+                "type": "query",
+                "description": "The creation date for the Claim"
+              },
+              {
+                "name": "_security",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given security labels"
+              },
+              {
+                "name": "encounter",
+                "value": "",
+                "type": "query",
+                "description": "Encounters associated with a billed line item"
+              },
+              {
+                "name": "priority",
+                "value": "",
+                "type": "query",
+                "description": "Processing priority requested"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given profile"
+              },
+              {
+                "name": "_has",
+                "value": "",
+                "type": "query",
+                "description": "Return resources linked to by the given target"
+              },
+              {
+                "name": "_tag",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given tag"
+              },
+              {
+                "name": "_source",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given source value (Resource.meta.source)"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource"
+              },
+              {
+                "name": "subdetail-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a line item, detail, subdetail product or service"
+              },
+              {
+                "name": "_content",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's data using a fulltext search"
+              },
+              {
+                "name": "_text",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's narrative using a fulltext search"
+              },
+              {
+                "name": "facility",
+                "value": "",
+                "type": "query",
+                "description": "Facility where the products or services have been or will be provided"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the Claim instance."
+              }
+            ]
+          },
+          "docs": "This is a search type"
+        },
+        {
+          "info": {
+            "name": "create-type: Create a new Claim instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create-type: Create a new Claim instance"
+        },
+        {
+          "info": {
+            "name": "type-history: Fetch the resource change history for all resources of type Claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/_history"
+          },
+          "docs": "type-history: Fetch the resource change history for all resources of type Claim"
+        },
+        {
+          "info": {
+            "name": "instance-history: Fetch the resource change history for all resources of type Claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/_history",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-history: Fetch the resource change history for all resources of type Claim"
+        },
+        {
+          "info": {
+            "name": "GET /Claim/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/$validate",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Claim/{id}/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$validate",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /Claim/{id}/$meta-delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$meta-delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete tags, profiles, and/or security labels from a resource"
+        },
+        {
+          "info": {
+            "name": "POST /Claim/{id}/$meta-add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$meta-add",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add tags, profiles, and/or security labels to a resource"
+        },
+        {
+          "info": {
+            "name": "GET /Claim/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/$meta",
+            "params": [
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "GET /Claim/{id}/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "POST /Claim/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/$expunge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /Claim/{id}/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$expunge",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Claim/{id}/$graphql",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$graphql",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format."
+        },
+        {
+          "info": {
+            "name": "POST /Claim/{id}/$binary-access-write",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$binary-access-write",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Claim/{id}/$binary-access-read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$binary-access-read",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Claim/:id/$diff",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "from",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              },
+              {
+                "name": "to",
+                "value": "Patient/example/version/2",
+                "type": "query",
+                "description": "The resource ID and version to diff to"
+              },
+              {
+                "name": "includeMeta",
+                "value": "false",
+                "type": "query",
+                "description": "Should differences in the Resource.meta element be included in the diff"
+              },
+              {
+                "name": "fromVersion",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              }
+            ]
+          },
+          "docs": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,2414 @@
+{
+  "item": [
+    {
+      "id": "342214f8-dedd-42cc-bce8-da11ca6894ea",
+      "name": "MedicationDispense",
+      "description": {
+        "content": "The MedicationDispense FHIR resource type",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eee19733-172e-4164-b860-e957c93f33f6",
+          "name": "read-instance: Read MedicationDispense instance",
+          "request": {
+            "name": "read-instance: Read MedicationDispense instance",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f55e1d19-8871-4b10-a6aa-a11c1ff677aa",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0916ae5-1102-4dab-bf61-8a473f8ebd2c",
+          "name": "update-instance: Update an existing MedicationDispense instance, or create using a client-assigned ID",
+          "request": {
+            "name": "update-instance: Update an existing MedicationDispense instance, or create using a client-assigned ID",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eae418a9-2f10-4aa3-8781-e6047b04ec89",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"MedicationDispense\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92914211-508f-4508-ae34-14f91178ea96",
+          "name": "instance-delete: Perform a logical delete on a resource instance",
+          "request": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95344fc9-e228-4f6e-82ec-f9b4e33964e7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "430c799b-b1d6-4c90-952c-bf0408675680",
+          "name": "instance-patch: Patch a resource instance of type MedicationDispense by ID",
+          "request": {
+            "name": "instance-patch: Patch a resource instance of type MedicationDispense by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8ae98e8-5d3c-4b2f-9851-d14203d97d24",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80755343-2a87-4596-a2bf-00b7d47d2e4d",
+          "name": "vread-instance: Read MedicationDispense instance with specific version",
+          "request": {
+            "name": "vread-instance: Read MedicationDispense instance with specific version",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "_history",
+                ":version_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version_id",
+                  "description": "(Required) The resource version ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a43d150-0b9b-451c-b442-c03ef0e85101",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "_history",
+                    ":version_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version_id",
+                      "description": "(Required) The resource version ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a17e87f9-38c3-42d0-8200-63e62a05e19d",
+          "name": "search-type: Search for MedicationDispense instances",
+          "request": {
+            "name": "search-type: Search for MedicationDispense instances",
+            "description": {
+              "content": "This is a search type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Returns dispenses of this medicine code",
+                    "type": "text/plain"
+                  },
+                  "key": "code",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources of type [MedicationDispense] populated with the resource-placeholder extension",
+                    "type": "text/plain"
+                  },
+                  "key": "resource-placeholder",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The identity of a patient for whom to list dispenses",
+                    "type": "text/plain"
+                  },
+                  "key": "subject",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Only return resources which were last updated as specified by the given range",
+                    "type": "text/plain"
+                  },
+                  "key": "_lastUpdated",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses that should be sent to a specific destination",
+                    "type": "text/plain"
+                  },
+                  "key": "destination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses of a specific type",
+                    "type": "text/plain"
+                  },
+                  "key": "type",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The identity of a patient to list dispenses  for",
+                    "type": "text/plain"
+                  },
+                  "key": "patient",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses with a specific context (episode or episode of care)",
+                    "type": "text/plain"
+                  },
+                  "key": "context",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses with this external identifier",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses performed by a specific individual",
+                    "type": "text/plain"
+                  },
+                  "key": "performer",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The identity of a receiver to list dispenses for",
+                    "type": "text/plain"
+                  },
+                  "key": "receiver",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given security labels",
+                    "type": "text/plain"
+                  },
+                  "key": "_security",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses with the specified responsible party",
+                    "type": "text/plain"
+                  },
+                  "key": "responsibleparty",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses of this medicine resource",
+                    "type": "text/plain"
+                  },
+                  "key": "medication",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses handed over on this date",
+                    "type": "text/plain"
+                  },
+                  "key": "whenhandedover",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses prepared on this date",
+                    "type": "text/plain"
+                  },
+                  "key": "whenprepared",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given profile",
+                    "type": "text/plain"
+                  },
+                  "key": "_profile",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The identity of a prescription to list dispenses from",
+                    "type": "text/plain"
+                  },
+                  "key": "prescription",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Return resources linked to by the given target",
+                    "type": "text/plain"
+                  },
+                  "key": "_has",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given tag",
+                    "type": "text/plain"
+                  },
+                  "key": "_tag",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given source value (Resource.meta.source)",
+                    "type": "text/plain"
+                  },
+                  "key": "_source",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The ID of the resource",
+                    "type": "text/plain"
+                  },
+                  "key": "_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's data using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_content",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's narrative using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_text",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Returns dispenses with a specified dispense status",
+                    "type": "text/plain"
+                  },
+                  "key": "status",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "464202d2-e5d7-4c91-99e3-cce2e68f4666",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "code",
+                      "value": ""
+                    },
+                    {
+                      "key": "resource-placeholder",
+                      "value": ""
+                    },
+                    {
+                      "key": "subject",
+                      "value": ""
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": ""
+                    },
+                    {
+                      "key": "destination",
+                      "value": ""
+                    },
+                    {
+                      "key": "type",
+                      "value": ""
+                    },
+                    {
+                      "key": "patient",
+                      "value": ""
+                    },
+                    {
+                      "key": "context",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier",
+                      "value": ""
+                    },
+                    {
+                      "key": "performer",
+                      "value": ""
+                    },
+                    {
+                      "key": "receiver",
+                      "value": ""
+                    },
+                    {
+                      "key": "_security",
+                      "value": ""
+                    },
+                    {
+                      "key": "responsibleparty",
+                      "value": ""
+                    },
+                    {
+                      "key": "medication",
+                      "value": ""
+                    },
+                    {
+                      "key": "whenhandedover",
+                      "value": ""
+                    },
+                    {
+                      "key": "whenprepared",
+                      "value": ""
+                    },
+                    {
+                      "key": "_profile",
+                      "value": ""
+                    },
+                    {
+                      "key": "prescription",
+                      "value": ""
+                    },
+                    {
+                      "key": "_has",
+                      "value": ""
+                    },
+                    {
+                      "key": "_tag",
+                      "value": ""
+                    },
+                    {
+                      "key": "_source",
+                      "value": ""
+                    },
+                    {
+                      "key": "_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "_content",
+                      "value": ""
+                    },
+                    {
+                      "key": "_text",
+                      "value": ""
+                    },
+                    {
+                      "key": "status",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a4d5c42-e126-41b5-8fda-8e2572482e65",
+          "name": "create-type: Create a new MedicationDispense instance",
+          "request": {
+            "name": "create-type: Create a new MedicationDispense instance",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1fdb5987-1793-4b60-9dbf-abde38d78a41",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"MedicationDispense\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7396ef2d-d28e-4fef-b7f3-b213fd287d58",
+          "name": "type-history: Fetch the resource change history for all resources of type MedicationDispense",
+          "request": {
+            "name": "type-history: Fetch the resource change history for all resources of type MedicationDispense",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e60fe69c-eeda-427c-8794-e4710e919e10",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a4ba0e2-02bb-49a7-9ab2-e24cacd58865",
+          "name": "instance-history: Fetch the resource change history for all resources of type MedicationDispense",
+          "request": {
+            "name": "instance-history: Fetch the resource change history for all resources of type MedicationDispense",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9739b74-6b82-427e-8103-212c462476d3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9888eed-9c76-48a2-8a18-a5d336634577",
+          "name": "/MedicationDispense/$validate",
+          "request": {
+            "name": "/MedicationDispense/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98192f1e-5823-4ed1-a68f-3fef6a95ad2a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5dc95e0-a42c-434f-9f7d-b9548dfeaa08",
+          "name": "/MedicationDispense/:id/$validate",
+          "request": {
+            "name": "/MedicationDispense/:id/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0a13011-16db-4185-a5ab-57b6675662d7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7315d79-029f-4883-bc31-9364680c3a58",
+          "name": "Delete tags, profiles, and/or security labels from a resource",
+          "request": {
+            "name": "Delete tags, profiles, and/or security labels from a resource",
+            "description": {
+              "content": "Delete tags, profiles, and/or security labels from a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$meta-delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "25ca82eb-6f09-4dff-80fc-eaeba224aaaf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$meta-delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f43fb5ce-41dd-466d-af7d-9076c2e7e0c1",
+          "name": "Add tags, profiles, and/or security labels to a resource",
+          "request": {
+            "name": "Add tags, profiles, and/or security labels to a resource",
+            "description": {
+              "content": "Add tags, profiles, and/or security labels to a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$meta-add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "75348287-ef43-45f3-a05b-818fb701cce4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$meta-add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57d86ef2-4bfc-4649-925c-8e5b0c2f63fe",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66ed8d6d-263e-4314-b9f4-6297cf9553f8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7a2791f-05be-496f-83eb-9fe4a6aac538",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1df93ea2-b5f3-4943-9522-0872cdccc977",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5cde2c0-c80d-4bc5-86c3-3c1691370d09",
+          "name": "/MedicationDispense/$expunge",
+          "request": {
+            "name": "/MedicationDispense/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "050a4e14-e9c9-4a87-a880-9d6a43eaee6c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b61c0292-96ad-481b-b3ae-793af1876d40",
+          "name": "/MedicationDispense/:id/$expunge",
+          "request": {
+            "name": "/MedicationDispense/:id/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9e390798-0350-4f93-8922-4534c47a073c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52d1bc3d-463b-4f5c-b743-74dc163f09db",
+          "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+          "request": {
+            "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+            "description": {
+              "content": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$graphql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d22edb63-eec8-43be-8ee0-4fdd938b67cb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$graphql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f70ee241-a22b-4a41-a36c-ac4cc56829af",
+          "name": "/MedicationDispense/:id/$binary-access-write",
+          "request": {
+            "name": "/MedicationDispense/:id/$binary-access-write",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$binary-access-write"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ddceba91-791f-437f-8f71-a9f2960186ca",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$binary-access-write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68756de9-1d80-4641-9402-19d77dd60cac",
+          "name": "/MedicationDispense/:id/$binary-access-read",
+          "request": {
+            "name": "/MedicationDispense/:id/$binary-access-read",
+            "description": {},
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$binary-access-read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "path",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24344801-4aa1-4bf8-84aa-31329134e461",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$binary-access-read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f55687d-79e8-46b8-9195-210f9c36bba0",
+          "name": "Comparte two resources or two versions of a single resource",
+          "request": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "description": {
+              "content": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "MedicationDispense",
+                ":id",
+                "$diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff to",
+                    "type": "text/plain"
+                  },
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Should differences in the Resource.meta element be included in the diff",
+                    "type": "text/plain"
+                  },
+                  "key": "includeMeta",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "fromVersion",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfb75a5c-4f3a-4df8-bcac-ade5315fc905",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "MedicationDispense",
+                    ":id",
+                    "$diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": ""
+                    },
+                    {
+                      "key": "to",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeMeta",
+                      "value": ""
+                    },
+                    {
+                      "key": "fromVersion",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ext.amerihealthcaritas.com/0500/patient-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "da0875eb-1ae1-437c-9dc1-91715ec76f94",
+    "name": "AmeriHealth Caritas AllergyIntolerance MedicationDispense API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The AllergyIntolerance FHIR resource type",
+      "type": "text/plain"
+    }
+  }
+}

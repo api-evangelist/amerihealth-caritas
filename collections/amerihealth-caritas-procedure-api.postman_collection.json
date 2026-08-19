@@ -1,0 +1,2426 @@
+{
+  "item": [
+    {
+      "id": "a25d8c19-ff60-44a4-aa19-f94be40f58a2",
+      "name": "Procedure",
+      "description": {
+        "content": "The Procedure FHIR resource type",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86f9edbc-5aae-46e5-b1de-d2672399fd64",
+          "name": "read-instance: Read Procedure instance",
+          "request": {
+            "name": "read-instance: Read Procedure instance",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a970ffa8-9a63-4262-ba8d-f7638a1a0547",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de4d2ff8-5d74-4558-8ddf-f3067a772a65",
+          "name": "update-instance: Update an existing Procedure instance, or create using a client-assigned ID",
+          "request": {
+            "name": "update-instance: Update an existing Procedure instance, or create using a client-assigned ID",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dca38739-dffb-4cb1-ac0f-5d9bff6fc5af",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Procedure\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e869185-e4e2-4292-988f-8d2219aa02ae",
+          "name": "instance-delete: Perform a logical delete on a resource instance",
+          "request": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "718d0313-0dd8-4675-877f-979651ba05b4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1845b91a-8c4b-4d55-a9ae-75c0508decd8",
+          "name": "instance-patch: Patch a resource instance of type Procedure by ID",
+          "request": {
+            "name": "instance-patch: Patch a resource instance of type Procedure by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "55cd6ec5-6397-4602-852d-f7fcaa6a7c15",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13f735b2-6bb1-4165-b253-abf6c0911444",
+          "name": "vread-instance: Read Procedure instance with specific version",
+          "request": {
+            "name": "vread-instance: Read Procedure instance with specific version",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "_history",
+                ":version_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version_id",
+                  "description": "(Required) The resource version ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f4bf0e8-052e-4fa7-b92a-183426b01f7e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "_history",
+                    ":version_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version_id",
+                      "description": "(Required) The resource version ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "347465a3-33a9-4aa9-b009-58f0e8859c71",
+          "name": "search-type: Search for Procedure instances",
+          "request": {
+            "name": "search-type: Search for Procedure instances",
+            "description": {
+              "content": "This is a search type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "When the procedure was performed",
+                    "type": "text/plain"
+                  },
+                  "key": "date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A code to identify a  procedure",
+                    "type": "text/plain"
+                  },
+                  "key": "code",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources of type [Procedure] populated with the resource-placeholder extension",
+                    "type": "text/plain"
+                  },
+                  "key": "resource-placeholder",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search by subject",
+                    "type": "text/plain"
+                  },
+                  "key": "subject",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Only return resources which were last updated as specified by the given range",
+                    "type": "text/plain"
+                  },
+                  "key": "_lastUpdated",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Part of referenced event",
+                    "type": "text/plain"
+                  },
+                  "key": "part-of",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Coded reason procedure performed",
+                    "type": "text/plain"
+                  },
+                  "key": "reason-code",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A request for this procedure",
+                    "type": "text/plain"
+                  },
+                  "key": "based-on",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search by subject - a patient",
+                    "type": "text/plain"
+                  },
+                  "key": "patient",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Instantiates external protocol or definition",
+                    "type": "text/plain"
+                  },
+                  "key": "instantiates-uri",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A unique identifier for a procedure",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The reference to the practitioner",
+                    "type": "text/plain"
+                  },
+                  "key": "performer",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given security labels",
+                    "type": "text/plain"
+                  },
+                  "key": "_security",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Instantiates FHIR protocol or definition",
+                    "type": "text/plain"
+                  },
+                  "key": "instantiates-canonical",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Encounter created as part of",
+                    "type": "text/plain"
+                  },
+                  "key": "encounter",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given profile",
+                    "type": "text/plain"
+                  },
+                  "key": "_profile",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Return resources linked to by the given target",
+                    "type": "text/plain"
+                  },
+                  "key": "_has",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given tag",
+                    "type": "text/plain"
+                  },
+                  "key": "_tag",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The justification that the procedure was performed",
+                    "type": "text/plain"
+                  },
+                  "key": "reason-reference",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Where the procedure happened",
+                    "type": "text/plain"
+                  },
+                  "key": "location",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given source value (Resource.meta.source)",
+                    "type": "text/plain"
+                  },
+                  "key": "_source",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The ID of the resource",
+                    "type": "text/plain"
+                  },
+                  "key": "_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Classification of the procedure",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's data using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_content",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's narrative using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_text",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown",
+                    "type": "text/plain"
+                  },
+                  "key": "status",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bb04919-04ed-42c7-a63a-f8efaf9d0f2a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": ""
+                    },
+                    {
+                      "key": "code",
+                      "value": ""
+                    },
+                    {
+                      "key": "resource-placeholder",
+                      "value": ""
+                    },
+                    {
+                      "key": "subject",
+                      "value": ""
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": ""
+                    },
+                    {
+                      "key": "part-of",
+                      "value": ""
+                    },
+                    {
+                      "key": "reason-code",
+                      "value": ""
+                    },
+                    {
+                      "key": "based-on",
+                      "value": ""
+                    },
+                    {
+                      "key": "patient",
+                      "value": ""
+                    },
+                    {
+                      "key": "instantiates-uri",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier",
+                      "value": ""
+                    },
+                    {
+                      "key": "performer",
+                      "value": ""
+                    },
+                    {
+                      "key": "_security",
+                      "value": ""
+                    },
+                    {
+                      "key": "instantiates-canonical",
+                      "value": ""
+                    },
+                    {
+                      "key": "encounter",
+                      "value": ""
+                    },
+                    {
+                      "key": "_profile",
+                      "value": ""
+                    },
+                    {
+                      "key": "_has",
+                      "value": ""
+                    },
+                    {
+                      "key": "_tag",
+                      "value": ""
+                    },
+                    {
+                      "key": "reason-reference",
+                      "value": ""
+                    },
+                    {
+                      "key": "location",
+                      "value": ""
+                    },
+                    {
+                      "key": "_source",
+                      "value": ""
+                    },
+                    {
+                      "key": "_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "category",
+                      "value": ""
+                    },
+                    {
+                      "key": "_content",
+                      "value": ""
+                    },
+                    {
+                      "key": "_text",
+                      "value": ""
+                    },
+                    {
+                      "key": "status",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f34be489-2b02-456a-a318-d2dc4fa33543",
+          "name": "create-type: Create a new Procedure instance",
+          "request": {
+            "name": "create-type: Create a new Procedure instance",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4dc8cccf-3e10-4563-8ddb-179ea8ad114b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Procedure\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "292da3b9-4372-4a7d-9add-058795c23805",
+          "name": "type-history: Fetch the resource change history for all resources of type Procedure",
+          "request": {
+            "name": "type-history: Fetch the resource change history for all resources of type Procedure",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a771ee4-b557-4c90-864d-99440372fb30",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a83c297-aa32-40d1-a3eb-5b0c0855eab9",
+          "name": "instance-history: Fetch the resource change history for all resources of type Procedure",
+          "request": {
+            "name": "instance-history: Fetch the resource change history for all resources of type Procedure",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5a166e0-105d-415b-a881-79e5955e0c79",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c53ec413-4639-4c7c-bd41-9d8a0d00bb08",
+          "name": "/Procedure/$validate",
+          "request": {
+            "name": "/Procedure/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13c7c588-5dd2-4c99-9280-dafcc343d59b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a376108a-f6c0-4727-9548-f823267500ed",
+          "name": "/Procedure/:id/$validate",
+          "request": {
+            "name": "/Procedure/:id/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aad430e4-dadd-494a-9740-0f01b36b2fdb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9976366-1a2d-4676-9d26-cfc305a8f41b",
+          "name": "Delete tags, profiles, and/or security labels from a resource",
+          "request": {
+            "name": "Delete tags, profiles, and/or security labels from a resource",
+            "description": {
+              "content": "Delete tags, profiles, and/or security labels from a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$meta-delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80a7babb-59e5-4e26-b8d6-0379b34244a7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$meta-delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32f9f71f-4d7c-4d4e-b0a3-0f32d0bc9072",
+          "name": "Add tags, profiles, and/or security labels to a resource",
+          "request": {
+            "name": "Add tags, profiles, and/or security labels to a resource",
+            "description": {
+              "content": "Add tags, profiles, and/or security labels to a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$meta-add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e3e38be8-9920-41e8-a197-7a446314dfe8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$meta-add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b84a9687-c157-4ea4-b50c-2c94bb940a1c",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7df0dc7f-d468-432b-aba8-412e6312624b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea7bf599-510b-4b4a-bb0a-59e59a89603a",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aac67a71-8713-4ba3-afc5-4bbfd87c7b3a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e896c039-c5a2-4c61-8442-af2141885a79",
+          "name": "/Procedure/$expunge",
+          "request": {
+            "name": "/Procedure/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb6b9ad4-cc45-4fe0-a10d-b71ce5c47e42",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1c87f2c-971d-4264-bc31-2cbcb4c7b50a",
+          "name": "/Procedure/:id/$expunge",
+          "request": {
+            "name": "/Procedure/:id/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b30645e0-1a39-47ab-8d67-2e8dcef0a31a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86f61d30-5c29-45cc-aebe-b61feca220c4",
+          "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+          "request": {
+            "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+            "description": {
+              "content": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$graphql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3440cc0-fa5e-4f62-9111-e5980b83a912",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$graphql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5739b1b-f275-41da-a847-1fcfb65817de",
+          "name": "/Procedure/:id/$binary-access-write",
+          "request": {
+            "name": "/Procedure/:id/$binary-access-write",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$binary-access-write"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1ba2b3f2-172d-43de-b273-00fddc1c579f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$binary-access-write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbf3d3c1-2083-4593-9e47-6c2580aa4e1f",
+          "name": "/Procedure/:id/$binary-access-read",
+          "request": {
+            "name": "/Procedure/:id/$binary-access-read",
+            "description": {},
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$binary-access-read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "path",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c405ab76-8fd0-40b7-9a6c-5c1ec0effad3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$binary-access-read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "572cff40-92ab-4d93-ba40-cd0b22ccd746",
+          "name": "Comparte two resources or two versions of a single resource",
+          "request": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "description": {
+              "content": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Procedure",
+                ":id",
+                "$diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff to",
+                    "type": "text/plain"
+                  },
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Should differences in the Resource.meta element be included in the diff",
+                    "type": "text/plain"
+                  },
+                  "key": "includeMeta",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "fromVersion",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b52ac53d-aa31-4506-be27-681577eefbf8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Procedure",
+                    ":id",
+                    "$diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": ""
+                    },
+                    {
+                      "key": "to",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeMeta",
+                      "value": ""
+                    },
+                    {
+                      "key": "fromVersion",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ext.amerihealthcaritas.com/0500/patient-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f841e8c9-b384-44c1-ab0a-5760cf7b2bb1",
+    "name": "AmeriHealth Caritas AllergyIntolerance Procedure API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The AllergyIntolerance FHIR resource type",
+      "type": "text/plain"
+    }
+  }
+}

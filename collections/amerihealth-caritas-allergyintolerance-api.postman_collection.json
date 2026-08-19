@@ -1,0 +1,2426 @@
+{
+  "item": [
+    {
+      "id": "53b440ca-d80c-464f-ab88-b09e3c9b79ac",
+      "name": "AllergyIntolerance",
+      "description": {
+        "content": "The AllergyIntolerance FHIR resource type",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cf585dd1-ffcc-477e-85b8-b0bb2e856e4e",
+          "name": "read-instance: Read AllergyIntolerance instance",
+          "request": {
+            "name": "read-instance: Read AllergyIntolerance instance",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b798cb56-134e-4e11-868c-c987f6e4d17f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a1000b6-8457-4f0b-a29d-143186dfcd63",
+          "name": "update-instance: Update an existing AllergyIntolerance instance, or create using a client-assigned ID",
+          "request": {
+            "name": "update-instance: Update an existing AllergyIntolerance instance, or create using a client-assigned ID",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "70fdc605-80fe-497d-b1e0-d1cdbb2d6a5d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"AllergyIntolerance\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0b64d7b-e50c-4b74-bf1a-bad90c54c1dd",
+          "name": "instance-delete: Perform a logical delete on a resource instance",
+          "request": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e612018-234a-494e-9a8d-9f5f1f72ea76",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ef2e40d-f629-49f5-b332-05247f247fca",
+          "name": "instance-patch: Patch a resource instance of type AllergyIntolerance by ID",
+          "request": {
+            "name": "instance-patch: Patch a resource instance of type AllergyIntolerance by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc729f43-5580-45c6-bc44-35beab8aa42f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58f708e6-c7d5-4ad1-9c5d-c1ce764ea2f3",
+          "name": "vread-instance: Read AllergyIntolerance instance with specific version",
+          "request": {
+            "name": "vread-instance: Read AllergyIntolerance instance with specific version",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "_history",
+                ":version_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version_id",
+                  "description": "(Required) The resource version ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "293aee1b-16f5-41de-b8d3-f9892ab7867c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "_history",
+                    ":version_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version_id",
+                      "description": "(Required) The resource version ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f53151f5-8ae2-4ea0-8325-a56abdedf9b1",
+          "name": "search-type: Search for AllergyIntolerance instances",
+          "request": {
+            "name": "search-type: Search for AllergyIntolerance instances",
+            "description": {
+              "content": "This is a search type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "Date first version of the resource instance was recorded",
+                    "type": "text/plain"
+                  },
+                  "key": "date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Code that identifies the allergy or intolerance",
+                    "type": "text/plain"
+                  },
+                  "key": "code",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources of type [AllergyIntolerance] populated with the resource-placeholder extension",
+                    "type": "text/plain"
+                  },
+                  "key": "resource-placeholder",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "unconfirmed | confirmed | refuted | entered-in-error",
+                    "type": "text/plain"
+                  },
+                  "key": "verification-status",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Only return resources which were last updated as specified by the given range",
+                    "type": "text/plain"
+                  },
+                  "key": "_lastUpdated",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "low | high | unable-to-assess",
+                    "type": "text/plain"
+                  },
+                  "key": "criticality",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "active | inactive | resolved",
+                    "type": "text/plain"
+                  },
+                  "key": "clinical-status",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "allergy | intolerance - Underlying mechanism (if known)",
+                    "type": "text/plain"
+                  },
+                  "key": "type",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Who the sensitivity is for",
+                    "type": "text/plain"
+                  },
+                  "key": "patient",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "mild | moderate | severe (of event as a whole)",
+                    "type": "text/plain"
+                  },
+                  "key": "severity",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "External ids for this item",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Clinical symptoms/signs associated with the Event",
+                    "type": "text/plain"
+                  },
+                  "key": "manifestation",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Who recorded the sensitivity",
+                    "type": "text/plain"
+                  },
+                  "key": "recorder",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given security labels",
+                    "type": "text/plain"
+                  },
+                  "key": "_security",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Date(/time) when manifestations showed",
+                    "type": "text/plain"
+                  },
+                  "key": "onset",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "How the subject was exposed to the substance",
+                    "type": "text/plain"
+                  },
+                  "key": "route",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Source of the information about the allergy",
+                    "type": "text/plain"
+                  },
+                  "key": "asserter",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given profile",
+                    "type": "text/plain"
+                  },
+                  "key": "_profile",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Return resources linked to by the given target",
+                    "type": "text/plain"
+                  },
+                  "key": "_has",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given tag",
+                    "type": "text/plain"
+                  },
+                  "key": "_tag",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given source value (Resource.meta.source)",
+                    "type": "text/plain"
+                  },
+                  "key": "_source",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The ID of the resource",
+                    "type": "text/plain"
+                  },
+                  "key": "_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "food | medication | environment | biologic",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's data using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_content",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's narrative using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_text",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Date(/time) of last known occurrence of a reaction",
+                    "type": "text/plain"
+                  },
+                  "key": "last-date",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b3a2284-9daa-45e6-9936-8bc30ad6a3cb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": ""
+                    },
+                    {
+                      "key": "code",
+                      "value": ""
+                    },
+                    {
+                      "key": "resource-placeholder",
+                      "value": ""
+                    },
+                    {
+                      "key": "verification-status",
+                      "value": ""
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": ""
+                    },
+                    {
+                      "key": "criticality",
+                      "value": ""
+                    },
+                    {
+                      "key": "clinical-status",
+                      "value": ""
+                    },
+                    {
+                      "key": "type",
+                      "value": ""
+                    },
+                    {
+                      "key": "patient",
+                      "value": ""
+                    },
+                    {
+                      "key": "severity",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier",
+                      "value": ""
+                    },
+                    {
+                      "key": "manifestation",
+                      "value": ""
+                    },
+                    {
+                      "key": "recorder",
+                      "value": ""
+                    },
+                    {
+                      "key": "_security",
+                      "value": ""
+                    },
+                    {
+                      "key": "onset",
+                      "value": ""
+                    },
+                    {
+                      "key": "route",
+                      "value": ""
+                    },
+                    {
+                      "key": "asserter",
+                      "value": ""
+                    },
+                    {
+                      "key": "_profile",
+                      "value": ""
+                    },
+                    {
+                      "key": "_has",
+                      "value": ""
+                    },
+                    {
+                      "key": "_tag",
+                      "value": ""
+                    },
+                    {
+                      "key": "_source",
+                      "value": ""
+                    },
+                    {
+                      "key": "_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "category",
+                      "value": ""
+                    },
+                    {
+                      "key": "_content",
+                      "value": ""
+                    },
+                    {
+                      "key": "_text",
+                      "value": ""
+                    },
+                    {
+                      "key": "last-date",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f4950f9-5026-4414-9e8a-92e6ebe7e4e2",
+          "name": "create-type: Create a new AllergyIntolerance instance",
+          "request": {
+            "name": "create-type: Create a new AllergyIntolerance instance",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ab043984-7772-460b-a3f6-97e8cef5cfdd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"AllergyIntolerance\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbecdd04-8372-4ae6-b5b6-b3e9407c356f",
+          "name": "type-history: Fetch the resource change history for all resources of type AllergyIntolerance",
+          "request": {
+            "name": "type-history: Fetch the resource change history for all resources of type AllergyIntolerance",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "324d77f0-5a12-4fc1-bfd6-95e4d752441a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f845978-207a-4c49-95e4-6277296f23cd",
+          "name": "instance-history: Fetch the resource change history for all resources of type AllergyIntolerance",
+          "request": {
+            "name": "instance-history: Fetch the resource change history for all resources of type AllergyIntolerance",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2e08cead-ccfa-41da-abc3-66df9d2e63b4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0a1e723-705b-4b62-ae08-6169d45ee9a5",
+          "name": "/AllergyIntolerance/$validate",
+          "request": {
+            "name": "/AllergyIntolerance/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6549bb4b-d4c1-4575-a6dd-b6f5c0334920",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5ec1831-eff1-4184-9345-370ed12aca5c",
+          "name": "/AllergyIntolerance/:id/$validate",
+          "request": {
+            "name": "/AllergyIntolerance/:id/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1bfafcee-8235-4af6-9835-4bda4dca1854",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a71607d4-5a64-4c73-adbb-301f2e6ba1af",
+          "name": "Delete tags, profiles, and/or security labels from a resource",
+          "request": {
+            "name": "Delete tags, profiles, and/or security labels from a resource",
+            "description": {
+              "content": "Delete tags, profiles, and/or security labels from a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$meta-delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c78eb776-c8bd-4989-876c-66e3dc1ab7a3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$meta-delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91900bfe-7fe5-4de7-aa69-4d03ee0047e0",
+          "name": "Add tags, profiles, and/or security labels to a resource",
+          "request": {
+            "name": "Add tags, profiles, and/or security labels to a resource",
+            "description": {
+              "content": "Add tags, profiles, and/or security labels to a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$meta-add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ea438c6d-56e5-4b6f-88cc-7dfa7d92c31e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$meta-add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a6b028b-6cd1-4686-abdd-fe75da4a261c",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e59ab29-87b3-4d94-8ac4-3dc6e3a6e46b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b66a47d3-29d3-45a1-8d77-2c5bcc07fdec",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1af2ebd-ae9f-4611-85e8-4ae6ac7f304a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1099d0d4-4de9-4681-8f12-d5367eec022c",
+          "name": "/AllergyIntolerance/$expunge",
+          "request": {
+            "name": "/AllergyIntolerance/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17d3dc60-b205-4883-b76e-e82491290027",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db5cfdb8-5d0b-40fb-88bd-75628e2e6b54",
+          "name": "/AllergyIntolerance/:id/$expunge",
+          "request": {
+            "name": "/AllergyIntolerance/:id/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64c05d2d-2f2b-481c-a12b-7c672e7c84da",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edef341b-e6c2-4069-ad3e-50d20b04c566",
+          "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+          "request": {
+            "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+            "description": {
+              "content": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$graphql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f18c5bd4-d987-4b38-8436-12e67b0e3a69",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$graphql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aeba5fa9-c8ed-4688-a8f8-f54815cd725d",
+          "name": "/AllergyIntolerance/:id/$binary-access-write",
+          "request": {
+            "name": "/AllergyIntolerance/:id/$binary-access-write",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$binary-access-write"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "86d88683-3454-4ced-9bbe-abdf7b469c9e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$binary-access-write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f2ee1b0-c1e2-49af-956a-3545de662d29",
+          "name": "/AllergyIntolerance/:id/$binary-access-read",
+          "request": {
+            "name": "/AllergyIntolerance/:id/$binary-access-read",
+            "description": {},
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$binary-access-read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "path",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a332c49b-a9ff-463a-854f-7bfddb45af86",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$binary-access-read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43909ca2-3d92-4e79-a32e-b8e8b38287b3",
+          "name": "Comparte two resources or two versions of a single resource",
+          "request": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "description": {
+              "content": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AllergyIntolerance",
+                ":id",
+                "$diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff to",
+                    "type": "text/plain"
+                  },
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Should differences in the Resource.meta element be included in the diff",
+                    "type": "text/plain"
+                  },
+                  "key": "includeMeta",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "fromVersion",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efc2ea44-e9cf-401f-8c72-867f49d8b33f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AllergyIntolerance",
+                    ":id",
+                    "$diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": ""
+                    },
+                    {
+                      "key": "to",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeMeta",
+                      "value": ""
+                    },
+                    {
+                      "key": "fromVersion",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ext.amerihealthcaritas.com/0500/patient-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "37b37dd5-b25b-44a8-a94e-f51cd692c574",
+    "name": "AmeriHealth Caritas AllergyIntolerance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The AllergyIntolerance FHIR resource type",
+      "type": "text/plain"
+    }
+  }
+}

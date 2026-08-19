@@ -1,0 +1,2414 @@
+{
+  "item": [
+    {
+      "id": "bfb61656-ef9a-402d-bbe9-90a966f602cf",
+      "name": "PractitionerRole",
+      "description": {
+        "content": "The PractitionerRole FHIR resource type",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a692917f-bd53-4d24-bf44-47f67b4ce661",
+          "name": "read-instance: Read PractitionerRole instance",
+          "request": {
+            "name": "read-instance: Read PractitionerRole instance",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "865b8861-8d18-4500-8195-32cce7b6d99d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ba9a76a-c76a-4f69-9519-872a9f99b2e2",
+          "name": "update-instance: Update an existing PractitionerRole instance, or create using a client-assigned ID",
+          "request": {
+            "name": "update-instance: Update an existing PractitionerRole instance, or create using a client-assigned ID",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1193d02-c773-44a6-aefe-6e775cb04e71",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"PractitionerRole\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36a20550-4503-473d-a13e-ce577895dcf1",
+          "name": "instance-delete: Perform a logical delete on a resource instance",
+          "request": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7c4dc09-91cc-40d8-b2d7-ca291550e82a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df94cb9f-6373-4205-9794-127a55cfa4ea",
+          "name": "instance-patch: Patch a resource instance of type PractitionerRole by ID",
+          "request": {
+            "name": "instance-patch: Patch a resource instance of type PractitionerRole by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4fe2d4c1-bf35-4f9d-9d83-515938f0244d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc2fd6c4-e077-4764-8506-b94c802f4cb3",
+          "name": "vread-instance: Read PractitionerRole instance with specific version",
+          "request": {
+            "name": "vread-instance: Read PractitionerRole instance with specific version",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "_history",
+                ":version_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version_id",
+                  "description": "(Required) The resource version ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79d1ad5f-9be9-474f-b802-5da2bd453884",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "_history",
+                    ":version_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version_id",
+                      "description": "(Required) The resource version ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84d90483-70f6-45bb-be57-30eddf86920e",
+          "name": "search-type: Search for PractitionerRole instances",
+          "request": {
+            "name": "search-type: Search for PractitionerRole instances",
+            "description": {
+              "content": "This is a search type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "The period during which the practitioner is authorized to perform in these role(s)",
+                    "type": "text/plain"
+                  },
+                  "key": "date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The practitioner has this specialty at an organization",
+                    "type": "text/plain"
+                  },
+                  "key": "specialty",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The practitioner can perform this role at for the organization",
+                    "type": "text/plain"
+                  },
+                  "key": "role",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources of type [PractitionerRole] populated with the resource-placeholder extension",
+                    "type": "text/plain"
+                  },
+                  "key": "resource-placeholder",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Only return resources which were last updated as specified by the given range",
+                    "type": "text/plain"
+                  },
+                  "key": "_lastUpdated",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Technical endpoints providing access to services operated for the practitioner with this role",
+                    "type": "text/plain"
+                  },
+                  "key": "endpoint",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The value in any kind of contact",
+                    "type": "text/plain"
+                  },
+                  "key": "telecom",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A value in an email contact",
+                    "type": "text/plain"
+                  },
+                  "key": "email",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A practitioner's Identifier - 2022-07-27 reload",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Practitioner that is able to provide the defined services for the organization",
+                    "type": "text/plain"
+                  },
+                  "key": "practitioner",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier-system-prn-unique",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given security labels",
+                    "type": "text/plain"
+                  },
+                  "key": "_security",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Whether this practitioner role record is in active use",
+                    "type": "text/plain"
+                  },
+                  "key": "active",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given profile",
+                    "type": "text/plain"
+                  },
+                  "key": "_profile",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A value in a phone contact",
+                    "type": "text/plain"
+                  },
+                  "key": "phone",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The list of healthcare services that this worker provides for this role's Organization/Location(s)",
+                    "type": "text/plain"
+                  },
+                  "key": "service",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The identity of the organization the practitioner represents / acts on behalf of",
+                    "type": "text/plain"
+                  },
+                  "key": "organization",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Return resources linked to by the given target",
+                    "type": "text/plain"
+                  },
+                  "key": "_has",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given tag",
+                    "type": "text/plain"
+                  },
+                  "key": "_tag",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "One of the locations at which this practitioner provides care",
+                    "type": "text/plain"
+                  },
+                  "key": "location",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search for resources which have the given source value (Resource.meta.source)",
+                    "type": "text/plain"
+                  },
+                  "key": "_source",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The ID of the resource",
+                    "type": "text/plain"
+                  },
+                  "key": "_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's data using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_content",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search the contents of the resource's narrative using a fulltext search",
+                    "type": "text/plain"
+                  },
+                  "key": "_text",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A practitioner role identifier with system PRN",
+                    "type": "text/plain"
+                  },
+                  "key": "identifier-system-prn",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95a0b975-f403-44cc-adb2-3a8d58fb5175",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": ""
+                    },
+                    {
+                      "key": "specialty",
+                      "value": ""
+                    },
+                    {
+                      "key": "role",
+                      "value": ""
+                    },
+                    {
+                      "key": "resource-placeholder",
+                      "value": ""
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": ""
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": ""
+                    },
+                    {
+                      "key": "telecom",
+                      "value": ""
+                    },
+                    {
+                      "key": "email",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier",
+                      "value": ""
+                    },
+                    {
+                      "key": "practitioner",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier-system-prn-unique",
+                      "value": ""
+                    },
+                    {
+                      "key": "_security",
+                      "value": ""
+                    },
+                    {
+                      "key": "active",
+                      "value": ""
+                    },
+                    {
+                      "key": "_profile",
+                      "value": ""
+                    },
+                    {
+                      "key": "phone",
+                      "value": ""
+                    },
+                    {
+                      "key": "service",
+                      "value": ""
+                    },
+                    {
+                      "key": "organization",
+                      "value": ""
+                    },
+                    {
+                      "key": "_has",
+                      "value": ""
+                    },
+                    {
+                      "key": "_tag",
+                      "value": ""
+                    },
+                    {
+                      "key": "location",
+                      "value": ""
+                    },
+                    {
+                      "key": "_source",
+                      "value": ""
+                    },
+                    {
+                      "key": "_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "_content",
+                      "value": ""
+                    },
+                    {
+                      "key": "_text",
+                      "value": ""
+                    },
+                    {
+                      "key": "identifier-system-prn",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "145b60a0-aefa-4d20-bb51-dab9ffae2b34",
+          "name": "create-type: Create a new PractitionerRole instance",
+          "request": {
+            "name": "create-type: Create a new PractitionerRole instance",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "68ac7be8-dbe9-4d89-91ff-678ce24071a1",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"PractitionerRole\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df1cad56-45fd-4e04-83c5-48636fd7836a",
+          "name": "type-history: Fetch the resource change history for all resources of type PractitionerRole",
+          "request": {
+            "name": "type-history: Fetch the resource change history for all resources of type PractitionerRole",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31ae3fc8-3e6e-4083-8238-3c4d534add8d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "755c8773-a268-428a-b26e-251fd0565619",
+          "name": "instance-history: Fetch the resource change history for all resources of type PractitionerRole",
+          "request": {
+            "name": "instance-history: Fetch the resource change history for all resources of type PractitionerRole",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7edb6fa-1841-4a2e-9247-f4750c860bcf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "479bca77-8c56-4d2b-a9c1-40518385b5c6",
+          "name": "/PractitionerRole/$validate",
+          "request": {
+            "name": "/PractitionerRole/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d43d7dbf-6aa6-41f0-88ad-33cb78db8596",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "abadc043-3549-40a8-bdf5-aedfdd563878",
+          "name": "/PractitionerRole/:id/$validate",
+          "request": {
+            "name": "/PractitionerRole/:id/$validate",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "resource",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "profile",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8760191c-db05-4087-b2d3-ee19c73290be",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resource",
+                      "value": ""
+                    },
+                    {
+                      "key": "mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "profile",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "233284e6-0ae2-489e-9e05-9e3a26dc1024",
+          "name": "Delete tags, profiles, and/or security labels from a resource",
+          "request": {
+            "name": "Delete tags, profiles, and/or security labels from a resource",
+            "description": {
+              "content": "Delete tags, profiles, and/or security labels from a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$meta-delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e761c06-dfd4-47e3-932a-85572dcf4a8b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$meta-delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4dd530f-b55b-4f59-b6e0-8e82e2b059ee",
+          "name": "Add tags, profiles, and/or security labels to a resource",
+          "request": {
+            "name": "Add tags, profiles, and/or security labels to a resource",
+            "description": {
+              "content": "Add tags, profiles, and/or security labels to a resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$meta-add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c8ba96ae-577a-4de4-a1f0-136b1f38c8ba",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$meta-add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"meta\"\n  }, {\n    \"name\": \"return\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98cb5a2e-dc73-441e-8935-8cd3aaca773c",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90d04f76-009c-4a77-9e3a-1b3ed79aa309",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1883bd0c-8308-4692-967b-d081db8058f1",
+          "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+          "request": {
+            "name": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+            "description": {
+              "content": "Request a list of tags, profiles, and security labels for a specfic resource instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "return",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "986d1e21-1495-48ad-8de1-855640d45b57",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "return",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2168cb84-ec23-45b3-af2e-60ccfb539b1a",
+          "name": "/PractitionerRole/$expunge",
+          "request": {
+            "name": "/PractitionerRole/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "752459f4-3728-4a30-9d02-7c42eef2e25b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbfe0ba6-b5a6-4890-9342-948cce5fb9e9",
+          "name": "/PractitionerRole/:id/$expunge",
+          "request": {
+            "name": "/PractitionerRole/:id/$expunge",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$expunge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fa30de7c-717a-4b69-9cf8-578216b51a87",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$expunge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"limit\",\n    \"valueInteger\": 0\n  }, {\n    \"name\": \"expungeDeletedResources\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungePreviousVersions\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"expungeEverything\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"count\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2813bd43-16fd-4fa1-8fc1-635a78a32f7b",
+          "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+          "request": {
+            "name": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+            "description": {
+              "content": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$graphql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7cd0a4d-680e-431a-8603-52a8e11f0f48",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$graphql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7da5cb2-5785-420d-a404-5a36770fdb98",
+          "name": "/PractitionerRole/:id/$binary-access-write",
+          "request": {
+            "name": "/PractitionerRole/:id/$binary-access-write",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$binary-access-write"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/fhir+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dfcc6700-3451-4360-b179-989b78788117",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$binary-access-write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"path\",\n    \"valueString\": \"example\"\n  } ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad35d616-cd4d-4e24-8afa-67e4edec0f42",
+          "name": "/PractitionerRole/:id/$binary-access-read",
+          "request": {
+            "name": "/PractitionerRole/:id/$binary-access-read",
+            "description": {},
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$binary-access-read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "path",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03615277-b33a-4141-a555-c9f7256faa4f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$binary-access-read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd40c44c-44b5-43cb-8699-1b1c84470f9c",
+          "name": "Comparte two resources or two versions of a single resource",
+          "request": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "description": {
+              "content": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "PractitionerRole",
+                ":id",
+                "$diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) The resource ID and version to diff to",
+                    "type": "text/plain"
+                  },
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Should differences in the Resource.meta element be included in the diff",
+                    "type": "text/plain"
+                  },
+                  "key": "includeMeta",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The resource ID and version to diff from",
+                    "type": "text/plain"
+                  },
+                  "key": "fromVersion",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1555ecad-5698-47d5-bb90-b7a042920d94",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "PractitionerRole",
+                    ":id",
+                    "$diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": ""
+                    },
+                    {
+                      "key": "to",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeMeta",
+                      "value": ""
+                    },
+                    {
+                      "key": "fromVersion",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The resource ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/fhir+json"
+                }
+              ],
+              "body": "\"<object>\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ext.amerihealthcaritas.com/0500/patient-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3f7fa0e1-ed1a-4301-b940-cc300e1c5f52",
+    "name": "AmeriHealth Caritas AllergyIntolerance PractitionerRole API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The AllergyIntolerance FHIR resource type",
+      "type": "text/plain"
+    }
+  }
+}

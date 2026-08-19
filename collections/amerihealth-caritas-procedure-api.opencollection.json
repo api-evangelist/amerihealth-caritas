@@ -1,0 +1,632 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AmeriHealth Caritas AllergyIntolerance Procedure API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Procedure",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read-instance: Read Procedure instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "read-instance: Read Procedure instance"
+        },
+        {
+          "info": {
+            "name": "update-instance: Update an existing Procedure instance, or create using a client-assigned ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "update-instance: Update an existing Procedure instance, or create using a client-assigned ID"
+        },
+        {
+          "info": {
+            "name": "instance-patch: Patch a resource instance of type Procedure by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "instance-patch: Patch a resource instance of type Procedure by ID"
+        },
+        {
+          "info": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-delete: Perform a logical delete on a resource instance"
+        },
+        {
+          "info": {
+            "name": "vread-instance: Read Procedure instance with specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/_history/:version_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "version_id",
+                "value": "1",
+                "type": "path",
+                "description": "The resource version ID"
+              }
+            ]
+          },
+          "docs": "vread-instance: Read Procedure instance with specific version"
+        },
+        {
+          "info": {
+            "name": "search-type: Search for Procedure instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "When the procedure was performed"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "A code to identify a  procedure"
+              },
+              {
+                "name": "resource-placeholder",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources of type [Procedure] populated with the resource-placeholder extension"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "Search by subject"
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Only return resources which were last updated as specified by the given range"
+              },
+              {
+                "name": "part-of",
+                "value": "",
+                "type": "query",
+                "description": "Part of referenced event"
+              },
+              {
+                "name": "reason-code",
+                "value": "",
+                "type": "query",
+                "description": "Coded reason procedure performed"
+              },
+              {
+                "name": "based-on",
+                "value": "",
+                "type": "query",
+                "description": "A request for this procedure"
+              },
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query",
+                "description": "Search by subject - a patient"
+              },
+              {
+                "name": "instantiates-uri",
+                "value": "",
+                "type": "query",
+                "description": "Instantiates external protocol or definition"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "A unique identifier for a procedure"
+              },
+              {
+                "name": "performer",
+                "value": "",
+                "type": "query",
+                "description": "The reference to the practitioner"
+              },
+              {
+                "name": "_security",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given security labels"
+              },
+              {
+                "name": "instantiates-canonical",
+                "value": "",
+                "type": "query",
+                "description": "Instantiates FHIR protocol or definition"
+              },
+              {
+                "name": "encounter",
+                "value": "",
+                "type": "query",
+                "description": "Encounter created as part of"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given profile"
+              },
+              {
+                "name": "_has",
+                "value": "",
+                "type": "query",
+                "description": "Return resources linked to by the given target"
+              },
+              {
+                "name": "_tag",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given tag"
+              },
+              {
+                "name": "reason-reference",
+                "value": "",
+                "type": "query",
+                "description": "The justification that the procedure was performed"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "Where the procedure happened"
+              },
+              {
+                "name": "_source",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given source value (Resource.meta.source)"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Classification of the procedure"
+              },
+              {
+                "name": "_content",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's data using a fulltext search"
+              },
+              {
+                "name": "_text",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's narrative using a fulltext search"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown"
+              }
+            ]
+          },
+          "docs": "This is a search type"
+        },
+        {
+          "info": {
+            "name": "create-type: Create a new Procedure instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create-type: Create a new Procedure instance"
+        },
+        {
+          "info": {
+            "name": "type-history: Fetch the resource change history for all resources of type Procedure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/_history"
+          },
+          "docs": "type-history: Fetch the resource change history for all resources of type Procedure"
+        },
+        {
+          "info": {
+            "name": "instance-history: Fetch the resource change history for all resources of type Procedure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/_history",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-history: Fetch the resource change history for all resources of type Procedure"
+        },
+        {
+          "info": {
+            "name": "GET /Procedure/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/$validate",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Procedure/{id}/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$validate",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /Procedure/{id}/$meta-delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$meta-delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete tags, profiles, and/or security labels from a resource"
+        },
+        {
+          "info": {
+            "name": "POST /Procedure/{id}/$meta-add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$meta-add",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add tags, profiles, and/or security labels to a resource"
+        },
+        {
+          "info": {
+            "name": "GET /Procedure/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/$meta",
+            "params": [
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "GET /Procedure/{id}/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "POST /Procedure/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/$expunge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /Procedure/{id}/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$expunge",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Procedure/{id}/$graphql",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$graphql",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format."
+        },
+        {
+          "info": {
+            "name": "POST /Procedure/{id}/$binary-access-write",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$binary-access-write",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Procedure/{id}/$binary-access-read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$binary-access-read",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Procedure/:id/$diff",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "from",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              },
+              {
+                "name": "to",
+                "value": "Patient/example/version/2",
+                "type": "query",
+                "description": "The resource ID and version to diff to"
+              },
+              {
+                "name": "includeMeta",
+                "value": "false",
+                "type": "query",
+                "description": "Should differences in the Resource.meta element be included in the diff"
+              },
+              {
+                "name": "fromVersion",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              }
+            ]
+          },
+          "docs": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

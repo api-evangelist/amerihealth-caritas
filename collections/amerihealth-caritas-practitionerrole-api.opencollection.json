@@ -1,0 +1,625 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AmeriHealth Caritas AllergyIntolerance PractitionerRole API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PractitionerRole",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read-instance: Read PractitionerRole instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "read-instance: Read PractitionerRole instance"
+        },
+        {
+          "info": {
+            "name": "update-instance: Update an existing PractitionerRole instance, or create using a client-assigned ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "update-instance: Update an existing PractitionerRole instance, or create using a client-assigned ID"
+        },
+        {
+          "info": {
+            "name": "instance-patch: Patch a resource instance of type PractitionerRole by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "instance-patch: Patch a resource instance of type PractitionerRole by ID"
+        },
+        {
+          "info": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-delete: Perform a logical delete on a resource instance"
+        },
+        {
+          "info": {
+            "name": "vread-instance: Read PractitionerRole instance with specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/_history/:version_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "version_id",
+                "value": "1",
+                "type": "path",
+                "description": "The resource version ID"
+              }
+            ]
+          },
+          "docs": "vread-instance: Read PractitionerRole instance with specific version"
+        },
+        {
+          "info": {
+            "name": "search-type: Search for PractitionerRole instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "The period during which the practitioner is authorized to perform in these role(s)"
+              },
+              {
+                "name": "specialty",
+                "value": "",
+                "type": "query",
+                "description": "The practitioner has this specialty at an organization"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "The practitioner can perform this role at for the organization"
+              },
+              {
+                "name": "resource-placeholder",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources of type [PractitionerRole] populated with the resource-placeholder extension"
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Only return resources which were last updated as specified by the given range"
+              },
+              {
+                "name": "endpoint",
+                "value": "",
+                "type": "query",
+                "description": "Technical endpoints providing access to services operated for the practitioner with this role"
+              },
+              {
+                "name": "telecom",
+                "value": "",
+                "type": "query",
+                "description": "The value in any kind of contact"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "A value in an email contact"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "A practitioner's Identifier - 2022-07-27 reload"
+              },
+              {
+                "name": "practitioner",
+                "value": "",
+                "type": "query",
+                "description": "Practitioner that is able to provide the defined services for the organization"
+              },
+              {
+                "name": "identifier-system-prn-unique",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "_security",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given security labels"
+              },
+              {
+                "name": "active",
+                "value": "",
+                "type": "query",
+                "description": "Whether this practitioner role record is in active use"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given profile"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "A value in a phone contact"
+              },
+              {
+                "name": "service",
+                "value": "",
+                "type": "query",
+                "description": "The list of healthcare services that this worker provides for this role's Organization/Location(s)"
+              },
+              {
+                "name": "organization",
+                "value": "",
+                "type": "query",
+                "description": "The identity of the organization the practitioner represents / acts on behalf of"
+              },
+              {
+                "name": "_has",
+                "value": "",
+                "type": "query",
+                "description": "Return resources linked to by the given target"
+              },
+              {
+                "name": "_tag",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given tag"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "One of the locations at which this practitioner provides care"
+              },
+              {
+                "name": "_source",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given source value (Resource.meta.source)"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource"
+              },
+              {
+                "name": "_content",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's data using a fulltext search"
+              },
+              {
+                "name": "_text",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's narrative using a fulltext search"
+              },
+              {
+                "name": "identifier-system-prn",
+                "value": "",
+                "type": "query",
+                "description": "A practitioner role identifier with system PRN"
+              }
+            ]
+          },
+          "docs": "This is a search type"
+        },
+        {
+          "info": {
+            "name": "create-type: Create a new PractitionerRole instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create-type: Create a new PractitionerRole instance"
+        },
+        {
+          "info": {
+            "name": "type-history: Fetch the resource change history for all resources of type PractitionerRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/_history"
+          },
+          "docs": "type-history: Fetch the resource change history for all resources of type PractitionerRole"
+        },
+        {
+          "info": {
+            "name": "instance-history: Fetch the resource change history for all resources of type PractitionerRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/_history",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-history: Fetch the resource change history for all resources of type PractitionerRole"
+        },
+        {
+          "info": {
+            "name": "GET /PractitionerRole/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/$validate",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /PractitionerRole/{id}/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$validate",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /PractitionerRole/{id}/$meta-delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$meta-delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete tags, profiles, and/or security labels from a resource"
+        },
+        {
+          "info": {
+            "name": "POST /PractitionerRole/{id}/$meta-add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$meta-add",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add tags, profiles, and/or security labels to a resource"
+        },
+        {
+          "info": {
+            "name": "GET /PractitionerRole/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/$meta",
+            "params": [
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "GET /PractitionerRole/{id}/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "POST /PractitionerRole/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/$expunge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /PractitionerRole/{id}/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$expunge",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /PractitionerRole/{id}/$graphql",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$graphql",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format."
+        },
+        {
+          "info": {
+            "name": "POST /PractitionerRole/{id}/$binary-access-write",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$binary-access-write",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /PractitionerRole/{id}/$binary-access-read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$binary-access-read",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/PractitionerRole/:id/$diff",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "from",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              },
+              {
+                "name": "to",
+                "value": "Patient/example/version/2",
+                "type": "query",
+                "description": "The resource ID and version to diff to"
+              },
+              {
+                "name": "includeMeta",
+                "value": "false",
+                "type": "query",
+                "description": "Should differences in the Resource.meta element be included in the diff"
+              },
+              {
+                "name": "fromVersion",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              }
+            ]
+          },
+          "docs": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

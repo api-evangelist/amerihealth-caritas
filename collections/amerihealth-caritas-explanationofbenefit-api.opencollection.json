@@ -1,0 +1,673 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AmeriHealth Caritas AllergyIntolerance ExplanationOfBenefit API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ExplanationOfBenefit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read-instance: Read ExplanationOfBenefit instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "read-instance: Read ExplanationOfBenefit instance"
+        },
+        {
+          "info": {
+            "name": "update-instance: Update an existing ExplanationOfBenefit instance, or create using a client-assigned ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "update-instance: Update an existing ExplanationOfBenefit instance, or create using a client-assigned ID"
+        },
+        {
+          "info": {
+            "name": "instance-patch: Patch a resource instance of type ExplanationOfBenefit by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "instance-patch: Patch a resource instance of type ExplanationOfBenefit by ID"
+        },
+        {
+          "info": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-delete: Perform a logical delete on a resource instance"
+        },
+        {
+          "info": {
+            "name": "vread-instance: Read ExplanationOfBenefit instance with specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/_history/:version_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "version_id",
+                "value": "1",
+                "type": "path",
+                "description": "The resource version ID"
+              }
+            ]
+          },
+          "docs": "vread-instance: Read ExplanationOfBenefit instance with specific version"
+        },
+        {
+          "info": {
+            "name": "search-type: Search for ExplanationOfBenefit instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "The explanation of benefit billable period start date"
+              },
+              {
+                "name": "care-team",
+                "value": "",
+                "type": "query",
+                "description": "Member of the CareTeam"
+              },
+              {
+                "name": "resource-placeholder",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources of type [ExplanationOfBenefit] populated with the resource-placeholder extension"
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Only return resources which were last updated as specified by the given range"
+              },
+              {
+                "name": "payee",
+                "value": "",
+                "type": "query",
+                "description": "The party receiving any payment for the Claim"
+              },
+              {
+                "name": "identifier-system-uc-unique",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "provider",
+                "value": "",
+                "type": "query",
+                "description": "The reference to the provider"
+              },
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query",
+                "description": "The reference to the patient"
+              },
+              {
+                "name": "detail-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a line item detail product or service"
+              },
+              {
+                "name": "identifier-system-uc",
+                "value": "",
+                "type": "query",
+                "description": "An explanation of benefit identifier with system uc"
+              },
+              {
+                "name": "claim",
+                "value": "",
+                "type": "query",
+                "description": "The reference to the claim"
+              },
+              {
+                "name": "enterer",
+                "value": "",
+                "type": "query",
+                "description": "The party responsible for the entry of the Claim"
+              },
+              {
+                "name": "procedure-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a procedure"
+              },
+              {
+                "name": "item-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a line item product or service"
+              },
+              {
+                "name": "coverage",
+                "value": "",
+                "type": "query",
+                "description": "The plan under which the claim was adjudicated"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "The business identifier of the Explanation of Benefit"
+              },
+              {
+                "name": "created",
+                "value": "",
+                "type": "query",
+                "description": "The creation date for the EOB"
+              },
+              {
+                "name": "_security",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given security labels"
+              },
+              {
+                "name": "encounter",
+                "value": "",
+                "type": "query",
+                "description": "Encounters associated with a billed line item"
+              },
+              {
+                "name": "disposition",
+                "value": "",
+                "type": "query",
+                "description": "The contents of the disposition message"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given profile"
+              },
+              {
+                "name": "prescription",
+                "value": "",
+                "type": "query",
+                "description": "Reference of the prescription authorizing services or products that is linked to this explanation of benefit"
+              },
+              {
+                "name": "benefitPeriodStart",
+                "value": "",
+                "type": "query",
+                "description": "The explanation of benefit's plan benefit period start date"
+              },
+              {
+                "name": "_has",
+                "value": "",
+                "type": "query",
+                "description": "Return resources linked to by the given target"
+              },
+              {
+                "name": "_tag",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given tag"
+              },
+              {
+                "name": "benefitPeriodEnd",
+                "value": "",
+                "type": "query",
+                "description": "The explanation of benefit's plan benefit period end date"
+              },
+              {
+                "name": "_source",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given source value (Resource.meta.source)"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource"
+              },
+              {
+                "name": "subdetail-udi",
+                "value": "",
+                "type": "query",
+                "description": "UDI associated with a line item detail subdetail product or service"
+              },
+              {
+                "name": "_content",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's data using a fulltext search"
+              },
+              {
+                "name": "_text",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's narrative using a fulltext search"
+              },
+              {
+                "name": "facility",
+                "value": "",
+                "type": "query",
+                "description": "Facility responsible for the goods and services"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Status of the instance"
+              }
+            ]
+          },
+          "docs": "This is a search type"
+        },
+        {
+          "info": {
+            "name": "create-type: Create a new ExplanationOfBenefit instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create-type: Create a new ExplanationOfBenefit instance"
+        },
+        {
+          "info": {
+            "name": "type-history: Fetch the resource change history for all resources of type ExplanationOfBenefit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/_history"
+          },
+          "docs": "type-history: Fetch the resource change history for all resources of type ExplanationOfBenefit"
+        },
+        {
+          "info": {
+            "name": "instance-history: Fetch the resource change history for all resources of type ExplanationOfBenefit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/_history",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-history: Fetch the resource change history for all resources of type ExplanationOfBenefit"
+        },
+        {
+          "info": {
+            "name": "GET /ExplanationOfBenefit/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/$validate",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ExplanationOfBenefit/{id}/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$validate",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /ExplanationOfBenefit/{id}/$meta-delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$meta-delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete tags, profiles, and/or security labels from a resource"
+        },
+        {
+          "info": {
+            "name": "POST /ExplanationOfBenefit/{id}/$meta-add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$meta-add",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add tags, profiles, and/or security labels to a resource"
+        },
+        {
+          "info": {
+            "name": "GET /ExplanationOfBenefit/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/$meta",
+            "params": [
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "GET /ExplanationOfBenefit/{id}/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "POST /ExplanationOfBenefit/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/$expunge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /ExplanationOfBenefit/{id}/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$expunge",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ExplanationOfBenefit/{id}/$graphql",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$graphql",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format."
+        },
+        {
+          "info": {
+            "name": "POST /ExplanationOfBenefit/{id}/$binary-access-write",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$binary-access-write",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ExplanationOfBenefit/{id}/$binary-access-read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$binary-access-read",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/ExplanationOfBenefit/:id/$diff",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "from",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              },
+              {
+                "name": "to",
+                "value": "Patient/example/version/2",
+                "type": "query",
+                "description": "The resource ID and version to diff to"
+              },
+              {
+                "name": "includeMeta",
+                "value": "false",
+                "type": "query",
+                "description": "Should differences in the Resource.meta element be included in the diff"
+              },
+              {
+                "name": "fromVersion",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              }
+            ]
+          },
+          "docs": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

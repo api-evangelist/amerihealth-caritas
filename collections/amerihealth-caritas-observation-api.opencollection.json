@@ -1,0 +1,770 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AmeriHealth Caritas AllergyIntolerance Observation API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Observation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read-instance: Read Observation instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "read-instance: Read Observation instance"
+        },
+        {
+          "info": {
+            "name": "update-instance: Update an existing Observation instance, or create using a client-assigned ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "update-instance: Update an existing Observation instance, or create using a client-assigned ID"
+        },
+        {
+          "info": {
+            "name": "instance-patch: Patch a resource instance of type Observation by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "instance-patch: Patch a resource instance of type Observation by ID"
+        },
+        {
+          "info": {
+            "name": "instance-delete: Perform a logical delete on a resource instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-delete: Perform a logical delete on a resource instance"
+        },
+        {
+          "info": {
+            "name": "vread-instance: Read Observation instance with specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/_history/:version_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "version_id",
+                "value": "1",
+                "type": "path",
+                "description": "The resource version ID"
+              }
+            ]
+          },
+          "docs": "vread-instance: Read Observation instance with specific version"
+        },
+        {
+          "info": {
+            "name": "search-type: Search for Observation instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "Obtained date/time. If the obtained element is a period, a date that falls in the period"
+              },
+              {
+                "name": "combo-data-absent-reason",
+                "value": "",
+                "type": "query",
+                "description": "The reason why the expected value in the element Observation.value[x] or Observation.component.value[x] is missing."
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "The code of the observation type"
+              },
+              {
+                "name": "component-data-absent-reason",
+                "value": "",
+                "type": "query",
+                "description": "The reason why the expected value in the element Observation.component.value[x] is missing."
+              },
+              {
+                "name": "resource-placeholder",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources of type [Observation] populated with the resource-placeholder extension"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The subject that the observation is about"
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Only return resources which were last updated as specified by the given range"
+              },
+              {
+                "name": "value-date",
+                "value": "",
+                "type": "query",
+                "description": "The value of the observation, if the value is a date or period of time"
+              },
+              {
+                "name": "value-concept",
+                "value": "",
+                "type": "query",
+                "description": "The value of the observation, if the value is a CodeableConcept"
+              },
+              {
+                "name": "derived-from",
+                "value": "",
+                "type": "query",
+                "description": "Related measurements the observation is made from"
+              },
+              {
+                "name": "focus",
+                "value": "",
+                "type": "query",
+                "description": "The focus of an observation when the focus is not the patient of record."
+              },
+              {
+                "name": "part-of",
+                "value": "",
+                "type": "query",
+                "description": "Part of referenced event"
+              },
+              {
+                "name": "has-member",
+                "value": "",
+                "type": "query",
+                "description": "Related resource that belongs to the Observation group"
+              },
+              {
+                "name": "based-on",
+                "value": "",
+                "type": "query",
+                "description": "Reference to the service request."
+              },
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query",
+                "description": "The subject that the observation is about (if patient)"
+              },
+              {
+                "name": "specimen",
+                "value": "",
+                "type": "query",
+                "description": "Specimen used for this observation"
+              },
+              {
+                "name": "component-code",
+                "value": "",
+                "type": "query",
+                "description": "The component code of the observation type"
+              },
+              {
+                "name": "value-string",
+                "value": "",
+                "type": "query",
+                "description": "The value of the observation, if the value is a string, and also searches in CodeableConcept.text"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "The unique id for a particular observation"
+              },
+              {
+                "name": "performer",
+                "value": "",
+                "type": "query",
+                "description": "Who performed the observation"
+              },
+              {
+                "name": "combo-code",
+                "value": "",
+                "type": "query",
+                "description": "The code of the observation type or component type"
+              },
+              {
+                "name": "method",
+                "value": "",
+                "type": "query",
+                "description": "The method used for the observation"
+              },
+              {
+                "name": "value-quantity",
+                "value": "",
+                "type": "query",
+                "description": "The value of the observation, if the value is a Quantity, or a SampledData (just search on the bounds of the values in sampled data)"
+              },
+              {
+                "name": "component-value-quantity",
+                "value": "",
+                "type": "query",
+                "description": "The value of the component observation, if the value is a Quantity, or a SampledData (just search on the bounds of the values in sampled data)"
+              },
+              {
+                "name": "_security",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given security labels"
+              },
+              {
+                "name": "data-absent-reason",
+                "value": "",
+                "type": "query",
+                "description": "The reason why the expected value in the element Observation.value[x] is missing."
+              },
+              {
+                "name": "combo-value-quantity",
+                "value": "",
+                "type": "query",
+                "description": "The value or component value of the observation, if the value is a Quantity, or a SampledData (just search on the bounds of the values in sampled data)"
+              },
+              {
+                "name": "encounter",
+                "value": "",
+                "type": "query",
+                "description": "Encounter related to the observation"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given profile"
+              },
+              {
+                "name": "_has",
+                "value": "",
+                "type": "query",
+                "description": "Return resources linked to by the given target"
+              },
+              {
+                "name": "_tag",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given tag"
+              },
+              {
+                "name": "_source",
+                "value": "",
+                "type": "query",
+                "description": "Search for resources which have the given source value (Resource.meta.source)"
+              },
+              {
+                "name": "component-value-concept",
+                "value": "",
+                "type": "query",
+                "description": "The value of the component observation, if the value is a CodeableConcept"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The classification of the type of observation"
+              },
+              {
+                "name": "_content",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's data using a fulltext search"
+              },
+              {
+                "name": "_text",
+                "value": "",
+                "type": "query",
+                "description": "Search the contents of the resource's narrative using a fulltext search"
+              },
+              {
+                "name": "device",
+                "value": "",
+                "type": "query",
+                "description": "The Device that generated the observation data."
+              },
+              {
+                "name": "combo-value-concept",
+                "value": "",
+                "type": "query",
+                "description": "The value or component value of the observation, if the value is a CodeableConcept"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the observation"
+              }
+            ]
+          },
+          "docs": "This is a search type"
+        },
+        {
+          "info": {
+            "name": "create-type: Create a new Observation instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create-type: Create a new Observation instance"
+        },
+        {
+          "info": {
+            "name": "type-history: Fetch the resource change history for all resources of type Observation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/_history"
+          },
+          "docs": "type-history: Fetch the resource change history for all resources of type Observation"
+        },
+        {
+          "info": {
+            "name": "instance-history: Fetch the resource change history for all resources of type Observation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/_history",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "instance-history: Fetch the resource change history for all resources of type Observation"
+        },
+        {
+          "info": {
+            "name": "GET /Observation/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/$validate",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Observation/{id}/$validate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$validate",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /Observation/{id}/$meta-delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$meta-delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete tags, profiles, and/or security labels from a resource"
+        },
+        {
+          "info": {
+            "name": "POST /Observation/{id}/$meta-add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$meta-add",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add tags, profiles, and/or security labels to a resource"
+        },
+        {
+          "info": {
+            "name": "GET /Observation/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/$meta",
+            "params": [
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "GET /Observation/{id}/$meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "return",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of tags, profiles, and security labels for a specfic resource instance"
+        },
+        {
+          "info": {
+            "name": "POST /Observation/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/$expunge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /Observation/{id}/$expunge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$expunge",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Observation/$lastn",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/$lastn",
+            "params": [
+              {
+                "name": "_count",
+                "value": "",
+                "type": "query",
+                "description": "Results from this method are returned across multiple pages. This parameter controls the size of those pages."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The classification of the type of observation"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "The code of the observation type"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "The effective date of the observation"
+              },
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query",
+                "description": "The subject that the observation is about (if patient)"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The subject that the observation is about"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of observations to return for each observation code"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Observation/{id}/$graphql",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$graphql",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ]
+          },
+          "docs": "This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format."
+        },
+        {
+          "info": {
+            "name": "POST /Observation/{id}/$binary-access-write",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$binary-access-write",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Observation/{id}/$binary-access-read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$binary-access-read",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Comparte two resources or two versions of a single resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ext.amerihealthcaritas.com/0500/patient-api/Observation/:id/$diff",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The resource ID"
+              },
+              {
+                "name": "from",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              },
+              {
+                "name": "to",
+                "value": "Patient/example/version/2",
+                "type": "query",
+                "description": "The resource ID and version to diff to"
+              },
+              {
+                "name": "includeMeta",
+                "value": "false",
+                "type": "query",
+                "description": "Should differences in the Resource.meta element be included in the diff"
+              },
+              {
+                "name": "fromVersion",
+                "value": "Patient/example/version/1",
+                "type": "query",
+                "description": "The resource ID and version to diff from"
+              }
+            ]
+          },
+          "docs": "This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
