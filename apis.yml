@@ -120,68 +120,6 @@ apis:
     url: https://careers.amerihealthcaritas.com/us/en
   - type: DeveloperPortal
     url: https://developer.amerihealthcaritas.com/
-- aid: amerihealth-caritas:amerihealth-caritas-allergyintolerance-api
-  name: AmeriHealth Caritas AllergyIntolerance API
-  description: The AllergyIntolerance FHIR resource type
-  humanURL: https://developer.amerihealthcaritas.com/
-  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  tags:
-  - AllergyIntolerance
-  properties:
-  - type: OpenAPI
-    url: openapi/amerihealth-caritas-allergyintolerance-api-openapi.yml
-  - type: Portal
-    url: https://developer.amerihealthcaritas.com/
-  - type: Documentation
-    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
-  - type: AuthorizeURL
-    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
-  - type: TokenURL
-    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
-  - type: SpectralRules
-    url: rules/amerihealth-caritas-rules.yml
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-patient-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-coverage-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
-  - type: SwaggerUI
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-practitioner-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-organization-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-location-schema.json
 - aid: amerihealth-caritas:amerihealth-caritas-claim-api
   name: AmeriHealth Caritas Claim API
   description: The Claim FHIR resource type
@@ -492,68 +430,6 @@ apis:
     url: json-schema/amerihealth-caritas-organization-schema.json
   - type: JSONSchema
     url: json-schema/amerihealth-caritas-location-schema.json
-- aid: amerihealth-caritas:amerihealth-caritas-healthcareservice-api
-  name: AmeriHealth Caritas HealthcareService API
-  description: The HealthcareService FHIR resource type
-  humanURL: https://developer.amerihealthcaritas.com/
-  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  tags:
-  - HealthcareService
-  properties:
-  - type: OpenAPI
-    url: openapi/amerihealth-caritas-healthcareservice-api-openapi.yml
-  - type: Portal
-    url: https://developer.amerihealthcaritas.com/
-  - type: Documentation
-    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
-  - type: AuthorizeURL
-    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
-  - type: TokenURL
-    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
-  - type: SpectralRules
-    url: rules/amerihealth-caritas-rules.yml
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-patient-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-coverage-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
-  - type: SwaggerUI
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-practitioner-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-organization-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-location-schema.json
 - aid: amerihealth-caritas:amerihealth-caritas-immunization-api
   name: AmeriHealth Caritas Immunization API
   description: The Immunization FHIR resource type
@@ -564,68 +440,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amerihealth-caritas-immunization-api-openapi.yml
-  - type: Portal
-    url: https://developer.amerihealthcaritas.com/
-  - type: Documentation
-    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
-  - type: AuthorizeURL
-    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
-  - type: TokenURL
-    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
-  - type: SpectralRules
-    url: rules/amerihealth-caritas-rules.yml
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-patient-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-coverage-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
-  - type: SwaggerUI
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-practitioner-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-organization-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-location-schema.json
-- aid: amerihealth-caritas:amerihealth-caritas-insuranceplan-api
-  name: AmeriHealth Caritas InsurancePlan API
-  description: The InsurancePlan FHIR resource type
-  humanURL: https://developer.amerihealthcaritas.com/
-  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  tags:
-  - InsurancePlan
-  properties:
-  - type: OpenAPI
-    url: openapi/amerihealth-caritas-insuranceplan-api-openapi.yml
   - type: Portal
     url: https://developer.amerihealthcaritas.com/
   - type: Documentation
@@ -988,68 +802,6 @@ apis:
     url: json-schema/amerihealth-caritas-organization-schema.json
   - type: JSONSchema
     url: json-schema/amerihealth-caritas-location-schema.json
-- aid: amerihealth-caritas:amerihealth-caritas-medicationrequest-api
-  name: AmeriHealth Caritas MedicationRequest API
-  description: The MedicationRequest FHIR resource type
-  humanURL: https://developer.amerihealthcaritas.com/
-  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  tags:
-  - MedicationRequest
-  properties:
-  - type: OpenAPI
-    url: openapi/amerihealth-caritas-medicationrequest-api-openapi.yml
-  - type: Portal
-    url: https://developer.amerihealthcaritas.com/
-  - type: Documentation
-    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
-  - type: AuthorizeURL
-    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
-  - type: TokenURL
-    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
-  - type: SpectralRules
-    url: rules/amerihealth-caritas-rules.yml
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-patient-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-coverage-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
-  - type: SwaggerUI
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-practitioner-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-organization-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-location-schema.json
 - aid: amerihealth-caritas:amerihealth-caritas-observation-api
   name: AmeriHealth Caritas Observation API
   description: The Observation FHIR resource type
@@ -1360,68 +1112,6 @@ apis:
     url: json-schema/amerihealth-caritas-organization-schema.json
   - type: JSONSchema
     url: json-schema/amerihealth-caritas-location-schema.json
-- aid: amerihealth-caritas:amerihealth-caritas-practitionerrole-api
-  name: AmeriHealth Caritas PractitionerRole API
-  description: The PractitionerRole FHIR resource type
-  humanURL: https://developer.amerihealthcaritas.com/
-  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  tags:
-  - PractitionerRole
-  properties:
-  - type: OpenAPI
-    url: openapi/amerihealth-caritas-practitionerrole-api-openapi.yml
-  - type: Portal
-    url: https://developer.amerihealthcaritas.com/
-  - type: Documentation
-    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
-  - type: AuthorizeURL
-    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
-  - type: TokenURL
-    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
-  - type: SpectralRules
-    url: rules/amerihealth-caritas-rules.yml
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-patient-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-coverage-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
-  - type: CapabilityStatement
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
-  - type: SwaggerUI
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
-  - type: BaseURL
-    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-practitioner-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-organization-schema.json
-  - type: JSONSchema
-    url: json-schema/amerihealth-caritas-location-schema.json
 - aid: amerihealth-caritas:amerihealth-caritas-procedure-api
   name: AmeriHealth Caritas Procedure API
   description: The Procedure FHIR resource type
@@ -1494,6 +1184,316 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amerihealth-caritas-system-level-operations-api-openapi.yml
+  - type: Portal
+    url: https://developer.amerihealthcaritas.com/
+  - type: Documentation
+    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
+  - type: AuthorizeURL
+    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
+  - type: TokenURL
+    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
+  - type: SpectralRules
+    url: rules/amerihealth-caritas-rules.yml
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-coverage-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
+  - type: SwaggerUI
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-location-schema.json
+- aid: amerihealth-caritas:amerihealth-caritas-allergy-intolerance-api
+  name: AmeriHealth Caritas Allergy Intolerance API
+  description: The AllergyIntolerance FHIR resource type
+  humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  tags:
+  - Allergy Intolerance
+  properties:
+  - type: OpenAPI
+    url: openapi/amerihealth-caritas-allergy-intolerance-api-openapi.yml
+  - type: Portal
+    url: https://developer.amerihealthcaritas.com/
+  - type: Documentation
+    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
+  - type: AuthorizeURL
+    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
+  - type: TokenURL
+    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
+  - type: SpectralRules
+    url: rules/amerihealth-caritas-rules.yml
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-coverage-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
+  - type: SwaggerUI
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-location-schema.json
+- aid: amerihealth-caritas:amerihealth-caritas-healthcare-service-api
+  name: AmeriHealth Caritas Healthcare Service API
+  description: The HealthcareService FHIR resource type
+  humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  tags:
+  - Healthcare Service
+  properties:
+  - type: OpenAPI
+    url: openapi/amerihealth-caritas-healthcare-service-api-openapi.yml
+  - type: Portal
+    url: https://developer.amerihealthcaritas.com/
+  - type: Documentation
+    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
+  - type: AuthorizeURL
+    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
+  - type: TokenURL
+    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
+  - type: SpectralRules
+    url: rules/amerihealth-caritas-rules.yml
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-coverage-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
+  - type: SwaggerUI
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-location-schema.json
+- aid: amerihealth-caritas:amerihealth-caritas-insurance-plan-api
+  name: AmeriHealth Caritas Insurance Plan API
+  description: The InsurancePlan FHIR resource type
+  humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  tags:
+  - Insurance Plan
+  properties:
+  - type: OpenAPI
+    url: openapi/amerihealth-caritas-insurance-plan-api-openapi.yml
+  - type: Portal
+    url: https://developer.amerihealthcaritas.com/
+  - type: Documentation
+    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
+  - type: AuthorizeURL
+    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
+  - type: TokenURL
+    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
+  - type: SpectralRules
+    url: rules/amerihealth-caritas-rules.yml
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-coverage-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
+  - type: SwaggerUI
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-location-schema.json
+- aid: amerihealth-caritas:amerihealth-caritas-medication-request-api
+  name: AmeriHealth Caritas Medication Request API
+  description: The MedicationRequest FHIR resource type
+  humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  tags:
+  - Medication Request
+  properties:
+  - type: OpenAPI
+    url: openapi/amerihealth-caritas-medication-request-api-openapi.yml
+  - type: Portal
+    url: https://developer.amerihealthcaritas.com/
+  - type: Documentation
+    url: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/patient-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/patient-api
+  - type: AuthorizeURL
+    url: https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize
+  - type: TokenURL
+    url: https://eapics.amerihealthcaritas.com/oauth2/v1/token
+  - type: SpectralRules
+    url: rules/amerihealth-caritas-rules.yml
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-coverage-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-explanation-of-benefit-schema.json
+  - type: CapabilityStatement
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata
+  - type: SwaggerUI
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0500/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/0900/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/1200/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2100/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2400/provider-api
+  - type: BaseURL
+    url: https://api-ext.amerihealthcaritas.com/2600/provider-api
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/amerihealth-caritas-location-schema.json
+- aid: amerihealth-caritas:amerihealth-caritas-practitioner-role-api
+  name: AmeriHealth Caritas Practitioner Role API
+  description: The PractitionerRole FHIR resource type
+  humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
+  baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
+  tags:
+  - Practitioner Role
+  properties:
+  - type: OpenAPI
+    url: openapi/amerihealth-caritas-practitioner-role-api-openapi.yml
   - type: Portal
     url: https://developer.amerihealthcaritas.com/
   - type: Documentation
