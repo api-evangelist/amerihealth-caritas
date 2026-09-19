@@ -107,6 +107,9 @@ apis:
   humanURL: https://www.amerihealthcaritas.com
   baseURL: https://www.amerihealthcaritas.com
   tags:
+  - Websites
+  - Corporate
+  tags_raw:
   - Website
   - Corporate
   properties:
@@ -994,6 +997,8 @@ apis:
   humanURL: https://developer.amerihealthcaritas.com/
   baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
   tags:
+  - Patients
+  tags_raw:
   - Patient
   properties:
   - type: OpenAPI
@@ -1242,6 +1247,8 @@ apis:
   humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
   baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
   tags:
+  - AllergyIntolerance
+  tags_raw:
   - Allergy Intolerance
   properties:
   - type: OpenAPI
@@ -1304,6 +1311,8 @@ apis:
   humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
   baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
   tags:
+  - HealthcareService
+  tags_raw:
   - Healthcare Service
   properties:
   - type: OpenAPI
@@ -1366,6 +1375,8 @@ apis:
   humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
   baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
   tags:
+  - InsurancePlan
+  tags_raw:
   - Insurance Plan
   properties:
   - type: OpenAPI
@@ -1428,6 +1439,8 @@ apis:
   humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
   baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
   tags:
+  - MedicationRequest
+  tags_raw:
   - Medication Request
   properties:
   - type: OpenAPI
@@ -1490,6 +1503,8 @@ apis:
   humanURL: https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/
   baseURL: https://api-ext.amerihealthcaritas.com/0500/patient-api
   tags:
+  - PractitionerRole
+  tags_raw:
   - Practitioner Role
   properties:
   - type: OpenAPI
