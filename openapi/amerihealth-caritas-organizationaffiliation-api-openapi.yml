@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance OrganizationAffiliation API
+  title: AmeriHealth Caritas Organization Affiliation API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The OrganizationAffiliation FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getOrganizationAffiliationById
+      x-operation-id-source: derived
     put:
       tags:
       - OrganizationAffiliation
-      summary: 'update-instance: Update an existing OrganizationAffiliation instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing OrganizationAffiliation instance, or create…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putOrganizationAffiliationById
+      x-operation-id-source: derived
     delete:
       tags:
       - OrganizationAffiliation
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteOrganizationAffiliationById
+      x-operation-id-source: derived
     patch:
       tags:
       - OrganizationAffiliation
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchOrganizationAffiliationById
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getOrganizationAffiliationByIdHistoryByVersionId
+      x-operation-id-source: derived
   /OrganizationAffiliation:
     get:
       tags:
@@ -286,6 +296,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getOrganizationAffiliation
+      x-operation-id-source: derived
     post:
       tags:
       - OrganizationAffiliation
@@ -310,11 +322,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postOrganizationAffiliation
+      x-operation-id-source: derived
   /OrganizationAffiliation/_history:
     get:
       tags:
       - OrganizationAffiliation
-      summary: 'type-history: Fetch the resource change history for all resources of type OrganizationAffiliation'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -325,11 +339,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getOrganizationAffiliationHistory
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/_history:
     get:
       tags:
       - OrganizationAffiliation
-      summary: 'instance-history: Fetch the resource change history for all resources of type OrganizationAffiliation'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -350,6 +366,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getOrganizationAffiliationByIdHistory
+      x-operation-id-source: derived
   /OrganizationAffiliation/$validate:
     get:
       tags:
@@ -377,6 +395,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get organization affiliation $validate
+      x-summary-source: derived
+      operationId: getOrganizationAffiliation$validate
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$validate:
     get:
       tags:
@@ -413,6 +435,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get organization affiliation by id $validate
+      x-summary-source: derived
+      operationId: getOrganizationAffiliationById$validate
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$meta-delete:
     post:
       tags:
@@ -445,6 +471,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create organization affiliation by id $meta delete
+      x-summary-source: derived
+      operationId: postOrganizationAffiliationById$metaDelete
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$meta-add:
     post:
       tags:
@@ -477,6 +507,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create organization affiliation by id $meta add
+      x-summary-source: derived
+      operationId: postOrganizationAffiliationById$metaAdd
+      x-operation-id-source: derived
   /OrganizationAffiliation/$meta:
     get:
       tags:
@@ -497,6 +531,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get organization affiliation $meta
+      x-summary-source: derived
+      operationId: getOrganizationAffiliation$meta
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$meta:
     get:
       tags:
@@ -526,6 +564,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get organization affiliation by id $meta
+      x-summary-source: derived
+      operationId: getOrganizationAffiliationById$meta
+      x-operation-id-source: derived
   /OrganizationAffiliation/$expunge:
     post:
       tags:
@@ -547,6 +589,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create organization affiliation $expunge
+      x-summary-source: derived
+      operationId: postOrganizationAffiliation$expunge
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$expunge:
     post:
       tags:
@@ -578,6 +624,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create organization affiliation by id $expunge
+      x-summary-source: derived
+      operationId: postOrganizationAffiliationById$expunge
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$graphql:
     get:
       tags:
@@ -603,6 +653,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get organization affiliation by id $graphql
+      x-summary-source: derived
+      operationId: getOrganizationAffiliationById$graphql
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$binary-access-write:
     post:
       tags:
@@ -634,6 +688,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create organization affiliation by id $binary access write
+      x-summary-source: derived
+      operationId: postOrganizationAffiliationById$binaryAccessWrite
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$binary-access-read:
     get:
       tags:
@@ -662,6 +720,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get organization affiliation by id $binary access read
+      x-summary-source: derived
+      operationId: getOrganizationAffiliationById$binaryAccessRead
+      x-operation-id-source: derived
   /OrganizationAffiliation/{id}/$diff:
     get:
       tags:
@@ -712,12 +774,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getOrganizationAffiliationById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

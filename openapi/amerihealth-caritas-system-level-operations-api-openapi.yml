@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance System Level Operations API
+  title: AmeriHealth Caritas System Level Operations API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: Server-level operations
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -32,6 +32,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
               example: <CapabilityStatement xmlns="http://hl7.org/fhir"/>
+      operationId: getMetadata
+      x-operation-id-source: derived
   /:
     post:
       tags:
@@ -55,11 +57,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postRoot
+      x-operation-id-source: derived
   /_history:
     get:
       tags:
       - System Level Operations
-      summary: 'server-history: Fetch the resource change history across all resource types on the server'
+      summary: 'server-history: Fetch the resource change history across all resource types on…'
       responses:
         '200':
           description: Success
@@ -70,6 +74,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHistory
+      x-operation-id-source: derived
   /$reindex:
     post:
       tags:
@@ -91,6 +97,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $reindex
+      x-summary-source: derived
+      operationId: post$reindex
+      x-operation-id-source: derived
   /$submit-attachment:
     post:
       tags:
@@ -112,6 +122,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $submit attachment
+      x-summary-source: derived
+      operationId: post$submitAttachment
+      x-operation-id-source: derived
   /$diff:
     get:
       tags:
@@ -153,6 +167,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: get$diff
+      x-operation-id-source: derived
   /$process-message:
     post:
       tags:
@@ -175,6 +191,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $process message
+      x-summary-source: derived
+      operationId: post$processMessage
+      x-operation-id-source: derived
   /$perform-reindexing-pass:
     post:
       tags:
@@ -197,6 +217,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $perform reindexing pass
+      x-summary-source: derived
+      operationId: post$performReindexingPass
+      x-operation-id-source: derived
   /$meta:
     get:
       tags:
@@ -217,6 +241,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get $meta
+      x-summary-source: derived
+      operationId: get$meta
+      x-operation-id-source: derived
   /$mark-all-resources-for-reindexing:
     post:
       tags:
@@ -239,11 +267,15 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $mark all resources for reindexing
+      x-summary-source: derived
+      operationId: post$markAllResourcesForReindexing
+      x-operation-id-source: derived
   /$get-resource-counts:
     get:
       tags:
       - System Level Operations
-      summary: Provides the number of resources currently stored on the server, broken down by resource type
+      summary: Provides the number of resources currently stored on the server, broken down by…
       description: Provides the number of resources currently stored on the server, broken down by resource type
       responses:
         '200':
@@ -255,6 +287,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: get$getResourceCounts
+      x-operation-id-source: derived
   /$expunge:
     post:
       tags:
@@ -276,6 +310,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $expunge
+      x-summary-source: derived
+      operationId: post$expunge
+      x-operation-id-source: derived
   /$reindex-terminology:
     post:
       tags:
@@ -297,6 +335,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create $reindex terminology
+      x-summary-source: derived
+      operationId: post$reindexTerminology
+      x-operation-id-source: derived
   /$graphql:
     get:
       tags:
@@ -312,12 +354,16 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get $graphql
+      x-summary-source: derived
+      operationId: get$graphql
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

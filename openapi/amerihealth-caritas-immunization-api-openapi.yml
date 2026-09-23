@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance Immunization API
+  title: AmeriHealth Caritas Immunization API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The Immunization FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getImmunizationById
+      x-operation-id-source: derived
     put:
       tags:
       - Immunization
-      summary: 'update-instance: Update an existing Immunization instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing Immunization instance, or create using a…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putImmunizationById
+      x-operation-id-source: derived
     delete:
       tags:
       - Immunization
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteImmunizationById
+      x-operation-id-source: derived
     patch:
       tags:
       - Immunization
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchImmunizationById
+      x-operation-id-source: derived
   /Immunization/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getImmunizationByIdHistoryByVersionId
+      x-operation-id-source: derived
   /Immunization:
     get:
       tags:
@@ -287,6 +297,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getImmunization
+      x-operation-id-source: derived
     post:
       tags:
       - Immunization
@@ -311,11 +323,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postImmunization
+      x-operation-id-source: derived
   /Immunization/_history:
     get:
       tags:
       - Immunization
-      summary: 'type-history: Fetch the resource change history for all resources of type Immunization'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -326,11 +340,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getImmunizationHistory
+      x-operation-id-source: derived
   /Immunization/{id}/_history:
     get:
       tags:
       - Immunization
-      summary: 'instance-history: Fetch the resource change history for all resources of type Immunization'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -351,6 +367,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getImmunizationByIdHistory
+      x-operation-id-source: derived
   /Immunization/$validate:
     get:
       tags:
@@ -378,6 +396,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get immunization $validate
+      x-summary-source: derived
+      operationId: getImmunization$validate
+      x-operation-id-source: derived
   /Immunization/{id}/$validate:
     get:
       tags:
@@ -414,6 +436,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get immunization by id $validate
+      x-summary-source: derived
+      operationId: getImmunizationById$validate
+      x-operation-id-source: derived
   /Immunization/{id}/$meta-delete:
     post:
       tags:
@@ -446,6 +472,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create immunization by id $meta delete
+      x-summary-source: derived
+      operationId: postImmunizationById$metaDelete
+      x-operation-id-source: derived
   /Immunization/{id}/$meta-add:
     post:
       tags:
@@ -478,6 +508,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create immunization by id $meta add
+      x-summary-source: derived
+      operationId: postImmunizationById$metaAdd
+      x-operation-id-source: derived
   /Immunization/$meta:
     get:
       tags:
@@ -498,6 +532,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get immunization $meta
+      x-summary-source: derived
+      operationId: getImmunization$meta
+      x-operation-id-source: derived
   /Immunization/{id}/$meta:
     get:
       tags:
@@ -527,6 +565,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get immunization by id $meta
+      x-summary-source: derived
+      operationId: getImmunizationById$meta
+      x-operation-id-source: derived
   /Immunization/$expunge:
     post:
       tags:
@@ -548,6 +590,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create immunization $expunge
+      x-summary-source: derived
+      operationId: postImmunization$expunge
+      x-operation-id-source: derived
   /Immunization/{id}/$expunge:
     post:
       tags:
@@ -579,6 +625,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create immunization by id $expunge
+      x-summary-source: derived
+      operationId: postImmunizationById$expunge
+      x-operation-id-source: derived
   /Immunization/{id}/$graphql:
     get:
       tags:
@@ -604,6 +654,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get immunization by id $graphql
+      x-summary-source: derived
+      operationId: getImmunizationById$graphql
+      x-operation-id-source: derived
   /Immunization/{id}/$binary-access-write:
     post:
       tags:
@@ -635,6 +689,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create immunization by id $binary access write
+      x-summary-source: derived
+      operationId: postImmunizationById$binaryAccessWrite
+      x-operation-id-source: derived
   /Immunization/{id}/$binary-access-read:
     get:
       tags:
@@ -663,6 +721,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get immunization by id $binary access read
+      x-summary-source: derived
+      operationId: getImmunizationById$binaryAccessRead
+      x-operation-id-source: derived
   /Immunization/{id}/$diff:
     get:
       tags:
@@ -713,12 +775,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getImmunizationById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

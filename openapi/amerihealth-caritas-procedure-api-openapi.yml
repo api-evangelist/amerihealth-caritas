@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance Procedure API
+  title: AmeriHealth Caritas Procedure API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The Procedure FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getProcedureById
+      x-operation-id-source: derived
     put:
       tags:
       - Procedure
-      summary: 'update-instance: Update an existing Procedure instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing Procedure instance, or create using a…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putProcedureById
+      x-operation-id-source: derived
     delete:
       tags:
       - Procedure
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteProcedureById
+      x-operation-id-source: derived
     patch:
       tags:
       - Procedure
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchProcedureById
+      x-operation-id-source: derived
   /Procedure/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getProcedureByIdHistoryByVersionId
+      x-operation-id-source: derived
   /Procedure:
     get:
       tags:
@@ -287,6 +297,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getProcedure
+      x-operation-id-source: derived
     post:
       tags:
       - Procedure
@@ -311,11 +323,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postProcedure
+      x-operation-id-source: derived
   /Procedure/_history:
     get:
       tags:
       - Procedure
-      summary: 'type-history: Fetch the resource change history for all resources of type Procedure'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -326,11 +340,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getProcedureHistory
+      x-operation-id-source: derived
   /Procedure/{id}/_history:
     get:
       tags:
       - Procedure
-      summary: 'instance-history: Fetch the resource change history for all resources of type Procedure'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -351,6 +367,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getProcedureByIdHistory
+      x-operation-id-source: derived
   /Procedure/$validate:
     get:
       tags:
@@ -378,6 +396,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get procedure $validate
+      x-summary-source: derived
+      operationId: getProcedure$validate
+      x-operation-id-source: derived
   /Procedure/{id}/$validate:
     get:
       tags:
@@ -414,6 +436,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get procedure by id $validate
+      x-summary-source: derived
+      operationId: getProcedureById$validate
+      x-operation-id-source: derived
   /Procedure/{id}/$meta-delete:
     post:
       tags:
@@ -446,6 +472,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create procedure by id $meta delete
+      x-summary-source: derived
+      operationId: postProcedureById$metaDelete
+      x-operation-id-source: derived
   /Procedure/{id}/$meta-add:
     post:
       tags:
@@ -478,6 +508,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create procedure by id $meta add
+      x-summary-source: derived
+      operationId: postProcedureById$metaAdd
+      x-operation-id-source: derived
   /Procedure/$meta:
     get:
       tags:
@@ -498,6 +532,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get procedure $meta
+      x-summary-source: derived
+      operationId: getProcedure$meta
+      x-operation-id-source: derived
   /Procedure/{id}/$meta:
     get:
       tags:
@@ -527,6 +565,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get procedure by id $meta
+      x-summary-source: derived
+      operationId: getProcedureById$meta
+      x-operation-id-source: derived
   /Procedure/$expunge:
     post:
       tags:
@@ -548,6 +590,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create procedure $expunge
+      x-summary-source: derived
+      operationId: postProcedure$expunge
+      x-operation-id-source: derived
   /Procedure/{id}/$expunge:
     post:
       tags:
@@ -579,6 +625,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create procedure by id $expunge
+      x-summary-source: derived
+      operationId: postProcedureById$expunge
+      x-operation-id-source: derived
   /Procedure/{id}/$graphql:
     get:
       tags:
@@ -604,6 +654,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get procedure by id $graphql
+      x-summary-source: derived
+      operationId: getProcedureById$graphql
+      x-operation-id-source: derived
   /Procedure/{id}/$binary-access-write:
     post:
       tags:
@@ -635,6 +689,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create procedure by id $binary access write
+      x-summary-source: derived
+      operationId: postProcedureById$binaryAccessWrite
+      x-operation-id-source: derived
   /Procedure/{id}/$binary-access-read:
     get:
       tags:
@@ -663,6 +721,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get procedure by id $binary access read
+      x-summary-source: derived
+      operationId: getProcedureById$binaryAccessRead
+      x-operation-id-source: derived
   /Procedure/{id}/$diff:
     get:
       tags:
@@ -713,12 +775,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getProcedureById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

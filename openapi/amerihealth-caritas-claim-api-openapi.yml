@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance Claim API
+  title: AmeriHealth Caritas Claim API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The Claim FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getClaimById
+      x-operation-id-source: derived
     put:
       tags:
       - Claim
-      summary: 'update-instance: Update an existing Claim instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing Claim instance, or create using a…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putClaimById
+      x-operation-id-source: derived
     delete:
       tags:
       - Claim
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteClaimById
+      x-operation-id-source: derived
     patch:
       tags:
       - Claim
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchClaimById
+      x-operation-id-source: derived
   /Claim/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getClaimByIdHistoryByVersionId
+      x-operation-id-source: derived
   /Claim:
     get:
       tags:
@@ -291,6 +301,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getClaim
+      x-operation-id-source: derived
     post:
       tags:
       - Claim
@@ -315,6 +327,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postClaim
+      x-operation-id-source: derived
   /Claim/_history:
     get:
       tags:
@@ -330,11 +344,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getClaimHistory
+      x-operation-id-source: derived
   /Claim/{id}/_history:
     get:
       tags:
       - Claim
-      summary: 'instance-history: Fetch the resource change history for all resources of type Claim'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -355,6 +371,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getClaimByIdHistory
+      x-operation-id-source: derived
   /Claim/$validate:
     get:
       tags:
@@ -382,6 +400,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get claim $validate
+      x-summary-source: derived
+      operationId: getClaim$validate
+      x-operation-id-source: derived
   /Claim/{id}/$validate:
     get:
       tags:
@@ -418,6 +440,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get claim by id $validate
+      x-summary-source: derived
+      operationId: getClaimById$validate
+      x-operation-id-source: derived
   /Claim/{id}/$meta-delete:
     post:
       tags:
@@ -450,6 +476,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create claim by id $meta delete
+      x-summary-source: derived
+      operationId: postClaimById$metaDelete
+      x-operation-id-source: derived
   /Claim/{id}/$meta-add:
     post:
       tags:
@@ -482,6 +512,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create claim by id $meta add
+      x-summary-source: derived
+      operationId: postClaimById$metaAdd
+      x-operation-id-source: derived
   /Claim/$meta:
     get:
       tags:
@@ -502,6 +536,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get claim $meta
+      x-summary-source: derived
+      operationId: getClaim$meta
+      x-operation-id-source: derived
   /Claim/{id}/$meta:
     get:
       tags:
@@ -531,6 +569,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get claim by id $meta
+      x-summary-source: derived
+      operationId: getClaimById$meta
+      x-operation-id-source: derived
   /Claim/$expunge:
     post:
       tags:
@@ -552,6 +594,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create claim $expunge
+      x-summary-source: derived
+      operationId: postClaim$expunge
+      x-operation-id-source: derived
   /Claim/{id}/$expunge:
     post:
       tags:
@@ -583,6 +629,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create claim by id $expunge
+      x-summary-source: derived
+      operationId: postClaimById$expunge
+      x-operation-id-source: derived
   /Claim/{id}/$graphql:
     get:
       tags:
@@ -608,6 +658,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get claim by id $graphql
+      x-summary-source: derived
+      operationId: getClaimById$graphql
+      x-operation-id-source: derived
   /Claim/{id}/$binary-access-write:
     post:
       tags:
@@ -639,6 +693,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create claim by id $binary access write
+      x-summary-source: derived
+      operationId: postClaimById$binaryAccessWrite
+      x-operation-id-source: derived
   /Claim/{id}/$binary-access-read:
     get:
       tags:
@@ -667,6 +725,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get claim by id $binary access read
+      x-summary-source: derived
+      operationId: getClaimById$binaryAccessRead
+      x-operation-id-source: derived
   /Claim/{id}/$diff:
     get:
       tags:
@@ -717,12 +779,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getClaimById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

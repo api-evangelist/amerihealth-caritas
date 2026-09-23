@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance HealthcareService API
+  title: AmeriHealth Caritas Healthcare Service API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The HealthcareService FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -12,13 +12,13 @@ security:
   - openid
   - fhirUser
 tags:
-- name: HealthcareService
+- name: Healthcare Service
   description: The HealthcareService FHIR resource type
 paths:
   /HealthcareService/{id}:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: 'read-instance: Read HealthcareService instance'
       parameters:
       - name: id
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHealthcareServiceById
+      x-operation-id-source: derived
     put:
       tags:
-      - HealthcareService
-      summary: 'update-instance: Update an existing HealthcareService instance, or create using a client-assigned ID'
+      - Healthcare Service
+      summary: 'update-instance: Update an existing HealthcareService instance, or create using…'
       parameters:
       - name: id
         in: path
@@ -74,9 +76,11 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putHealthcareServiceById
+      x-operation-id-source: derived
     delete:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: 'instance-delete: Perform a logical delete on a resource instance'
       parameters:
       - name: id
@@ -98,9 +102,11 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteHealthcareServiceById
+      x-operation-id-source: derived
     patch:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: 'instance-patch: Patch a resource instance of type HealthcareService by ID'
       parameters:
       - name: id
@@ -132,10 +138,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchHealthcareServiceById
+      x-operation-id-source: derived
   /HealthcareService/{id}/_history/{version_id}:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: 'vread-instance: Read HealthcareService instance with specific version'
       parameters:
       - name: id
@@ -166,10 +174,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHealthcareServiceByIdHistoryByVersionId
+      x-operation-id-source: derived
   /HealthcareService:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: 'search-type: Search for HealthcareService instances'
       description: This is a search type
       parameters:
@@ -278,9 +288,11 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHealthcareService
+      x-operation-id-source: derived
     post:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: 'create-type: Create a new HealthcareService instance'
       requestBody:
         content:
@@ -302,11 +314,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postHealthcareService
+      x-operation-id-source: derived
   /HealthcareService/_history:
     get:
       tags:
-      - HealthcareService
-      summary: 'type-history: Fetch the resource change history for all resources of type HealthcareService'
+      - Healthcare Service
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -317,11 +331,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHealthcareServiceHistory
+      x-operation-id-source: derived
   /HealthcareService/{id}/_history:
     get:
       tags:
-      - HealthcareService
-      summary: 'instance-history: Fetch the resource change history for all resources of type HealthcareService'
+      - Healthcare Service
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -342,10 +358,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHealthcareServiceByIdHistory
+      x-operation-id-source: derived
   /HealthcareService/$validate:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       parameters:
       - name: resource
         in: query
@@ -369,10 +387,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get healthcare service $validate
+      x-summary-source: derived
+      operationId: getHealthcareService$validate
+      x-operation-id-source: derived
   /HealthcareService/{id}/$validate:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       parameters:
       - name: id
         in: path
@@ -405,10 +427,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get healthcare service by id $validate
+      x-summary-source: derived
+      operationId: getHealthcareServiceById$validate
+      x-operation-id-source: derived
   /HealthcareService/{id}/$meta-delete:
     post:
       tags:
-      - HealthcareService
+      - Healthcare Service
       description: Delete tags, profiles, and/or security labels from a resource
       parameters:
       - name: id
@@ -437,10 +463,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create healthcare service by id $meta delete
+      x-summary-source: derived
+      operationId: postHealthcareServiceById$metaDelete
+      x-operation-id-source: derived
   /HealthcareService/{id}/$meta-add:
     post:
       tags:
-      - HealthcareService
+      - Healthcare Service
       description: Add tags, profiles, and/or security labels to a resource
       parameters:
       - name: id
@@ -469,10 +499,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create healthcare service by id $meta add
+      x-summary-source: derived
+      operationId: postHealthcareServiceById$metaAdd
+      x-operation-id-source: derived
   /HealthcareService/$meta:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       description: Request a list of tags, profiles, and security labels for a specfic resource instance
       parameters:
       - name: return
@@ -489,10 +523,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get healthcare service $meta
+      x-summary-source: derived
+      operationId: getHealthcareService$meta
+      x-operation-id-source: derived
   /HealthcareService/{id}/$meta:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       description: Request a list of tags, profiles, and security labels for a specfic resource instance
       parameters:
       - name: id
@@ -518,10 +556,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get healthcare service by id $meta
+      x-summary-source: derived
+      operationId: getHealthcareServiceById$meta
+      x-operation-id-source: derived
   /HealthcareService/$expunge:
     post:
       tags:
-      - HealthcareService
+      - Healthcare Service
       requestBody:
         content:
           application/fhir+json:
@@ -539,10 +581,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create healthcare service $expunge
+      x-summary-source: derived
+      operationId: postHealthcareService$expunge
+      x-operation-id-source: derived
   /HealthcareService/{id}/$expunge:
     post:
       tags:
-      - HealthcareService
+      - Healthcare Service
       parameters:
       - name: id
         in: path
@@ -570,10 +616,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create healthcare service by id $expunge
+      x-summary-source: derived
+      operationId: postHealthcareServiceById$expunge
+      x-operation-id-source: derived
   /HealthcareService/{id}/$graphql:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       description: This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.
       parameters:
       - name: id
@@ -595,10 +645,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get healthcare service by id $graphql
+      x-summary-source: derived
+      operationId: getHealthcareServiceById$graphql
+      x-operation-id-source: derived
   /HealthcareService/{id}/$binary-access-write:
     post:
       tags:
-      - HealthcareService
+      - Healthcare Service
       parameters:
       - name: id
         in: path
@@ -626,10 +680,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create healthcare service by id $binary access write
+      x-summary-source: derived
+      operationId: postHealthcareServiceById$binaryAccessWrite
+      x-operation-id-source: derived
   /HealthcareService/{id}/$binary-access-read:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       parameters:
       - name: id
         in: path
@@ -654,10 +712,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get healthcare service by id $binary access read
+      x-summary-source: derived
+      operationId: getHealthcareServiceById$binaryAccessRead
+      x-operation-id-source: derived
   /HealthcareService/{id}/$diff:
     get:
       tags:
-      - HealthcareService
+      - Healthcare Service
       summary: Comparte two resources or two versions of a single resource
       description: This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.
       parameters:
@@ -704,12 +766,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getHealthcareServiceById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

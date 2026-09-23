@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance MedicationDispense API
+  title: AmeriHealth Caritas Medication Dispense API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The MedicationDispense FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationDispenseById
+      x-operation-id-source: derived
     put:
       tags:
       - MedicationDispense
-      summary: 'update-instance: Update an existing MedicationDispense instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing MedicationDispense instance, or create…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putMedicationDispenseById
+      x-operation-id-source: derived
     delete:
       tags:
       - MedicationDispense
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteMedicationDispenseById
+      x-operation-id-source: derived
     patch:
       tags:
       - MedicationDispense
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchMedicationDispenseById
+      x-operation-id-source: derived
   /MedicationDispense/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationDispenseByIdHistoryByVersionId
+      x-operation-id-source: derived
   /MedicationDispense:
     get:
       tags:
@@ -283,6 +293,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationDispense
+      x-operation-id-source: derived
     post:
       tags:
       - MedicationDispense
@@ -307,11 +319,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postMedicationDispense
+      x-operation-id-source: derived
   /MedicationDispense/_history:
     get:
       tags:
       - MedicationDispense
-      summary: 'type-history: Fetch the resource change history for all resources of type MedicationDispense'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -322,11 +336,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationDispenseHistory
+      x-operation-id-source: derived
   /MedicationDispense/{id}/_history:
     get:
       tags:
       - MedicationDispense
-      summary: 'instance-history: Fetch the resource change history for all resources of type MedicationDispense'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -347,6 +363,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationDispenseByIdHistory
+      x-operation-id-source: derived
   /MedicationDispense/$validate:
     get:
       tags:
@@ -374,6 +392,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get medication dispense $validate
+      x-summary-source: derived
+      operationId: getMedicationDispense$validate
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$validate:
     get:
       tags:
@@ -410,6 +432,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get medication dispense by id $validate
+      x-summary-source: derived
+      operationId: getMedicationDispenseById$validate
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$meta-delete:
     post:
       tags:
@@ -442,6 +468,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create medication dispense by id $meta delete
+      x-summary-source: derived
+      operationId: postMedicationDispenseById$metaDelete
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$meta-add:
     post:
       tags:
@@ -474,6 +504,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create medication dispense by id $meta add
+      x-summary-source: derived
+      operationId: postMedicationDispenseById$metaAdd
+      x-operation-id-source: derived
   /MedicationDispense/$meta:
     get:
       tags:
@@ -494,6 +528,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get medication dispense $meta
+      x-summary-source: derived
+      operationId: getMedicationDispense$meta
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$meta:
     get:
       tags:
@@ -523,6 +561,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get medication dispense by id $meta
+      x-summary-source: derived
+      operationId: getMedicationDispenseById$meta
+      x-operation-id-source: derived
   /MedicationDispense/$expunge:
     post:
       tags:
@@ -544,6 +586,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create medication dispense $expunge
+      x-summary-source: derived
+      operationId: postMedicationDispense$expunge
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$expunge:
     post:
       tags:
@@ -575,6 +621,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create medication dispense by id $expunge
+      x-summary-source: derived
+      operationId: postMedicationDispenseById$expunge
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$graphql:
     get:
       tags:
@@ -600,6 +650,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get medication dispense by id $graphql
+      x-summary-source: derived
+      operationId: getMedicationDispenseById$graphql
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$binary-access-write:
     post:
       tags:
@@ -631,6 +685,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create medication dispense by id $binary access write
+      x-summary-source: derived
+      operationId: postMedicationDispenseById$binaryAccessWrite
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$binary-access-read:
     get:
       tags:
@@ -659,6 +717,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get medication dispense by id $binary access read
+      x-summary-source: derived
+      operationId: getMedicationDispenseById$binaryAccessRead
+      x-operation-id-source: derived
   /MedicationDispense/{id}/$diff:
     get:
       tags:
@@ -709,12 +771,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationDispenseById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

@@ -1,5 +1,5 @@
-aid: amerihealth-caritas
-name: AmeriHealth Caritas Rules
+x-aid: amerihealth-caritas
+x-name: AmeriHealth Caritas Rules
 description: >-
   Operational rules and Spectral-style guardrails for working with the
   AmeriHealth Caritas FHIR R4 Patient Access, Provider Directory, and
@@ -7,7 +7,7 @@ description: >-
   on FHIR authentication, HIPAA handling, per-plan endpoint routing
   conventions, and read-only safety posture expected from agents and
   integrations.
-modified: '2026-05-23'
+x-modified: '2026-05-23'
 rules:
   - id: ahc-fhir-r4-conformance
     name: FHIR R4 (4.0.1) Conformance
@@ -148,6 +148,6 @@ rules:
       - amerihealth-caritas:provider-directory-api
       - amerihealth-caritas:formulary-api
     severity: recommended
-maintainers:
+x-maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

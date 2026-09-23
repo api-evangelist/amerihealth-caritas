@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance MedicationRequest API
+  title: AmeriHealth Caritas Allergy Intolerance API
   contact: {}
   version: 1.0.0
   description: The AllergyIntolerance FHIR resource type
@@ -12,14 +12,14 @@ security:
   - openid
   - fhirUser
 tags:
-- name: MedicationRequest
-  description: The MedicationRequest FHIR resource type
+- name: Allergy Intolerance
+  description: The AllergyIntolerance FHIR resource type
 paths:
-  /MedicationRequest/{id}:
+  /AllergyIntolerance/{id}:
     get:
       tags:
-      - MedicationRequest
-      summary: 'read-instance: Read MedicationRequest instance'
+      - Allergy Intolerance
+      summary: 'read-instance: Read AllergyIntolerance instance'
       parameters:
       - name: id
         in: path
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getAllergyIntoleranceById
+      x-operation-id-source: derived
     put:
       tags:
-      - MedicationRequest
-      summary: 'update-instance: Update an existing MedicationRequest instance, or create using a client-assigned ID'
+      - Allergy Intolerance
+      summary: 'update-instance: Update an existing AllergyIntolerance instance, or create…'
       parameters:
       - name: id
         in: path
@@ -59,11 +61,11 @@ paths:
           application/fhir+json:
             schema:
               $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            example: "{\n  \"resourceType\": \"MedicationRequest\"\n}"
+            example: "{\n  \"resourceType\": \"AllergyIntolerance\"\n}"
           application/fhir+xml:
             schema:
               $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: <MedicationRequest xmlns="http://hl7.org/fhir"/>
+            example: <AllergyIntolerance xmlns="http://hl7.org/fhir"/>
       responses:
         '200':
           description: Success
@@ -74,9 +76,11 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putAllergyIntoleranceById
+      x-operation-id-source: derived
     delete:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       summary: 'instance-delete: Perform a logical delete on a resource instance'
       parameters:
       - name: id
@@ -98,10 +102,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteAllergyIntoleranceById
+      x-operation-id-source: derived
     patch:
       tags:
-      - MedicationRequest
-      summary: 'instance-patch: Patch a resource instance of type MedicationRequest by ID'
+      - Allergy Intolerance
+      summary: 'instance-patch: Patch a resource instance of type AllergyIntolerance by ID'
       parameters:
       - name: id
         in: path
@@ -132,11 +138,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/_history/{version_id}:
+      operationId: patchAllergyIntoleranceById
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/_history/{version_id}:
     get:
       tags:
-      - MedicationRequest
-      summary: 'vread-instance: Read MedicationRequest instance with specific version'
+      - Allergy Intolerance
+      summary: 'vread-instance: Read AllergyIntolerance instance with specific version'
       parameters:
       - name: id
         in: path
@@ -166,80 +174,82 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest:
+      operationId: getAllergyIntoleranceByIdHistoryByVersionId
+      x-operation-id-source: derived
+  /AllergyIntolerance:
     get:
       tags:
-      - MedicationRequest
-      summary: 'search-type: Search for MedicationRequest instances'
+      - Allergy Intolerance
+      summary: 'search-type: Search for AllergyIntolerance instances'
       description: This is a search type
       parameters:
       - name: date
         in: query
-        description: Returns medication request to be administered on a specific date
-        style: simple
-      - name: authoredon
-        in: query
-        description: Return prescriptions written on this date
+        description: Date first version of the resource instance was recorded
         style: simple
       - name: code
         in: query
-        description: Return prescriptions of this medication code
-        style: simple
-      - name: subject
-        in: query
-        description: The identity of a patient to list orders  for
+        description: Code that identifies the allergy or intolerance
         style: simple
       - name: resource-placeholder
         in: query
-        description: Search for resources of type [MedicationRequest] populated with the resource-placeholder extension
+        description: Search for resources of type [AllergyIntolerance] populated with the resource-placeholder extension
+        style: simple
+      - name: verification-status
+        in: query
+        description: unconfirmed | confirmed | refuted | entered-in-error
         style: simple
       - name: _lastUpdated
         in: query
         description: Only return resources which were last updated as specified by the given range
         style: simple
-      - name: intended-performer
+      - name: criticality
         in: query
-        description: Returns the intended performer of the administration of the medication request
+        description: low | high | unable-to-assess
+        style: simple
+      - name: clinical-status
+        in: query
+        description: active | inactive | resolved
+        style: simple
+      - name: type
+        in: query
+        description: allergy | intolerance - Underlying mechanism (if known)
         style: simple
       - name: patient
         in: query
-        description: Returns prescriptions for a specific patient
+        description: Who the sensitivity is for
         style: simple
-      - name: intended-performertype
+      - name: severity
         in: query
-        description: Returns requests for a specific type of performer
-        style: simple
-      - name: requester
-        in: query
-        description: Returns prescriptions prescribed by this prescriber
+        description: mild | moderate | severe (of event as a whole)
         style: simple
       - name: identifier
         in: query
-        description: Return prescriptions with this external identifier
+        description: External ids for this item
         style: simple
-      - name: intended-dispenser
+      - name: manifestation
         in: query
-        description: Returns prescriptions intended to be dispensed by this Organization
+        description: Clinical symptoms/signs associated with the Event
+        style: simple
+      - name: recorder
+        in: query
+        description: Who recorded the sensitivity
         style: simple
       - name: _security
         in: query
         description: Search for resources which have the given security labels
         style: simple
-      - name: medication
+      - name: onset
         in: query
-        description: Return prescriptions for this medication reference
+        description: Date(/time) when manifestations showed
         style: simple
-      - name: encounter
+      - name: route
         in: query
-        description: Return prescriptions with this encounter identifier
+        description: How the subject was exposed to the substance
         style: simple
-      - name: priority
+      - name: asserter
         in: query
-        description: Returns prescriptions with different priorities
-        style: simple
-      - name: intent
-        in: query
-        description: Returns prescriptions with different intents
+        description: Source of the information about the allergy
         style: simple
       - name: _profile
         in: query
@@ -263,7 +273,7 @@ paths:
         style: simple
       - name: category
         in: query
-        description: Returns prescriptions with different categories
+        description: food | medication | environment | biologic
         style: simple
       - name: _content
         in: query
@@ -273,9 +283,9 @@ paths:
         in: query
         description: Search the contents of the resource's narrative using a fulltext search
         style: simple
-      - name: status
+      - name: last-date
         in: query
-        description: Status of the prescription
+        description: Date(/time) of last known occurrence of a reaction
         style: simple
       responses:
         '200':
@@ -287,20 +297,22 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getAllergyIntolerance
+      x-operation-id-source: derived
     post:
       tags:
-      - MedicationRequest
-      summary: 'create-type: Create a new MedicationRequest instance'
+      - Allergy Intolerance
+      summary: 'create-type: Create a new AllergyIntolerance instance'
       requestBody:
         content:
           application/fhir+json:
             schema:
               $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            example: "{\n  \"resourceType\": \"MedicationRequest\"\n}"
+            example: "{\n  \"resourceType\": \"AllergyIntolerance\"\n}"
           application/fhir+xml:
             schema:
               $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: <MedicationRequest xmlns="http://hl7.org/fhir"/>
+            example: <AllergyIntolerance xmlns="http://hl7.org/fhir"/>
       responses:
         '200':
           description: Success
@@ -311,11 +323,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/_history:
+      operationId: postAllergyIntolerance
+      x-operation-id-source: derived
+  /AllergyIntolerance/_history:
     get:
       tags:
-      - MedicationRequest
-      summary: 'type-history: Fetch the resource change history for all resources of type MedicationRequest'
+      - Allergy Intolerance
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -326,11 +340,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/_history:
+      operationId: getAllergyIntoleranceHistory
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/_history:
     get:
       tags:
-      - MedicationRequest
-      summary: 'instance-history: Fetch the resource change history for all resources of type MedicationRequest'
+      - Allergy Intolerance
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -351,10 +367,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/$validate:
+      operationId: getAllergyIntoleranceByIdHistory
+      x-operation-id-source: derived
+  /AllergyIntolerance/$validate:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       parameters:
       - name: resource
         in: query
@@ -378,10 +396,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$validate:
+      summary: Get allergy intolerance $validate
+      x-summary-source: derived
+      operationId: getAllergyIntolerance$validate
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$validate:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       parameters:
       - name: id
         in: path
@@ -414,10 +436,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$meta-delete:
+      summary: Get allergy intolerance by id $validate
+      x-summary-source: derived
+      operationId: getAllergyIntoleranceById$validate
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$meta-delete:
     post:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       description: Delete tags, profiles, and/or security labels from a resource
       parameters:
       - name: id
@@ -446,10 +472,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$meta-add:
+      summary: Create allergy intolerance by id $meta delete
+      x-summary-source: derived
+      operationId: postAllergyIntoleranceById$metaDelete
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$meta-add:
     post:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       description: Add tags, profiles, and/or security labels to a resource
       parameters:
       - name: id
@@ -478,10 +508,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/$meta:
+      summary: Create allergy intolerance by id $meta add
+      x-summary-source: derived
+      operationId: postAllergyIntoleranceById$metaAdd
+      x-operation-id-source: derived
+  /AllergyIntolerance/$meta:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       description: Request a list of tags, profiles, and security labels for a specfic resource instance
       parameters:
       - name: return
@@ -498,10 +532,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$meta:
+      summary: Get allergy intolerance $meta
+      x-summary-source: derived
+      operationId: getAllergyIntolerance$meta
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$meta:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       description: Request a list of tags, profiles, and security labels for a specfic resource instance
       parameters:
       - name: id
@@ -527,10 +565,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/$expunge:
+      summary: Get allergy intolerance by id $meta
+      x-summary-source: derived
+      operationId: getAllergyIntoleranceById$meta
+      x-operation-id-source: derived
+  /AllergyIntolerance/$expunge:
     post:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       requestBody:
         content:
           application/fhir+json:
@@ -548,10 +590,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$expunge:
+      summary: Create allergy intolerance $expunge
+      x-summary-source: derived
+      operationId: postAllergyIntolerance$expunge
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$expunge:
     post:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       parameters:
       - name: id
         in: path
@@ -579,10 +625,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$graphql:
+      summary: Create allergy intolerance by id $expunge
+      x-summary-source: derived
+      operationId: postAllergyIntoleranceById$expunge
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$graphql:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       description: This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.
       parameters:
       - name: id
@@ -604,10 +654,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$binary-access-write:
+      summary: Get allergy intolerance by id $graphql
+      x-summary-source: derived
+      operationId: getAllergyIntoleranceById$graphql
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$binary-access-write:
     post:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       parameters:
       - name: id
         in: path
@@ -635,10 +689,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$binary-access-read:
+      summary: Create allergy intolerance by id $binary access write
+      x-summary-source: derived
+      operationId: postAllergyIntoleranceById$binaryAccessWrite
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$binary-access-read:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       parameters:
       - name: id
         in: path
@@ -663,10 +721,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /MedicationRequest/{id}/$diff:
+      summary: Get allergy intolerance by id $binary access read
+      x-summary-source: derived
+      operationId: getAllergyIntoleranceById$binaryAccessRead
+      x-operation-id-source: derived
+  /AllergyIntolerance/{id}/$diff:
     get:
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       summary: Comparte two resources or two versions of a single resource
       description: This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.
       parameters:
@@ -713,12 +775,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getAllergyIntoleranceById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

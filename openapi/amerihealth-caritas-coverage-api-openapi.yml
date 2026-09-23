@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance Coverage API
+  title: AmeriHealth Caritas Coverage API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The Coverage FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getCoverageById
+      x-operation-id-source: derived
     put:
       tags:
       - Coverage
-      summary: 'update-instance: Update an existing Coverage instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing Coverage instance, or create using a…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putCoverageById
+      x-operation-id-source: derived
     delete:
       tags:
       - Coverage
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteCoverageById
+      x-operation-id-source: derived
     patch:
       tags:
       - Coverage
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchCoverageById
+      x-operation-id-source: derived
   /Coverage/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getCoverageByIdHistoryByVersionId
+      x-operation-id-source: derived
   /Coverage:
     get:
       tags:
@@ -274,6 +284,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getCoverage
+      x-operation-id-source: derived
     post:
       tags:
       - Coverage
@@ -298,11 +310,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postCoverage
+      x-operation-id-source: derived
   /Coverage/_history:
     get:
       tags:
       - Coverage
-      summary: 'type-history: Fetch the resource change history for all resources of type Coverage'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -313,11 +327,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getCoverageHistory
+      x-operation-id-source: derived
   /Coverage/{id}/_history:
     get:
       tags:
       - Coverage
-      summary: 'instance-history: Fetch the resource change history for all resources of type Coverage'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -338,6 +354,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getCoverageByIdHistory
+      x-operation-id-source: derived
   /Coverage/$validate:
     get:
       tags:
@@ -365,6 +383,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get coverage $validate
+      x-summary-source: derived
+      operationId: getCoverage$validate
+      x-operation-id-source: derived
   /Coverage/{id}/$validate:
     get:
       tags:
@@ -401,6 +423,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get coverage by id $validate
+      x-summary-source: derived
+      operationId: getCoverageById$validate
+      x-operation-id-source: derived
   /Coverage/{id}/$meta-delete:
     post:
       tags:
@@ -433,6 +459,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create coverage by id $meta delete
+      x-summary-source: derived
+      operationId: postCoverageById$metaDelete
+      x-operation-id-source: derived
   /Coverage/{id}/$meta-add:
     post:
       tags:
@@ -465,6 +495,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create coverage by id $meta add
+      x-summary-source: derived
+      operationId: postCoverageById$metaAdd
+      x-operation-id-source: derived
   /Coverage/$meta:
     get:
       tags:
@@ -485,6 +519,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get coverage $meta
+      x-summary-source: derived
+      operationId: getCoverage$meta
+      x-operation-id-source: derived
   /Coverage/{id}/$meta:
     get:
       tags:
@@ -514,6 +552,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get coverage by id $meta
+      x-summary-source: derived
+      operationId: getCoverageById$meta
+      x-operation-id-source: derived
   /Coverage/$expunge:
     post:
       tags:
@@ -535,6 +577,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create coverage $expunge
+      x-summary-source: derived
+      operationId: postCoverage$expunge
+      x-operation-id-source: derived
   /Coverage/{id}/$expunge:
     post:
       tags:
@@ -566,6 +612,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create coverage by id $expunge
+      x-summary-source: derived
+      operationId: postCoverageById$expunge
+      x-operation-id-source: derived
   /Coverage/{id}/$graphql:
     get:
       tags:
@@ -591,6 +641,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get coverage by id $graphql
+      x-summary-source: derived
+      operationId: getCoverageById$graphql
+      x-operation-id-source: derived
   /Coverage/{id}/$binary-access-write:
     post:
       tags:
@@ -622,6 +676,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create coverage by id $binary access write
+      x-summary-source: derived
+      operationId: postCoverageById$binaryAccessWrite
+      x-operation-id-source: derived
   /Coverage/{id}/$binary-access-read:
     get:
       tags:
@@ -650,6 +708,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get coverage by id $binary access read
+      x-summary-source: derived
+      operationId: getCoverageById$binaryAccessRead
+      x-operation-id-source: derived
   /Coverage/{id}/$diff:
     get:
       tags:
@@ -700,12 +762,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getCoverageById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

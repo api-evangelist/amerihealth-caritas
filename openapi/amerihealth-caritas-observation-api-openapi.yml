@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance Observation API
+  title: AmeriHealth Caritas Observation API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The Observation FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getObservationById
+      x-operation-id-source: derived
     put:
       tags:
       - Observation
-      summary: 'update-instance: Update an existing Observation instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing Observation instance, or create using a…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putObservationById
+      x-operation-id-source: derived
     delete:
       tags:
       - Observation
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteObservationById
+      x-operation-id-source: derived
     patch:
       tags:
       - Observation
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchObservationById
+      x-operation-id-source: derived
   /Observation/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getObservationByIdHistoryByVersionId
+      x-operation-id-source: derived
   /Observation:
     get:
       tags:
@@ -343,6 +353,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getObservation
+      x-operation-id-source: derived
     post:
       tags:
       - Observation
@@ -367,11 +379,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postObservation
+      x-operation-id-source: derived
   /Observation/_history:
     get:
       tags:
       - Observation
-      summary: 'type-history: Fetch the resource change history for all resources of type Observation'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -382,11 +396,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getObservationHistory
+      x-operation-id-source: derived
   /Observation/{id}/_history:
     get:
       tags:
       - Observation
-      summary: 'instance-history: Fetch the resource change history for all resources of type Observation'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -407,6 +423,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getObservationByIdHistory
+      x-operation-id-source: derived
   /Observation/$validate:
     get:
       tags:
@@ -434,6 +452,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation $validate
+      x-summary-source: derived
+      operationId: getObservation$validate
+      x-operation-id-source: derived
   /Observation/{id}/$validate:
     get:
       tags:
@@ -470,6 +492,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation by id $validate
+      x-summary-source: derived
+      operationId: getObservationById$validate
+      x-operation-id-source: derived
   /Observation/{id}/$meta-delete:
     post:
       tags:
@@ -502,6 +528,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create observation by id $meta delete
+      x-summary-source: derived
+      operationId: postObservationById$metaDelete
+      x-operation-id-source: derived
   /Observation/{id}/$meta-add:
     post:
       tags:
@@ -534,6 +564,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create observation by id $meta add
+      x-summary-source: derived
+      operationId: postObservationById$metaAdd
+      x-operation-id-source: derived
   /Observation/$meta:
     get:
       tags:
@@ -554,6 +588,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation $meta
+      x-summary-source: derived
+      operationId: getObservation$meta
+      x-operation-id-source: derived
   /Observation/{id}/$meta:
     get:
       tags:
@@ -583,6 +621,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation by id $meta
+      x-summary-source: derived
+      operationId: getObservationById$meta
+      x-operation-id-source: derived
   /Observation/$expunge:
     post:
       tags:
@@ -604,6 +646,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create observation $expunge
+      x-summary-source: derived
+      operationId: postObservation$expunge
+      x-operation-id-source: derived
   /Observation/{id}/$expunge:
     post:
       tags:
@@ -635,6 +681,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create observation by id $expunge
+      x-summary-source: derived
+      operationId: postObservationById$expunge
+      x-operation-id-source: derived
   /Observation/$lastn:
     get:
       tags:
@@ -685,6 +735,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation $lastn
+      x-summary-source: derived
+      operationId: getObservation$lastn
+      x-operation-id-source: derived
   /Observation/{id}/$graphql:
     get:
       tags:
@@ -710,6 +764,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation by id $graphql
+      x-summary-source: derived
+      operationId: getObservationById$graphql
+      x-operation-id-source: derived
   /Observation/{id}/$binary-access-write:
     post:
       tags:
@@ -741,6 +799,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create observation by id $binary access write
+      x-summary-source: derived
+      operationId: postObservationById$binaryAccessWrite
+      x-operation-id-source: derived
   /Observation/{id}/$binary-access-read:
     get:
       tags:
@@ -769,6 +831,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get observation by id $binary access read
+      x-summary-source: derived
+      operationId: getObservationById$binaryAccessRead
+      x-operation-id-source: derived
   /Observation/{id}/$diff:
     get:
       tags:
@@ -819,12 +885,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getObservationById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

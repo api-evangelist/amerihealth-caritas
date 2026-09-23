@@ -1,29 +1,7 @@
 {
   "provider": "amerihealth-caritas",
   "sources": [
-    "amerihealth-caritas-allergyintolerance-api-openapi.yml",
-    "amerihealth-caritas-claim-api-openapi.yml",
-    "amerihealth-caritas-condition-api-openapi.yml",
-    "amerihealth-caritas-coverage-api-openapi.yml",
-    "amerihealth-caritas-encounter-api-openapi.yml",
-    "amerihealth-caritas-explanationofbenefit-api-openapi.yml",
-    "amerihealth-caritas-healthcareservice-api-openapi.yml",
-    "amerihealth-caritas-immunization-api-openapi.yml",
-    "amerihealth-caritas-insuranceplan-api-openapi.yml",
-    "amerihealth-caritas-list-api-openapi.yml",
-    "amerihealth-caritas-location-api-openapi.yml",
-    "amerihealth-caritas-medication-api-openapi.yml",
-    "amerihealth-caritas-medicationdispense-api-openapi.yml",
-    "amerihealth-caritas-medicationknowledge-api-openapi.yml",
-    "amerihealth-caritas-medicationrequest-api-openapi.yml",
-    "amerihealth-caritas-observation-api-openapi.yml",
-    "amerihealth-caritas-organization-api-openapi.yml",
-    "amerihealth-caritas-organizationaffiliation-api-openapi.yml",
-    "amerihealth-caritas-patient-api-openapi.yml",
-    "amerihealth-caritas-practitioner-api-openapi.yml",
-    "amerihealth-caritas-practitionerrole-api-openapi.yml",
-    "amerihealth-caritas-procedure-api-openapi.yml",
-    "amerihealth-caritas-system-level-operations-api-openapi.yml"
+    "_original/amerihealth-caritas-patient-access-openapi.yml"
   ],
   "outputs": [
     "amerihealth-caritas-allergyintolerance-api-openapi.yml",
@@ -50,9 +28,42 @@
     "amerihealth-caritas-procedure-api-openapi.yml",
     "amerihealth-caritas-system-level-operations-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 5 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amerihealth-caritas-patient-access-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "superseded outputs removed: amerihealth-caritas-allergy-intolerance-api-openapi.yml, amerihealth-caritas-healthcare-service-api-openapi.yml, amerihealth-caritas-insurance-plan-api-openapi.yml, amerihealth-caritas-medication-request-api-openapi.yml, amerihealth-caritas-practitioner-role-api-openapi.yml",
+    "apis.yml register: written (+5 apis, 25 total)"
+  ],
+  "skipped": [
+    "_original/amerihealth-caritas-provider-directory-openapi.yml: archived document superseded by a larger archived document",
+    "amerihealth-caritas-allergy-intolerance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-claim-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-condition-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-coverage-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-encounter-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-explanationofbenefit-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-healthcare-service-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-immunization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-insurance-plan-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-list-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-location-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-medication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-medication-request-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-medicationdispense-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-medicationknowledge-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-observation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-organizationaffiliation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-patient-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-practitioner-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-practitioner-role-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-procedure-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amerihealth-caritas-system-level-operations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

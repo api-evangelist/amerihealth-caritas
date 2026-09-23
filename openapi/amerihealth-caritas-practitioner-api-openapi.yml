@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance Practitioner API
+  title: AmeriHealth Caritas Practitioner API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The Practitioner FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getPractitionerById
+      x-operation-id-source: derived
     put:
       tags:
       - Practitioner
-      summary: 'update-instance: Update an existing Practitioner instance, or create using a client-assigned ID'
+      summary: 'update-instance: Update an existing Practitioner instance, or create using a…'
       parameters:
       - name: id
         in: path
@@ -74,6 +76,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putPractitionerById
+      x-operation-id-source: derived
     delete:
       tags:
       - Practitioner
@@ -98,6 +102,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deletePractitionerById
+      x-operation-id-source: derived
     patch:
       tags:
       - Practitioner
@@ -132,6 +138,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: patchPractitionerById
+      x-operation-id-source: derived
   /Practitioner/{id}/_history/{version_id}:
     get:
       tags:
@@ -166,6 +174,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getPractitionerByIdHistoryByVersionId
+      x-operation-id-source: derived
   /Practitioner:
     get:
       tags:
@@ -298,6 +308,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getPractitioner
+      x-operation-id-source: derived
     post:
       tags:
       - Practitioner
@@ -322,11 +334,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: postPractitioner
+      x-operation-id-source: derived
   /Practitioner/_history:
     get:
       tags:
       - Practitioner
-      summary: 'type-history: Fetch the resource change history for all resources of type Practitioner'
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -337,11 +351,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getPractitionerHistory
+      x-operation-id-source: derived
   /Practitioner/{id}/_history:
     get:
       tags:
       - Practitioner
-      summary: 'instance-history: Fetch the resource change history for all resources of type Practitioner'
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -362,6 +378,8 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getPractitionerByIdHistory
+      x-operation-id-source: derived
   /Practitioner/$validate:
     get:
       tags:
@@ -389,6 +407,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get practitioner $validate
+      x-summary-source: derived
+      operationId: getPractitioner$validate
+      x-operation-id-source: derived
   /Practitioner/{id}/$validate:
     get:
       tags:
@@ -425,6 +447,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get practitioner by id $validate
+      x-summary-source: derived
+      operationId: getPractitionerById$validate
+      x-operation-id-source: derived
   /Practitioner/{id}/$meta-delete:
     post:
       tags:
@@ -457,6 +483,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create practitioner by id $meta delete
+      x-summary-source: derived
+      operationId: postPractitionerById$metaDelete
+      x-operation-id-source: derived
   /Practitioner/{id}/$meta-add:
     post:
       tags:
@@ -489,6 +519,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create practitioner by id $meta add
+      x-summary-source: derived
+      operationId: postPractitionerById$metaAdd
+      x-operation-id-source: derived
   /Practitioner/$meta:
     get:
       tags:
@@ -509,6 +543,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get practitioner $meta
+      x-summary-source: derived
+      operationId: getPractitioner$meta
+      x-operation-id-source: derived
   /Practitioner/{id}/$meta:
     get:
       tags:
@@ -538,6 +576,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get practitioner by id $meta
+      x-summary-source: derived
+      operationId: getPractitionerById$meta
+      x-operation-id-source: derived
   /Practitioner/$expunge:
     post:
       tags:
@@ -559,6 +601,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create practitioner $expunge
+      x-summary-source: derived
+      operationId: postPractitioner$expunge
+      x-operation-id-source: derived
   /Practitioner/{id}/$expunge:
     post:
       tags:
@@ -590,6 +636,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create practitioner by id $expunge
+      x-summary-source: derived
+      operationId: postPractitionerById$expunge
+      x-operation-id-source: derived
   /Practitioner/{id}/$graphql:
     get:
       tags:
@@ -615,6 +665,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get practitioner by id $graphql
+      x-summary-source: derived
+      operationId: getPractitionerById$graphql
+      x-operation-id-source: derived
   /Practitioner/{id}/$binary-access-write:
     post:
       tags:
@@ -646,6 +700,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Create practitioner by id $binary access write
+      x-summary-source: derived
+      operationId: postPractitionerById$binaryAccessWrite
+      x-operation-id-source: derived
   /Practitioner/{id}/$binary-access-read:
     get:
       tags:
@@ -674,6 +732,10 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      summary: Get practitioner by id $binary access read
+      x-summary-source: derived
+      operationId: getPractitionerById$binaryAccessRead
+      x-operation-id-source: derived
   /Practitioner/{id}/$diff:
     get:
       tags:
@@ -724,12 +786,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getPractitionerById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:

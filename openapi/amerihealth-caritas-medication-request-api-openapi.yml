@@ -1,9 +1,9 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: AmeriHealth Caritas AllergyIntolerance InsurancePlan API
+  title: AmeriHealth Caritas Medication Request API
   contact: {}
   version: 1.0.0
-  description: The AllergyIntolerance FHIR resource type
+  description: The MedicationRequest FHIR resource type
 servers:
 - url: https://api-ext.amerihealthcaritas.com/0500/patient-api
   description: AmeriHealth Caritas
@@ -12,14 +12,14 @@ security:
   - openid
   - fhirUser
 tags:
-- name: InsurancePlan
-  description: The InsurancePlan FHIR resource type
+- name: Medication Request
+  description: The MedicationRequest FHIR resource type
 paths:
-  /InsurancePlan/{id}:
+  /MedicationRequest/{id}:
     get:
       tags:
-      - InsurancePlan
-      summary: 'read-instance: Read InsurancePlan instance'
+      - Medication Request
+      summary: 'read-instance: Read MedicationRequest instance'
       parameters:
       - name: id
         in: path
@@ -40,10 +40,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationRequestById
+      x-operation-id-source: derived
     put:
       tags:
-      - InsurancePlan
-      summary: 'update-instance: Update an existing InsurancePlan instance, or create using a client-assigned ID'
+      - Medication Request
+      summary: 'update-instance: Update an existing MedicationRequest instance, or create using…'
       parameters:
       - name: id
         in: path
@@ -59,11 +61,11 @@ paths:
           application/fhir+json:
             schema:
               $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            example: "{\n  \"resourceType\": \"InsurancePlan\"\n}"
+            example: "{\n  \"resourceType\": \"MedicationRequest\"\n}"
           application/fhir+xml:
             schema:
               $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: <InsurancePlan xmlns="http://hl7.org/fhir"/>
+            example: <MedicationRequest xmlns="http://hl7.org/fhir"/>
       responses:
         '200':
           description: Success
@@ -74,9 +76,11 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: putMedicationRequestById
+      x-operation-id-source: derived
     delete:
       tags:
-      - InsurancePlan
+      - Medication Request
       summary: 'instance-delete: Perform a logical delete on a resource instance'
       parameters:
       - name: id
@@ -98,10 +102,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: deleteMedicationRequestById
+      x-operation-id-source: derived
     patch:
       tags:
-      - InsurancePlan
-      summary: 'instance-patch: Patch a resource instance of type InsurancePlan by ID'
+      - Medication Request
+      summary: 'instance-patch: Patch a resource instance of type MedicationRequest by ID'
       parameters:
       - name: id
         in: path
@@ -132,11 +138,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/_history/{version_id}:
+      operationId: patchMedicationRequestById
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/_history/{version_id}:
     get:
       tags:
-      - InsurancePlan
-      summary: 'vread-instance: Read InsurancePlan instance with specific version'
+      - Medication Request
+      summary: 'vread-instance: Read MedicationRequest instance with specific version'
       parameters:
       - name: id
         in: path
@@ -166,79 +174,86 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan:
+      operationId: getMedicationRequestByIdHistoryByVersionId
+      x-operation-id-source: derived
+  /MedicationRequest:
     get:
       tags:
-      - InsurancePlan
-      summary: 'search-type: Search for InsurancePlan instances'
+      - Medication Request
+      summary: 'search-type: Search for MedicationRequest instances'
       description: This is a search type
       parameters:
-      - name: address-state
+      - name: date
         in: query
-        description: A state specified in an address
+        description: Returns medication request to be administered on a specific date
+        style: simple
+      - name: authoredon
+        in: query
+        description: Return prescriptions written on this date
+        style: simple
+      - name: code
+        in: query
+        description: Return prescriptions of this medication code
+        style: simple
+      - name: subject
+        in: query
+        description: The identity of a patient to list orders  for
         style: simple
       - name: resource-placeholder
         in: query
-        description: Search for resources of type [InsurancePlan] populated with the resource-placeholder extension
+        description: Search for resources of type [MedicationRequest] populated with the resource-placeholder extension
         style: simple
       - name: _lastUpdated
         in: query
         description: Only return resources which were last updated as specified by the given range
         style: simple
-      - name: identifier-system-pln-unique
+      - name: intended-performer
         in: query
+        description: Returns the intended performer of the administration of the medication request
         style: simple
-      - name: type
+      - name: patient
         in: query
-        description: A code for the type of organization
+        description: Returns prescriptions for a specific patient
         style: simple
-      - name: address-country
+      - name: intended-performertype
         in: query
-        description: A country specified in an address
+        description: Returns requests for a specific type of performer
         style: simple
-      - name: administered-by
+      - name: requester
         in: query
-        description: Product administrator
-        style: simple
-      - name: endpoint
-        in: query
-        description: Technical endpoint
-        style: simple
-      - name: phonetic
-        in: query
-        description: A portion of the organization's name using some kind of phonetic matching algorithm
-        style: simple
-      - name: address-city
-        in: query
-        description: A city specified in an address
+        description: Returns prescriptions prescribed by this prescriber
         style: simple
       - name: identifier
         in: query
-        description: Any identifier for the organization (not the accreditation issuer's identifier)
+        description: Return prescriptions with this external identifier
         style: simple
-      - name: address
+      - name: intended-dispenser
         in: query
-        description: A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text
-        style: simple
-      - name: owned-by
-        in: query
-        description: An organization of which this organization forms a part
+        description: Returns prescriptions intended to be dispensed by this Organization
         style: simple
       - name: _security
         in: query
         description: Search for resources which have the given security labels
         style: simple
-      - name: address-postalcode
+      - name: medication
         in: query
-        description: A postal code specified in an address
+        description: Return prescriptions for this medication reference
+        style: simple
+      - name: encounter
+        in: query
+        description: Return prescriptions with this encounter identifier
+        style: simple
+      - name: priority
+        in: query
+        description: Returns prescriptions with different priorities
+        style: simple
+      - name: intent
+        in: query
+        description: Returns prescriptions with different intents
         style: simple
       - name: _profile
         in: query
         description: Search for resources which have the given profile
-        style: simple
-      - name: identifier-system-pln
-        in: query
-        description: An insurance plan identifier with system PLN
         style: simple
       - name: _has
         in: query
@@ -248,10 +263,6 @@ paths:
         in: query
         description: Search for resources which have the given tag
         style: simple
-      - name: address-use
-        in: query
-        description: A use code specified in an address
-        style: simple
       - name: _source
         in: query
         description: Search for resources which have the given source value (Resource.meta.source)
@@ -259,6 +270,10 @@ paths:
       - name: _id
         in: query
         description: The ID of the resource
+        style: simple
+      - name: category
+        in: query
+        description: Returns prescriptions with different categories
         style: simple
       - name: _content
         in: query
@@ -270,7 +285,7 @@ paths:
         style: simple
       - name: status
         in: query
-        description: Is the Organization record active
+        description: Status of the prescription
         style: simple
       responses:
         '200':
@@ -282,20 +297,22 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationRequest
+      x-operation-id-source: derived
     post:
       tags:
-      - InsurancePlan
-      summary: 'create-type: Create a new InsurancePlan instance'
+      - Medication Request
+      summary: 'create-type: Create a new MedicationRequest instance'
       requestBody:
         content:
           application/fhir+json:
             schema:
               $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            example: "{\n  \"resourceType\": \"InsurancePlan\"\n}"
+            example: "{\n  \"resourceType\": \"MedicationRequest\"\n}"
           application/fhir+xml:
             schema:
               $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: <InsurancePlan xmlns="http://hl7.org/fhir"/>
+            example: <MedicationRequest xmlns="http://hl7.org/fhir"/>
       responses:
         '200':
           description: Success
@@ -306,11 +323,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/_history:
+      operationId: postMedicationRequest
+      x-operation-id-source: derived
+  /MedicationRequest/_history:
     get:
       tags:
-      - InsurancePlan
-      summary: 'type-history: Fetch the resource change history for all resources of type InsurancePlan'
+      - Medication Request
+      summary: 'type-history: Fetch the resource change history for all resources of type…'
       responses:
         '200':
           description: Success
@@ -321,11 +340,13 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/_history:
+      operationId: getMedicationRequestHistory
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/_history:
     get:
       tags:
-      - InsurancePlan
-      summary: 'instance-history: Fetch the resource change history for all resources of type InsurancePlan'
+      - Medication Request
+      summary: 'instance-history: Fetch the resource change history for all resources of type…'
       parameters:
       - name: id
         in: path
@@ -346,10 +367,12 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/$validate:
+      operationId: getMedicationRequestByIdHistory
+      x-operation-id-source: derived
+  /MedicationRequest/$validate:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       parameters:
       - name: resource
         in: query
@@ -373,10 +396,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$validate:
+      summary: Get medication request $validate
+      x-summary-source: derived
+      operationId: getMedicationRequest$validate
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$validate:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       parameters:
       - name: id
         in: path
@@ -409,10 +436,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$meta-delete:
+      summary: Get medication request by id $validate
+      x-summary-source: derived
+      operationId: getMedicationRequestById$validate
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$meta-delete:
     post:
       tags:
-      - InsurancePlan
+      - Medication Request
       description: Delete tags, profiles, and/or security labels from a resource
       parameters:
       - name: id
@@ -441,10 +472,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$meta-add:
+      summary: Create medication request by id $meta delete
+      x-summary-source: derived
+      operationId: postMedicationRequestById$metaDelete
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$meta-add:
     post:
       tags:
-      - InsurancePlan
+      - Medication Request
       description: Add tags, profiles, and/or security labels to a resource
       parameters:
       - name: id
@@ -473,10 +508,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/$meta:
+      summary: Create medication request by id $meta add
+      x-summary-source: derived
+      operationId: postMedicationRequestById$metaAdd
+      x-operation-id-source: derived
+  /MedicationRequest/$meta:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       description: Request a list of tags, profiles, and security labels for a specfic resource instance
       parameters:
       - name: return
@@ -493,10 +532,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$meta:
+      summary: Get medication request $meta
+      x-summary-source: derived
+      operationId: getMedicationRequest$meta
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$meta:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       description: Request a list of tags, profiles, and security labels for a specfic resource instance
       parameters:
       - name: id
@@ -522,10 +565,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/$expunge:
+      summary: Get medication request by id $meta
+      x-summary-source: derived
+      operationId: getMedicationRequestById$meta
+      x-operation-id-source: derived
+  /MedicationRequest/$expunge:
     post:
       tags:
-      - InsurancePlan
+      - Medication Request
       requestBody:
         content:
           application/fhir+json:
@@ -543,10 +590,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$expunge:
+      summary: Create medication request $expunge
+      x-summary-source: derived
+      operationId: postMedicationRequest$expunge
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$expunge:
     post:
       tags:
-      - InsurancePlan
+      - Medication Request
       parameters:
       - name: id
         in: path
@@ -574,10 +625,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$graphql:
+      summary: Create medication request by id $expunge
+      x-summary-source: derived
+      operationId: postMedicationRequestById$expunge
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$graphql:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       description: This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.
       parameters:
       - name: id
@@ -599,10 +654,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$binary-access-write:
+      summary: Get medication request by id $graphql
+      x-summary-source: derived
+      operationId: getMedicationRequestById$graphql
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$binary-access-write:
     post:
       tags:
-      - InsurancePlan
+      - Medication Request
       parameters:
       - name: id
         in: path
@@ -630,10 +689,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$binary-access-read:
+      summary: Create medication request by id $binary access write
+      x-summary-source: derived
+      operationId: postMedicationRequestById$binaryAccessWrite
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$binary-access-read:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       parameters:
       - name: id
         in: path
@@ -658,10 +721,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-  /InsurancePlan/{id}/$diff:
+      summary: Get medication request by id $binary access read
+      x-summary-source: derived
+      operationId: getMedicationRequestById$binaryAccessRead
+      x-operation-id-source: derived
+  /MedicationRequest/{id}/$diff:
     get:
       tags:
-      - InsurancePlan
+      - Medication Request
       summary: Comparte two resources or two versions of a single resource
       description: This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.
       parameters:
@@ -708,12 +775,14 @@ paths:
             application/fhir+xml:
               schema:
                 $ref: '#/components/schemas/FHIR-XML-RESOURCE'
+      operationId: getMedicationRequestById$diff
+      x-operation-id-source: derived
 components:
   schemas:
-    FHIR-JSON-RESOURCE:
+    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
-    FHIR-XML-RESOURCE:
+    FHIR-JSON-RESOURCE:
       type: object
       description: A FHIR resource
   securitySchemes:
