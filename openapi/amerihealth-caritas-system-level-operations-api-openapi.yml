@@ -370,3 +370,9 @@ components:
     openId:
       type: openIdConnect
       openIdConnectUrl: https://api-ext.amerihealthcaritas.com/0500/patient-api/.well-known/smart-configuration
+x-provenance:
+  method: harvested
+  publisher: AmeriHealth Caritas
+  source: https://api-ext.amerihealthcaritas.com/1200/provider-api/api-docs?page=All
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
