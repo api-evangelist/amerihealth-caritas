@@ -1,0 +1,251 @@
+# AmeriHealth Caritas (amerihealth-caritas)
+
+<!-- API-EVANGELIST-PROVENANCE:BEGIN -->
+> ### About this repository
+>
+> **This is not our API.** This repository is an independent, third-party profile of a company's
+> **publicly available** API surface, maintained by [API Evangelist](https://apievangelist.com).
+> API Evangelist does not operate, host, resell, or support this company's APIs, and is not
+> affiliated with or endorsed by the company unless stated on the profile.
+>
+> **Where the information came from.** Everything here is assembled from material a member of the
+> public can reach with a browser and no credentials — the company's own website, developer portal
+> and documentation, the specifications it publishes for public use (OpenAPI, AsyncAPI, JSON Schema,
+> `apis.json`, `llms.txt` and similar), its public repositories, and its public status, pricing and
+> changelog pages. **Nothing here is obtained by breaching a system, defeating an access control, or
+> using credentials of any kind.**
+>
+> **The rating is an independent assessment.** The Kin Score and Agent Readiness rating are
+> independently calculated scores of a company's *public* API artifacts, produced by API Evangelist
+> against a published rubric. They are not certifications, endorsements, security assessments, or
+> audits, and they score published artifacts — not the quality, safety, or security of the software.
+>
+> **Corrections, re-scores, and removal are free.** No partnership, contract, or purchase is
+> required, and you do not need to justify the request.
+>
+> - **Something wrong?** Open an issue on this repository, or email
+>   [info@apievangelist.com](mailto:info@apievangelist.com).
+> - **Published something new?** Ask for a re-score and we will re-run the rating.
+> - **Want the listing taken down?** Say so and we will honor it. The profile is reduced to your
+>   company name, a factual description, and a link to your own site, and the company is recorded as
+>   **unrated** — never scored zero for having asked.
+>
+> **Response times.** Acknowledgement within **one business day**; removal or restriction within
+> **two business days**; corrections and re-scores within **five business days**.
+>
+> **Not from the company, and here with a question?** You are welcome here — we would rather be the
+> front line and point you the right way than have a good report go nowhere. What this repository
+> can answer is narrow, though, so it is worth knowing who you are actually looking for:
+>
+> - **A question about how the API works, an account, billing, or a bug in the service** — that is
+>   the company's own support, not us. We profile this API; we do not operate it and cannot see
+>   your account.
+> - **A bug in an open-source project we only catalog** — file it on that project's own repository.
+>   This has happened with a real and correct bug report that reached us instead of the people who
+>   could fix it, which helped nobody.
+> - **Anything about this listing itself** — the description, the tags, the rating, a missing or
+>   wrong artifact — is ours. Open an issue here.
+> - **Not sure, or something general about API Evangelist or APIs.io** — open an issue on the
+>   [APIs.io Inbox](https://github.com/api-search/inbox) and we will route it.
+>
+> **This repository contains no software, and we will never ask you to download anything.** There is
+> no build, release, installer, or binary here — only text and machine-readable API descriptions, so
+> there is nothing here that can be "corrupt" or need "repairing". Any issue, comment, or email
+> claiming otherwise and offering a download link is not from us and is hostile. Do not follow the
+> link; it is a lure. Report it to GitHub and, if you like, tell us at
+> [info@apievangelist.com](mailto:info@apievangelist.com) so we can take it down.
+>
+> **On a security or compliance team?** Email
+> [info@apievangelist.com](mailto:info@apievangelist.com) with *security* in the subject line and
+> you will get a person, not a form. We will tell you exactly which public URLs this profile was
+> built from so your team can see the same surface we did, and we will take the listing down on
+> request while you work through it.
+>
+> Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
+<!-- API-EVANGELIST-PROVENANCE:END -->
+
+AmeriHealth Caritas is one of the largest Medicaid managed care organizations in the United States, serving roughly five million members across Medicaid, Children's Health Insurance Program (CHIP), dual-eligible Medicare-Medicaid (D-SNP), Medicare-Medicaid LTSS, and Marketplace lines of business across thirteen states plus the District of Columbia. The company is owned jointly by Independence Blue Cross (majority) and Blue Cross Blue Shield of Michigan, operates state health plans under brands such as Keystone First, Select Health of South Carolina, Blue Cross Complete of Michigan, AmeriHealth Caritas Next, AmeriHealth Caritas VIP Care, and PerformCare, and exposes a set of HL7 FHIR R4 APIs through its developer portal at developer.amerihealthcaritas.com to satisfy the CMS Interoperability and Patient Access final rule (CMS-9115-F).
+
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/amerihealth-caritas/refs/heads/main/apis.yml)
+
+## Scope
+
+- **Type:** Index
+
+## Tags
+
+- Healthcare
+- Health Insurance
+- Managed Care
+- Medicaid
+- Medicare
+- Dual Eligible
+- CHIP
+- LTSS
+- Behavioral Health
+- Pharmacy Benefits
+- Interoperability
+- FHIR
+- CMS
+- SMART On FHIR
+- Patient Access
+- Provider Directory
+
+## Timestamps
+
+- **Created:** 2024-01-01
+- **Modified:** 2026-05-23
+
+## APIs
+
+### AmeriHealth Caritas Patient Access FHIR API
+
+HL7 FHIR R4 (4.0.1) Patient Access API published to satisfy the CMS Interoperability and Patient Access final rule (CMS-9115-F). Provides member-authorized access to clinical, claims, encounter, coverage, medication, immunization, and demographic resources for the AmeriHealth Caritas family of Medicaid, CHIP, D-SNP, LTSS, and Marketplace health plans. Member data is protected by SMART on FHIR / OAuth 2.0 with PKCE; production access requires developer registration, app review, and member consent. Per-plan FHIR base URLs are exposed under api-ext.amerihealthcaritas.com keyed by a four-digit plan code (0100, 0500, 0900, 2400, 2600 confirmed public).
+
+- **Human URL:** [https://developer.amerihealthcaritas.com/](https://developer.amerihealthcaritas.com/)
+- **Base URL:** `https://api-ext.amerihealthcaritas.com/0500/patient-api`
+
+#### Tags
+
+- Patient Access
+- FHIR
+- SMART On FHIR
+- Medicaid
+- CMS
+
+#### Properties
+
+- [Portal](https://developer.amerihealthcaritas.com/)
+- [Documentation](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- [Capability Statement](https://api-ext.amerihealthcaritas.com/0500/patient-api/metadata)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/0100/patient-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/0500/patient-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/0900/patient-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/2400/patient-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/2600/patient-api)
+- [Authorize U R L](https://member.amerihealthcaritas.com/patientaccesssvc/oauth2/v1/authorize)
+- [Token U R L](https://eapics.amerihealthcaritas.com/oauth2/v1/token)
+- [OpenAPI](openapi/amerihealth-caritas-patient-access-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/amerihealth-caritas-patient-access.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/amerihealth-caritas-patient-access.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Spectral Rules](rules/amerihealth-caritas-rules.yml)
+- [JSON Schema](json-schema/amerihealth-caritas-patient-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/amerihealth-caritas-coverage-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/amerihealth-caritas-explanation-of-benefit-schema.json) — [JSON Schema](https://json-schema.org/specification)
+
+### AmeriHealth Caritas Provider Directory FHIR API
+
+HL7 FHIR R4 (4.0.1) Provider Directory API satisfying the CMS Provider Directory requirements of the Interoperability and Patient Access final rule. Publishes Practitioner, PractitionerRole, Organization, OrganizationAffiliation, Location, and InsurancePlan resources for the AmeriHealth Caritas family of plans. No authentication is required; the directory is publicly queryable. Per-plan endpoints are exposed at api-ext.amerihealthcaritas.com under plan codes including 0100, 0500, 0900, 1200, 2100, 2400, and 2600.
+
+- **Human URL:** [https://developer.amerihealthcaritas.com/](https://developer.amerihealthcaritas.com/)
+- **Base URL:** `https://api-ext.amerihealthcaritas.com/1200/provider-api`
+
+#### Tags
+
+- Provider Directory
+- FHIR
+- Healthcare
+- CMS
+
+#### Properties
+
+- [Portal](https://developer.amerihealthcaritas.com/)
+- [Documentation](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- [Capability Statement](https://api-ext.amerihealthcaritas.com/1200/provider-api/metadata)
+- [Swagger U I](https://api-ext.amerihealthcaritas.com/1200/provider-api/swagger-ui/?page=All)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/0100/provider-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/0500/provider-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/0900/provider-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/1200/provider-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/2100/provider-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/2400/provider-api)
+- [Base U R L](https://api-ext.amerihealthcaritas.com/2600/provider-api)
+- [OpenAPI](openapi/amerihealth-caritas-provider-directory-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/amerihealth-caritas-provider-directory.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/amerihealth-caritas-provider-directory.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Spectral Rules](rules/amerihealth-caritas-rules.yml)
+- [JSON Schema](json-schema/amerihealth-caritas-practitioner-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/amerihealth-caritas-organization-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/amerihealth-caritas-location-schema.json) — [JSON Schema](https://json-schema.org/specification)
+
+### AmeriHealth Caritas Formulary FHIR API
+
+HL7 FHIR R4 Formulary API published to satisfy CMS-9115-F drug formulary publication requirements for Medicaid managed care and D-SNP populations. Covered drug lists, tier information, and prior authorization indicators are exposed through FHIR MedicationKnowledge and List resources. Documented at developer.amerihealthcaritas.com as a public, no-authentication surface; the canonical public base URL is not separately published at api-ext.amerihealthcaritas.com and formulary resources are currently surfaced inside the Patient Access API under MedicationKnowledge / List.
+
+- **Human URL:** [https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- **Base URL:** `https://api-ext.amerihealthcaritas.com/0500/patient-api`
+
+#### Tags
+
+- Formulary
+- Drug Formulary
+- FHIR
+- Pharmacy Benefits
+- CMS
+
+#### Properties
+
+- [Portal](https://developer.amerihealthcaritas.com/)
+- [Documentation](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- [Postman Collection](collections/amerihealth-caritas-patient-access.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/amerihealth-caritas-patient-access.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/amerihealth-caritas-provider-directory.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/amerihealth-caritas-provider-directory.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### AmeriHealth Caritas Corporate Website
+
+Public corporate website for AmeriHealth Caritas, hosting the family-of-plans health plan finder, solutions overview, careers, member and provider portals for the federated state plans, and pointers to the CMS Interoperability developer portal.
+
+- **Human URL:** [https://www.amerihealthcaritas.com](https://www.amerihealthcaritas.com)
+- **Base URL:** `https://www.amerihealthcaritas.com`
+
+#### Tags
+
+- Website
+- Corporate
+
+#### Properties
+
+- [Website](https://www.amerihealthcaritas.com)
+- [Health Plan Finder](https://www.amerihealthcaritas.com/find-a-health-plan)
+- [Solutions](https://www.amerihealthcaritas.com/health-care-solutions)
+- [Careers](https://careers.amerihealthcaritas.com/us/en)
+- [Developer Portal](https://developer.amerihealthcaritas.com/)
+- [Postman Collection](collections/amerihealth-caritas-patient-access.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/amerihealth-caritas-patient-access.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/amerihealth-caritas-provider-directory.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/amerihealth-caritas-provider-directory.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+## Common Properties
+
+- [Portal](https://developer.amerihealthcaritas.com/)
+- [Website](https://www.amerihealthcaritas.com)
+- [Documentation](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- [Getting Started](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- [Authentication](https://developer.amerihealthcaritas.com/dvp/v1/apiadditionaldocsinfo/)
+- [C M S Final Rule](https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability)
+- [C A R I N Blue Button](https://hl7.org/fhir/us/carin-bb/history.html)
+- [Da Vinci P Dex](https://hl7.org/fhir/us/davinci-pdex/history.html)
+- [U S C D I](https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi#uscdi-v1)
+- [S M A R T App Launch](https://hl7.org/fhir/smart-app-launch/1.0.0/)
+- [Health Plan Finder](https://www.amerihealthcaritas.com/find-a-health-plan)
+- [Contact Us](https://www.amerihealthcaritas.com/contact-us)
+- [Careers](https://careers.amerihealthcaritas.com/us/en)
+- [News Blog](https://www.amerihealthcaritas.com/newsroom)
+- [Transparency In Coverage](https://www.amerihealthcaritas.com/about-us/transparency-in-coverage.aspx)
+- [Git Hub](https://github.com/amerihealth)
+- [Plans](plans/amerihealth-caritas-plans-pricing.yml)
+- [Rate Limits](rate-limits/amerihealth-caritas-rate-limits.yml)
+- [Fin Ops](finops/amerihealth-caritas-finops.yml)
+- [Vocabulary](vocabulary/amerihealth-caritas-vocabulary.yml)
+- [J S O N L D Context](json-ld/amerihealth-caritas-context.jsonld)
+- [Features](undefined)
+- [Use Cases](undefined)
+- [Integrations](undefined)
+- [Solutions](undefined)
+- [L L Ms Txt](https://developer.amerihealthcaritas.com/llms.txt)
+
+## Maintainers
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
